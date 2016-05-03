@@ -1,0 +1,28 @@
+#!/bin/sh
+
+#preselection='pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&tauIsoMedium>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6'
+preselection='iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6'
+bselection='nbtag>=1&&njets<2'
+antibselection='nbtag==0'
+wselection='mtRecoil_1>70'
+signalselection='mtRecoil_1<40'
+qcdselection=$preselection
+trigselection='pt_1>0' #only for MC
+trigselectiondata=$trigselection
+#trigselection='lTrigger' #only for MC
+#trigselectiondata='lTrigger' #only for Data
+relaxedselection='njets<2&&((jcsv_1>0.46&&jpfid_1==1)^^(jcsv_2>0.46&&jpfid_2==1))'
+luminosity=2300. #pb
+#luminosity=2246. #pb
+direc='/nfs_scratch/laura/htt_weighted18/'
+zttScale=1.
+qcdfactor=1.00
+topSF=1.
+bins=30
+binning='binningHighStat=0.,10.,20.,30.,40.,50.,60.,70.,80.,90.,100.,110.,120.,130.,140.,150.,160.,170.,180.,190.,200.,225.,250.,275.,300.,325.,350.,400.,500.,700.,900.,1100.,1300.,1500.,1700.,1900.,2100.,2300.,2500.,2700.,2900.,3100.,3300.,3500.,3700.,3900. binningLowStat=0.,20.,40.,60.,80.,100.,120.,140.,160.,180.,200.,250.,300.,350.,400,500,700,900,1100,1300,1500,1700,1900,2100,2300,2500,2700,2900,3100,3300,3500,3700,3900' 
+#
+mkdir datacards
+#m_vis
+MakeDataCardHTT_Twiki channel='eleTau' shifts='Tau' dataFile=$direc'eleDATA.root' qcdFile=$direc'eleDATA.root' zttFile=$direc'ZJETS.root' zllFile=$direc'ZJETS.root' wFile=$direc'WJETS.root' vvFile=$direc'DiBoson.root' topFile=$direc'TT_ext4.root' preselection=$preselection antibselection=$antibselection bselection=$bselection  wselection=$wselection relaxedSelection=$relaxedselection trigselection=$trigselection trigselection50ns=$trigselectiondata  signalselection=$signalselection   qcdselection=$qcdselection luminosityErr=0.045 qcdfactor=$qcdfactor qcdfactorErr=0.02 vvErr=0.3   zttScale=$zttScale zttScaleErr=0.033    wFactorErr=0.06    zjfterr=0.1  zlfterr=0.24   topErr=0.075  topSF=$topSF 	muID=1.00 muIDErr=0.01 eleID=0.0 eleIDErr=0.0 tauID=1.0 tauIDErr=0.06  dir=$direc''  bID=1.0  bIDErr=0.10  bMisID=1.0  bMisIDErr=0.17    bitmask=1,1,1,0 weight='__WEIGHT__*GENWEIGHT*puweight*idisoweight_1*trigweight_1'  luminosity=$luminosity  variable='m_sv' bins=35 min=0 max=350 outputFile='datacards/htt_et.inputs-mssm-13TeV.root' $binning
+#MakeDataCardHTT_Twiki channel='eleTau' shifts='Tau' dataFile=$direc'eleDATA.root' qcdFile=$direc'eleDATA.root' zttFile=$direc'../Ztest/ZJETS.root' zllFile=$direc'../Ztest/ZJETS.root' wFile=$direc'WJETS.root' vvFile=$direc'DiBoson.root' topFile=$direc'TT_ext4.root' preselection=$preselection antibselection=$antibselection bselection=$bselection  wselection=$wselection relaxedSelection=$relaxedSelection trigselection=$trigselection trigselection50ns=$trigselectiondata  signalselection=$signalselection   qcdselection=$qcdselection luminosityErr=0.045 qcdfactor=$qcdfactor qcdfactorErr=0.02 vvErr=0.3   zttScale=$zttScale zttScaleErr=0.033    wFactorErr=0.06    zjfterr=0.1  zlfterr=0.24   topErr=0.075  topSF=$topSF 	muID=1.00 muIDErr=0.01 eleID=0.0 eleIDErr=0.0 tauID=1.0 tauIDErr=0.06  dir=$direc''  bID=1.0  bIDErr=0.10  bMisID=1.0  bMisIDErr=0.17    bitmask=1,1,1,0 weight='__WEIGHT__*GENWEIGHT*puweight*idisoweight_1*trigweight_1'  luminosity=$luminosity  variable='m_vis' bins=35 min=0 max=350 outputFile='datacards/htt_et.inputs-mssm-13TeV-m_vis.root' 
+exit;
