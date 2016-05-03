@@ -290,6 +290,10 @@ class DataCardCreatorHTT {
 			output.dVV = vvInflYield.second;
 
 
+                        std::cout<<"Create ZLL = ZLFT+ZJFT"<<std::endl;
+			std::pair<float,float> zllYield   = createHistogramAndShifts(zllFile_,"ZLL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+ZLL_genLLSel_+")*"+weight_),luminosity_*leg1Corr*zttScale_,prefix,false);
+
+
                         std::cout<<"Create ZLFT"<<std::endl;
                         std::cout<<"      Factor ZLFT: "<<zlftFactor_<<std::endl;
 			//Create ZL and ZJ
@@ -308,17 +312,6 @@ class DataCardCreatorHTT {
 			printf("      Z (j->tau) in signal region = %f + %f \n",zjftInflYield.first,zjftInflYield.second);
 			output.ZJFT  = zjftInflYield.first;
 			output.dZJFT = zjftInflYield.second;
-
-			/*
-                        std::cout<<"Create ZLL"<<std::endl;
-			//Create ZL and ZJ
-			std::pair<float,float> zllYield   = createHistogramAndShifts(zllFile_,"ZL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+ZLL_genLLSel_+")*"+weight_),luminosity_*leg1Corr*zllFactor_*zttScale_,prefix,false);
-			//std::pair<float,float> zllYield   = createHistogramAndShifts(zllFile_,"ZL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&genTaus==0&&((abs(pdg2)==13&&genPt2>8)||(abs(pdg2)==11&&genPt2>8)))*"+weight_),luminosity_*leg1Corr*zllFactor_*zttScale_,prefix,false);
-			std::pair<float,float> zllInflYield  = inflateError(zllYield,zllErr_);
-			printf("      Z (l->tau) in signal region = %f + %f \n",zllInflYield.first,zllInflYield.second);
-			output.ZLL  = zllInflYield.first;
-			output.dZLL = zllInflYield.second;
-			*/
 
 
                         std::cout<<"Create ZTT"<<std::endl;
@@ -430,7 +423,7 @@ class DataCardCreatorHTT {
 			printf("Tau ID Scale Factor is %.3f \n",tauID_);
 
 			std::cout<<"Select DATA"<<std::endl;
-			std::pair<float,float> dataY         = createHistogramAndShifts(dataFile_,"data_obs","("+preSelection+"&&"+trigSelection50ns_+"&&"+osSignalSelection_+"&&"+categorySelectionData_+")",scaleUp_,prefix);
+			std::pair<float,float> dataY         = createHistogramAndShifts(dataFile_,"data_obs","("+preSelection+"&&"+trigSelection50ns_+"&&"+osSignalSelection_+"&&"+categorySelectionData_+"&&"+blinding_+")",scaleUp_,prefix);
 			output.DATA = dataY.first;
 			std::cout<<"      DATA Yield: "<< output.DATA<<std::endl;
 
@@ -445,6 +438,10 @@ class DataCardCreatorHTT {
 			std::cout<<"      VV after error inflation: "<<vvInflYield.first<<std::endl;
 			output.VV  = vvInflYield.first;
 			output.dVV = vvInflYield.second;
+
+                        std::cout<<"Create ZLL = ZLFT+ZJFT"<<std::endl;
+			std::pair<float,float> zllYield   = createHistogramAndShifts(zllFile_,"ZLL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection_+"&&"+ZLL_genLLSel_+")*"+weight_),luminosity_*leg1Corr*zttScale_,prefix,false);
+
 
 			//Create ZL and ZJ
 
@@ -967,9 +964,9 @@ class DataCardCreatorHTT {
 			if((name=="data_obs"||name=="data_obs_ss"||name=="data_obs_sdb"||name=="data_obs_ss_sdb"||name=="QCD")&&variable_=="pt2ES"){
 				variable_="pt_2";
 			}
-			if((name=="data_obs"||name=="data_obs_ss"||name=="data_obs_sdb"||name=="data_obs_ss_sdb"||name=="QCD")&&(variable_=="NBtagPD"||variable_=="NBtagPDUp"||variable_=="NBtagPDDown")){
-				variable_="nbtag";
-			}
+			if((name=="data_obs"||name=="data_obs_ss"||name=="data_obs_sdb"||name=="data_obs_ss_sdb"||name=="QCD")&&(variable_=="NBtagPDUp"||variable_=="NBtagPDDown")){
+				variable_="NBtagPD";
+		}	
 
 
 

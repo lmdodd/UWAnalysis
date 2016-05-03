@@ -66,7 +66,7 @@ makeLTauStack(TString name,TString file,TString dir,int s,TString labelX,TString
 	float R = 0.04*W_ref;
 
 	//margins for inbetween the pads in a ratio plot
-	float B_ratio = 0.02*H_ref; 
+	float B_ratio = 0.1*H_ref; 
 	float T_ratio = 0.03*H_ref; 
 
 	//margin required for lebal on bottom of raito plot
@@ -354,10 +354,11 @@ makeLTauStack(TString name,TString file,TString dir,int s,TString labelX,TString
 	*/
 	CMS_lumi(c,4,11);
 	plotPad->Draw();
+	CMS_lumi(c,4,11);
 	if(log)
 		plotPad->SetLogy();
 
-	// c->RedrawAxis(); 
+	 //c->RedrawAxis(); 
 	c->SaveAs(name+".png");
 	c->SaveAs(name+".pdf");
 	c->SaveAs(name+".root");

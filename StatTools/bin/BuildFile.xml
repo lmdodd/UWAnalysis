@@ -26,6 +26,12 @@
 <bin   name="MakeDataCardHTT" file="MakeDataCardHTT.cc">
 </bin>
 
+<bin   name="MakeDataCardBtag" file="MakeDataCardBtag.cc">
+</bin>
+<bin   name="MakeDataCardBtagSF" file="MakeDataCardBtagSF.cc">
+</bin>
+<bin   name="MakeDataCardBtag1d" file="MakeDataCardBtag1d.cc">
+</bin>
 <bin   name="MakeDataCardZTT" file="MakeDataCardZTT.cc">
 </bin>
 <bin   name="MakeDataCardZTT_Twiki" file="MakeDataCardZTT_Twiki.cc">

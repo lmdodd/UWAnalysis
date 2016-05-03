@@ -144,7 +144,7 @@ int main (int argc, char* argv[])
 		std::cout<<"========Running btag selection========"<<std::endl;
 		std::string inclSel = parser.stringValue("preselection"); 
 		std::string catSel = parser.stringValue("bselection"); 
-		std::string catDataSel = "nbtag>0";
+		std::string catDataSel = "NBtagPD>0";
 		std::string bTagSF = parser.stringValue("bTagSF");					 
 
 		creator.makeHiggsShape(inclSel,catSel,"_btag");
@@ -162,7 +162,7 @@ int main (int argc, char* argv[])
 		std::cout<<"========Running antibtag selection========"<<std::endl;
 		std::string inclSel = parser.stringValue("preselection"); 
 		std::string catSel = parser.stringValue("antibselection"); 
-		std::string catDataSel = "nbtag==0"; 
+		std::string catDataSel = catSel; 
 		std::string bTagSF = parser.stringValue("bTagSF");					 
 
 		creator.makeHiggsShape(inclSel,catSel,"_antibtag");

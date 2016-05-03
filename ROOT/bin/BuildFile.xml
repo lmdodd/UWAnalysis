@@ -25,54 +25,6 @@
 </bin>
 <bin   name="PrintSelectionTableFromTree" file="PrintSelectionTableFromTree.cc">
 </bin>
-<bin   name="EventWeights" file="EventWeights.cc">
-</bin>
-<bin   name="EventWeightsIterative" file="EventWeightsIterative.cc">
-</bin>
-<bin   name="EventWeightsIterativeWJets" file="EventWeightsIterativeWJets.cc">
-</bin>
-<bin   name="EventWeightsIterativeZJets" file="EventWeightsIterativeZJets.cc">
-</bin>
-
-<bin   name="EventWeightsKFactorsHRes" file="EventWeightsKFactorsHRes.cc">
-</bin>
-
-<bin   name="EventWeightsCombined" file="EventWeightsCombined.cc">
-</bin>
-
-<bin   name="EventWeightsFromHisto" file="EventWeightsFromHisto.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiency" file="EventWeightsForEfficiency.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyFast" file="EventWeightsForEfficiencyFast.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyFastWJets" file="EventWeightsForEfficiencyFastWJets.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyFastHZ" file="EventWeightsForEfficiencyFastHZ.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyFastTOP" file="EventWeightsForEfficiencyFastTOP.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyBTag" file="EventWeightsForEfficiencyBTag.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyZEE" file="EventWeightsForEfficiencyZEE.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyFastEM" file="EventWeightsForEfficiencyFastEM.cc">
-</bin>
-
-<bin   name="EventWeightsEmbeddedUnfolding" file="EventWeightsEmbeddedUnfolding.cc">
-</bin>
-
-<bin   name="EventWeightsForEfficiencyHisto" file="EventWeightsForEfficiencyHisto.cc">
-</bin>
-
 
 <bin   name="OSLSMTMethodLikelihood" file="OSLSMTMethodLikelihood.cc">
 </bin>

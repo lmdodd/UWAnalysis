@@ -22,16 +22,13 @@ int main (int argc, char* argv[])
 
 	//Input Selections
 	parser.addOption("preselection",optutl::CommandLineParser::kString,"preselection","");
-	parser.addOption("extraselection",optutl::CommandLineParser::kString,"extraselection","");
 	parser.addOption("inclselection",optutl::CommandLineParser::kString,"inclselection","");
 	parser.addOption("signalselection",optutl::CommandLineParser::kString," Signal ","mt_1<30");
 	parser.addOption("wselection",optutl::CommandLineParser::kString,"W sideband defintion ","mt_1>70");
 	parser.addOption("qcdSelection",optutl::CommandLineParser::kString,"QCD Shape definition");
-	parser.addOption("relaxedSelection",optutl::CommandLineParser::kString,"Relaxed Selection");
+	parser.addOption("relaxedselection",optutl::CommandLineParser::kString,"Relaxed Selection");
 	parser.addOption("bselection",optutl::CommandLineParser::kString,"Btagging requirement for MSSM","nbtag>=1");
-	parser.addOption("antibSelection",optutl::CommandLineParser::kString,"Anti Btagging requirement for MSSM","(nbtag==0&&njets<2)");
-	parser.addOption("btagSelection",optutl::CommandLineParser::kString,"btagSelection","nbtag>0");
-	parser.addOption("btagSelection2",optutl::CommandLineParser::kString,"btagSelection","nbtag>0");
+	parser.addOption("antibselection",optutl::CommandLineParser::kString,"Anti Btagging requirement for MSSM","(nbtag==0&&njets<2)");
 	parser.addOption("bTagSF",optutl::CommandLineParser::kString,"bTagSF","1");
 	parser.addOption("bTagSF2",optutl::CommandLineParser::kString,"bTagSF","1");
 	//breaks without this currently
@@ -49,7 +46,8 @@ int main (int argc, char* argv[])
 	parser.addOption("luminosityErr",optutl::CommandLineParser::kDouble,"LuminosityErr",0.04);
 	parser.addOption("variable",optutl::CommandLineParser::kString,"Shape variable ","mass");
 	parser.addOption("weight",optutl::CommandLineParser::kString,"Weight for MC (Multiply Weight Factors here for efficiencies)","__WEIGHT__");
-	//parser.addOption("weight",optutl::CommandLineParser::kString,"Weight for MC (Multiply Weight Factors here for efficiencies)","__WEIGHT__*__CORR__");
+	parser.addOption("Zweight",optutl::CommandLineParser::kString,"Weight DY MC for ZPt reweighting","__ZWEIGHT__");
+	parser.addOption("TTweight",optutl::CommandLineParser::kString,"Weight DY MC for ZPt reweighting","topWeight");
 	parser.addOption("embWeight",optutl::CommandLineParser::kString,"Weight for Embedded","__CORR__");
 	parser.addOption("min",optutl::CommandLineParser::kDouble,"Minimum value",0.);
 	parser.addOption("max",optutl::CommandLineParser::kDouble,"Maximum Value ",500.);
@@ -96,8 +94,8 @@ int main (int argc, char* argv[])
 
 	//category options
 
-	parser.addOption("1jet0tag",optutl::CommandLineParser::kString,"Requirement for MSSM Categories 1","njetspt20<=1&&nbtag==0");
-	parser.addOption("1jet1tag",optutl::CommandLineParser::kString,"Requirement for MSSM Categories 2","njetspt20==1&&nbtag==1");
+	//parser.addOption("QCDCR",optutl::CommandLineParser::kString,"Requirement for MSSM CR QCD","charge!=0");
+	//parser.addOption("WCR",optutl::CommandLineParser::kString,"Requirement for MSSM CR WJets","mtRecoil_1>70");
 
 
 
@@ -110,49 +108,59 @@ int main (int argc, char* argv[])
 	printf("HighStat has %d entries ,LowStat has %d entries\n",(int)parser.doubleVector("binningHighStat").size(),(int)parser.doubleVector("binningLowStat").size());
 
 	//Inclusive
-	//setHighStat Binning
-	creator.setBinning(parser.doubleVector("binningLowStat"));
+	//Definition of runFullExtrapBtag
+	//BkgOutput runFullExtrapBtag(std::string relaxedSelection, std::string wSel, std::string preSelection, std::string categorySelection_, std::string prefix, std::string zShape, float topExtrap, float zExtrap, float zExtrapErr, std::string bTagSF) {
 
 	printf(" -------------------------------------\n"); 
 	printf(" --------New Variable--------\n"); 
 
-	if(bitmask[0]==0){
-	printf(" -------------------------------------\n"); 
+	if(bitmask[0]==1){
+		printf(" -------------------------------------\n"); 
+		creator.setBinning(parser.doubleVector("binningHighStat"));
 
-		printf("INCLUSIVE: No Two prong and MT Cut : preselection -------------------------------------\n"); 
+		printf("INCLUSIVE:preselection -------------------------------------\n"); 
 		std::string inclSel = parser.stringValue("preselection"); 
-		std::string catSel = parser.stringValue("extraselection"); 
+		std::string catSel = parser.stringValue("preselection"); 
 		std::string bTagSF = parser.stringValue("bTagSF");					 
 
-		creator.makeHiggsShape(inclSel,catSel,"_inclusivemt40");
-		BkgOutput outputIncl = creator.runFullExtrapBtag(inclSel,parser.stringValue("wselection"),inclSel,catSel,"_inclusivemt40",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
+		creator.makeHiggsShape(inclSel,catSel,"_inclusive");
+		BkgOutput outputIncl = creator.runFullExtrapBtag(inclSel,parser.stringValue("wselection"),inclSel,catSel,"_inclusive",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
 				1,//parser.doubleValue("zExtrap"),
 				1,//parser.doubleValue("zExtrapErr"),
 				bTagSF
 				);
 	}
-	
-	if(bitmask[1]==0){
-	printf(" -------------------------------------\n"); 
-		printf("INCLUSIVE: All DM and No MT Cut : inclselection -------------------------------------\n"); 
+
+
+	if(bitmask[1]==1){
+		printf(" -------------------------------------\n"); 
+		creator.setBinning(parser.doubleVector("binningHighStat"));
+
+		printf("INCLUSIVE: No bJets-------------------------------------\n"); 
 		std::string inclSel = parser.stringValue("preselection"); 
-                std::cout<<"using preselection: "<<inclSel<<std::endl;
-		BkgOutput output = creator.runOSLSMT(inclSel,"_inclusive",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"));
-		//(std::string preselection, std::string categoryselection, std::string prefix)
-		creator.makeHiggsShape(inclSel,inclSel,"_inclusive");
+		std::string catSel = parser.stringValue("antibselection"); 
+		std::string bTagSF = parser.stringValue("bTagSF");					 
+
+		creator.makeHiggsShape(inclSel,catSel,"_nobtag");
+		BkgOutput outputIncl = creator.runFullExtrapBtag(inclSel,parser.stringValue("wselection"),inclSel,catSel,"_nobtag",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
+				1,//parser.doubleValue("zExtrap"),
+				1,//parser.doubleValue("zExtrapErr"),
+				bTagSF
+				);
 	}
-       
 
-	if(bitmask[2]==0){
+	if(bitmask[2]==1){
 
-	printf(" -------------------------------------\n"); 
+		printf(" -------------------------------------\n"); 
 		std::cout<<"========Running btag selection========"<<std::endl;
+		creator.setBinning(parser.doubleVector("binningLowStat"));
 		std::string inclSel = parser.stringValue("preselection"); 
+		std::string relSel = parser.stringValue("relaxedselection");//To be relaxed Btag discriminator 
 		std::string catSel = parser.stringValue("bselection"); 
 		std::string bTagSF = parser.stringValue("bTagSF");					 
 
 		creator.makeHiggsShape(inclSel,catSel,"_btag");
-		BkgOutput outputIncl = creator.runFullExtrapBtag(inclSel,parser.stringValue("wselection"),inclSel,catSel,"_btag",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
+		BkgOutput outputIncl = creator.runFullExtrapBtag(relSel,parser.stringValue("wselection"),inclSel,catSel,"_btag",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
 				1,//parser.doubleValue("zExtrap"),
 				1,//parser.doubleValue("zExtrapErr"),
 				bTagSF
