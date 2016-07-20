@@ -1,0 +1,2399 @@
+mkdir: cannot create directory `eleTauPlots': File exists
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 596.472412 + 47.536144 
+Create VV
+      Diboson events before inflation = 78.159164 + 2.258665 
+      Diboson events in signal region = 78.159164 + 23.556286 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7284.866699 + 108.362587 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1284.408569 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3902.000000 + 62.465992 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.008492 + 6.415923 
+      VV events in SS Signal QCD sideband region = 20.006817 + 0.940206 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3902.000000 -377.848175 -97.008492 -275.790894 -20.006817= 3131.000000 +- 75.040764 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3131.000000 *1.060000 = 3318.859863 +- 101.234314 
+=============Data Yields=============
+DATA: 12465
+
+BKGD Yields 
+QCD: 3318.86
+W: 1284.41
+TOP: 596.472
+VV: 78.1592
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7284.87
+BACKGROUND=13328.370117 +-219.664398 
+Total Background & 13328.37 $\pm$ 551.51 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1>0&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 2527.499023 + 192.393372 
+Create VV
+      Diboson events before inflation = 327.758820 + 4.812549 
+      Diboson events in signal region = 327.758820 + 98.445351 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 799.750244 + 195.301483 
+Create ZJFT
+      Z (j->tau) in signal region = 404.225677 + 47.836411 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1>0&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 8986.593750 + 120.380554 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 9946.446289 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1>0&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 9076.000000 + 95.268044 
+      Z events in SS Signal QCD sideband region = 431.906067 + 26.398840 
+      TOP events in SS Signal QCD sideband region = 373.243591 + 12.719756 
+      VV events in SS Signal QCD sideband region = 85.656395 + 1.894853 
+      (MonteCarlo) W events in SS region = 2432.840332 + 88.789810 
+SS QCD in  core  =9076.000000 -2432.840332 -373.243591 -431.906067 -85.656395= 5752.000000 +- 133.498734 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =5752.000000 *1.060000 = 6097.119629 +- 182.370224 
+=============Data Yields=============
+DATA: 29161
+
+BKGD Yields 
+QCD: 6097.12
+W: 9946.45
+TOP: 2527.5
+VV: 327.759
+ZLFT: 799.75
+ZJFT: 404.226
+ZTT: 8986.59
+BACKGROUND=29089.396484 +-408.869446 
+Total Background & 29089.40 $\pm$ 760.94 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236694 + 47.739880 
+Create VV
+      Diboson events before inflation = 78.770241 + 2.266814 
+      Diboson events in signal region = 78.770241 + 23.739546 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699341 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.840332 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926514 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362610 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079687 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848145 -97.362610 -275.790894 -20.079687= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.237
+VV: 78.7702
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.016602 +-219.883148 
+Total Background & 13354.02 $\pm$ 566.37 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 587.672607 + 46.855103 
+Create VV
+      Diboson events before inflation = 77.289673 + 2.247819 
+      Diboson events in signal region = 77.289673 + 23.295603 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699341 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7271.860352 + 108.261917 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1284.468506 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3909.000000 + 62.521996 
+      Z events in SS Signal QCD sideband region = 275.170837 + 21.129364 
+      TOP events in SS Signal QCD sideband region = 94.821251 + 6.366514 
+      VV events in SS Signal QCD sideband region = 19.100891 + 0.904074 
+      (MonteCarlo) W events in SS region = 375.987823 + 35.191784 
+SS QCD in  core  =3909.000000 -375.987823 -94.821251 -275.170837 -19.100891= 3144.000000 +- 75.068382 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.418312 
+=============Data Yields=============
+DATA: 12933
+
+BKGD Yields 
+QCD: 3332.64
+W: 1284.47
+TOP: 587.673
+VV: 77.2897
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7271.86
+BACKGROUND=13319.534180 +-219.526428 
+Total Background & 13319.53 $\pm$ 550.60 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236450 + 47.739861 
+Create VV
+      Diboson events before inflation = 78.770264 + 2.266814 
+      Diboson events in signal region = 78.770264 + 23.739553 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903870 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.843750 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362617 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079689 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362617 -275.790894 -20.079689= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.019531 +-219.883148 
+Total Background & 13354.02 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236450 + 47.739861 
+Create VV
+      Diboson events before inflation = 78.770264 + 2.266814 
+      Diboson events in signal region = 78.770264 + 23.739553 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.843750 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362617 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079689 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362617 -275.790894 -20.079689= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.019531 +-219.883148 
+Total Background & 13354.02 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236450 + 47.739861 
+Create VV
+      Diboson events before inflation = 78.770264 + 2.266814 
+      Diboson events in signal region = 78.770264 + 23.739553 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903870 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.843750 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362617 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079689 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362617 -275.790894 -20.079689= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.019531 +-219.883148 
+Total Background & 13354.02 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 537.758667 + 43.099895 
+Create VV
+      Diboson events before inflation = 71.015472 + 2.128224 
+      Diboson events in signal region = 71.015472 + 21.410677 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 550.737122 + 135.540787 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7265.740234 + 108.221298 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1236.177856 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3845.000000 + 62.008064 
+      Z events in SS Signal QCD sideband region = 269.329071 + 20.878988 
+      TOP events in SS Signal QCD sideband region = 82.820946 + 5.963455 
+      VV events in SS Signal QCD sideband region = 18.138178 + 0.890412 
+      (MonteCarlo) W events in SS region = 352.480042 + 34.050961 
+SS QCD in  core  =3845.000000 -352.480042 -82.820946 -269.329071 -18.138178= 3122.000000 +- 74.005104 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3122.000000 *1.060000 = 3309.319824 +- 100.261833 
+=============Data Yields=============
+DATA: 12817
+
+BKGD Yields 
+QCD: 3309.32
+W: 1236.18
+TOP: 537.759
+VV: 71.0155
+ZLFT: 550.737
+ZJFT: 211.699
+ZTT: 7265.74
+BACKGROUND=13182.449219 +-217.178406 
+Total Background & 13182.45 $\pm$ 549.08 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 580.066895 + 46.307503 
+Create VV
+      Diboson events before inflation = 74.104134 + 2.192131 
+      Diboson events in signal region = 74.104134 + 22.339058 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 542.578979 + 133.579620 
+Create ZJFT
+      Z (j->tau) in signal region = 210.268051 + 27.982294 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7250.101562 + 108.081970 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1259.155396 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3896.000000 + 62.417946 
+      Z events in SS Signal QCD sideband region = 274.188141 + 21.077612 
+      TOP events in SS Signal QCD sideband region = 95.239899 + 6.369296 
+      VV events in SS Signal QCD sideband region = 19.519892 + 0.929817 
+      (MonteCarlo) W events in SS region = 371.127533 + 34.894840 
+SS QCD in  core  =3896.000000 -371.127533 -95.239899 -274.188141 -19.519892= 3136.000000 +- 74.828789 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3136.000000 *1.060000 = 3324.159912 +- 101.119850 
+=============Data Yields=============
+DATA: 12856
+
+BKGD Yields 
+QCD: 3324.16
+W: 1259.16
+TOP: 580.067
+VV: 74.1041
+ZLFT: 542.579
+ZJFT: 210.268
+ZTT: 7250.1
+BACKGROUND=13240.435547 +-217.189148 
+Total Background & 13240.44 $\pm$ 548.25 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236511 + 47.739868 
+Create VV
+      Diboson events before inflation = 78.770256 + 2.266814 
+      Diboson events in signal region = 78.770256 + 23.739550 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.842773 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362625 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079689 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848145 -97.362625 -275.790894 -20.079689= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.237
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.018555 +-219.883148 
+Total Background & 13354.02 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_2>0&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 2816.561523 + 214.082687 
+Create VV
+      Diboson events before inflation = 365.857147 + 5.153599 
+      Diboson events in signal region = 365.857147 + 109.878075 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 799.750183 + 195.301468 
+Create ZJFT
+      Z (j->tau) in signal region = 404.225647 + 47.836407 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_2>0&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 8979.478516 + 120.323921 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 9948.706055 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_2>0&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 9107.000000 + 95.430603 
+      Z events in SS Signal QCD sideband region = 433.865295 + 26.471441 
+      TOP events in SS Signal QCD sideband region = 385.044373 + 12.911921 
+      VV events in SS Signal QCD sideband region = 87.846489 + 1.916079 
+      (MonteCarlo) W events in SS region = 2438.591064 + 88.886978 
+SS QCD in  core  =9107.000000 -2438.591064 -385.044373 -433.865295 -87.846489= 5762.000000 +- 133.712448 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =5762.000000 *1.060000 = 6107.719727 +- 182.672180 
+=============Data Yields=============
+DATA: 29476
+
+BKGD Yields 
+QCD: 6107.72
+W: 9948.71
+TOP: 2816.56
+VV: 365.857
+ZLFT: 799.75
+ZJFT: 404.226
+ZTT: 8979.48
+BACKGROUND=29422.300781 +-422.459625 
+Total Background & 29422.30 $\pm$ 771.73 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 590.843384 + 47.097416 
+Create VV
+      Diboson events before inflation = 76.209328 + 2.221491 
+      Diboson events in signal region = 76.209328 + 22.970472 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7280.930176 + 108.325775 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1284.459717 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3908.000000 + 62.514000 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 96.422379 + 6.405735 
+      VV events in SS Signal QCD sideband region = 19.752535 + 0.932050 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3908.000000 -377.848145 -96.422379 -275.790894 -19.752535= 3138.000000 +- 75.079765 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3138.000000 *1.060000 = 3326.279785 +- 101.353432 
+=============Data Yields=============
+DATA: 12940
+
+BKGD Yields 
+QCD: 3326.28
+W: 1284.46
+TOP: 590.843
+VV: 76.2093
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7280.93
+BACKGROUND=13324.325195 +-219.545410 
+Total Background & 13324.33 $\pm$ 551.19 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 455.996552 + 36.861053 
+Create VV
+      Diboson events before inflation = 46.399136 + 1.756264 
+      Diboson events in signal region = 46.399136 + 14.030098 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 56.691307 + 16.530441 
+Create ZJFT
+      Z (j->tau) in signal region = 60.930935 + 11.804339 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 830.961243 + 36.381145 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 251.611450 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 830.000000 + 28.809721 
+      Z events in SS Signal QCD sideband region = 63.071743 + 10.051538 
+      TOP events in SS Signal QCD sideband region = 69.765411 + 5.478169 
+      VV events in SS Signal QCD sideband region = 11.729605 + 0.794418 
+      (MonteCarlo) W events in SS region = 135.989517 + 21.046684 
+SS QCD in  core  =830.000000 -135.989517 -69.765411 -63.071743 -11.729605= 549.000000 +- 37.478497 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =549.000000 *1.060000 = 581.939941 +- 41.216637 
+=============Data Yields=============
+DATA: 2492
+
+BKGD Yields 
+QCD: 581.94
+W: 251.611
+TOP: 455.997
+VV: 46.3991
+ZLFT: 56.6913
+ZJFT: 60.9309
+ZTT: 830.961
+BACKGROUND=2284.530518 +-76.251381 
+Total Background & 2284.53 $\pm$ 99.54 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+Create Top
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+      TTbar events in signal region = 0.000000 + 0.000000 
+Create VV
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+      Diboson events before inflation = 0.000000 + 0.000000 
+      Diboson events in signal region = 0.000000 + 0.000000 
+Create ZLFT
+      Factor ZLFT: 1
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+      Z (l->tau) in signal region = 0.000000 + 0.000000 
+Create ZJFT
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+      Z (j->tau) in signal region = 0.000000 + 0.000000 
+Create ZTT
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 0.000000 + 0.000000 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+          OS W  in MC = 0.000000 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+      Data events in SS Signal QCD sideband region = 0.000000 + 0.000000 
+      Z events in SS Signal QCD sideband region = 0.000000 + 0.000000 
+      TOP events in SS Signal QCD sideband region = 0.000000 + 0.000000 
+      VV events in SS Signal QCD sideband region = 0.000000 + 0.000000 
+      (MonteCarlo) W events in SS region = 0.000000 + 0.000000 
+SS QCD in  core  =0.000000 -0.000000 -0.000000 -0.000000 -0.000000= 0.000000 +- 0.000000 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =0.000000 *1.060000 = 0.000000 +- 0.000000 
+=============Data Yields=============
+DATA: 0
+
+BKGD Yields 
+QCD: 0
+W: 0
+TOP: 0
+VV: 0
+ZLFT: 0
+ZJFT: 0
+ZTT: 0
+BACKGROUND=0.000000 +-0.000000 
+Total Background & 0.00 $\pm$ 0.00 & - & - & - \\ 
+Make Higgs Shape
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+Error in <TTreeFormula::Compile>:  Bad numerical expression : "tauZIP"
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236450 + 47.739861 
+Create VV
+      Diboson events before inflation = 78.737534 + 2.266582 
+      Diboson events in signal region = 78.737534 + 23.729757 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.845215 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362625 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.043287 + 0.939722 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362625 -275.790894 -20.043287= 3144.000000 +- 75.128410 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468239 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7375
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.85
+BACKGROUND=13353.988281 +-219.882080 
+Total Background & 13353.99 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236389 + 47.739857 
+Create VV
+      Diboson events before inflation = 78.770248 + 2.266814 
+      Diboson events in signal region = 78.770248 + 23.739548 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903564 + 136.300461 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699371 + 28.126450 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.842285 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926514 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790863 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362610 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079691 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362610 -275.790863 -20.079691= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7702
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.017578 +-219.883118 
+Total Background & 13354.02 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 552.955383 + 44.184650 
+Create VV
+      Diboson events before inflation = 70.850273 + 2.157935 
+      Diboson events in signal region = 70.850273 + 21.364346 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 189.275696 + 48.626125 
+Create ZJFT
+      Z (j->tau) in signal region = 174.071289 + 24.223860 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 2610.944336 + 64.770691 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 674.910950 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 2119.000000 + 46.032597 
+      Z events in SS Signal QCD sideband region = 172.458954 + 16.573795 
+      TOP events in SS Signal QCD sideband region = 88.309875 + 6.042354 
+      VV events in SS Signal QCD sideband region = 17.529938 + 0.898607 
+      (MonteCarlo) W events in SS region = 252.341202 + 29.184057 
+SS QCD in  core  =2119.000000 -252.341202 -88.309875 -172.458954 -17.529938= 1588.000000 +- 57.295002 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =1588.000000 *1.060000 = 1683.279907 +- 68.535820 
+=============Data Yields=============
+DATA: 6139
+
+BKGD Yields 
+QCD: 1683.28
+W: 674.911
+TOP: 552.955
+VV: 70.8503
+ZLFT: 189.276
+ZJFT: 174.071
+ZTT: 2610.94
+BACKGROUND=5956.288086 +-128.069290 
+Total Background & 5956.29 $\pm$ 224.24 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 488.744080 + 39.341057 
+Create VV
+      Diboson events before inflation = 52.225941 + 1.863132 
+      Diboson events in signal region = 52.225941 + 15.778172 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 59.382568 + 17.172773 
+Create ZJFT
+      Z (j->tau) in signal region = 72.181938 + 13.069391 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 947.035645 + 38.882835 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 276.407654 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 952.000000 + 30.854498 
+      Z events in SS Signal QCD sideband region = 72.310501 + 10.839303 
+      TOP events in SS Signal QCD sideband region = 74.557274 + 5.642326 
+      VV events in SS Signal QCD sideband region = 13.600140 + 0.838874 
+      (MonteCarlo) W events in SS region = 152.102417 + 22.172626 
+SS QCD in  core  =952.000000 -152.102417 -74.557274 -72.310501 -13.600140= 639.000000 +- 39.920616 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =639.000000 *1.060000 = 677.339966 +- 44.203617 
+=============Data Yields=============
+DATA: 2812
+
+BKGD Yields 
+QCD: 677.34
+W: 276.408
+TOP: 488.744
+VV: 52.2259
+ZLFT: 59.3826
+ZJFT: 72.1819
+ZTT: 947.036
+BACKGROUND=2573.317871 +-81.389168 
+Total Background & 2573.32 $\pm$ 108.75 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 598.302979 + 47.670639 
+Create VV
+      Diboson events before inflation = 75.845810 + 2.236416 
+      Diboson events in signal region = 75.845810 + 22.863386 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 193.279404 + 49.606239 
+Create ZJFT
+      Z (j->tau) in signal region = 174.071289 + 24.223860 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 2709.407471 + 66.071770 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 691.347107 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 2156.000000 + 46.432747 
+      Z events in SS Signal QCD sideband region = 176.154648 + 16.727623 
+      TOP events in SS Signal QCD sideband region = 97.129074 + 6.424315 
+      VV events in SS Signal QCD sideband region = 18.897957 + 0.928266 
+      (MonteCarlo) W events in SS region = 260.252350 + 29.529457 
+SS QCD in  core  =2156.000000 -260.252350 -97.129074 -176.154648 -18.897957= 1604.000000 +- 57.878628 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =1604.000000 *1.060000 = 1700.239868 +- 69.232315 
+=============Data Yields=============
+DATA: 6314
+
+BKGD Yields 
+QCD: 1700.24
+W: 691.347
+TOP: 598.303
+VV: 75.8458
+ZLFT: 193.279
+ZJFT: 174.071
+ZTT: 2709.41
+BACKGROUND=6142.493652 +-131.172882 
+Total Background & 6142.49 $\pm$ 231.94 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 573.329041 + 45.819874 
+Create VV
+      Diboson events before inflation = 57.292080 + 1.950906 
+      Diboson events in signal region = 57.292080 + 17.297991 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 59.382568 + 17.172773 
+Create ZJFT
+      Z (j->tau) in signal region = 72.181938 + 13.069391 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 993.661560 + 39.912945 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 278.634949 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 995.000000 + 31.543621 
+      Z events in SS Signal QCD sideband region = 76.363167 + 11.125469 
+      TOP events in SS Signal QCD sideband region = 93.161133 + 6.327642 
+      VV events in SS Signal QCD sideband region = 14.923060 + 0.873990 
+      (MonteCarlo) W events in SS region = 158.153229 + 22.586111 
+SS QCD in  core  =995.000000 -158.153229 -93.161133 -76.363167 -14.923060= 652.000000 +- 40.862103 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =652.000000 *1.060000 = 691.119934 +- 45.234158 
+=============Data Yields=============
+DATA: 2970
+
+BKGD Yields 
+QCD: 691.12
+W: 278.635
+TOP: 573.329
+VV: 57.2921
+ZLFT: 59.3826
+ZJFT: 72.1819
+ZTT: 993.662
+BACKGROUND=2725.602051 +-86.049446 
+Total Background & 2725.60 $\pm$ 115.65 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.552063 + 47.761097 
+Create VV
+      Diboson events before inflation = 78.765915 + 2.266813 
+      Diboson events in signal region = 78.765915 + 23.738255 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903687 + 136.300476 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699387 + 28.126451 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.854980 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926392 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790955 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362579 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.078882 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362579 -275.790955 -20.078882= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.552
+VV: 78.7659
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.85
+BACKGROUND=13354.342773 +-219.887589 
+Total Background & 13354.34 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 598.121094 + 47.655556 
+Create VV
+      Diboson events before inflation = 78.642151 + 2.265075 
+      Diboson events in signal region = 78.642151 + 23.701128 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7285.353516 + 108.375183 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1284.543335 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3903.000000 + 62.473995 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.095619 + 6.410863 
+      VV events in SS Signal QCD sideband region = 20.018148 + 0.939632 
+      (MonteCarlo) W events in SS region = 377.049683 + 35.207905 
+SS QCD in  core  =3903.000000 -377.049683 -97.095619 -275.790894 -20.018148= 3133.000000 +- 75.042740 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3133.000000 *1.060000 = 3320.979736 +- 101.260704 
+=============Data Yields=============
+DATA: 12955
+
+BKGD Yields 
+QCD: 3320.98
+W: 1284.54
+TOP: 598.121
+VV: 78.6422
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7285.35
+BACKGROUND=13333.242188 +-219.726349 
+Total Background & 13333.24 $\pm$ 551.57 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 567.971497 + 45.389023 
+Create VV
+      Diboson events before inflation = 74.934937 + 2.204112 
+      Diboson events in signal region = 74.934937 + 22.588276 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 542.551575 + 133.582520 
+Create ZJFT
+      Z (j->tau) in signal region = 208.075317 + 27.771259 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7085.921875 + 106.823418 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1257.971680 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3805.000000 + 61.684681 
+      Z events in SS Signal QCD sideband region = 265.555359 + 20.719812 
+      TOP events in SS Signal QCD sideband region = 88.486450 + 6.167573 
+      VV events in SS Signal QCD sideband region = 19.149092 + 0.911803 
+      (MonteCarlo) W events in SS region = 360.620544 + 34.319893 
+SS QCD in  core  =3805.000000 -360.620544 -88.486450 -265.555359 -19.149092= 3071.000000 +- 73.831131 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3071.000000 *1.060000 = 3255.259766 +- 99.484673 
+=============Data Yields=============
+DATA: 12645
+
+BKGD Yields 
+QCD: 3255.26
+W: 1257.97
+TOP: 567.971
+VV: 74.9349
+ZLFT: 542.552
+ZJFT: 208.075
+ZTT: 7085.92
+BACKGROUND=12992.687500 +-215.631836 
+Total Background & 12992.69 $\pm$ 537.19 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 534.195862 + 42.856316 
+Create VV
+      Diboson events before inflation = 70.047310 + 2.142824 
+      Diboson events in signal region = 70.047310 + 21.123165 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 546.568665 + 134.542465 
+Create ZJFT
+      Z (j->tau) in signal region = 202.542664 + 27.166578 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 6758.713379 + 104.403175 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1188.329712 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3539.000000 + 59.489494 
+      Z events in SS Signal QCD sideband region = 256.803833 + 20.360142 
+      TOP events in SS Signal QCD sideband region = 80.920876 + 5.867339 
+      VV events in SS Signal QCD sideband region = 17.010456 + 0.853935 
+      (MonteCarlo) W events in SS region = 342.340210 + 33.589809 
+SS QCD in  core  =3539.000000 -342.340210 -80.920876 -256.803833 -17.010456= 2842.000000 +- 71.532967 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =2842.000000 *1.060000 = 3012.519775 +- 94.763954 
+=============Data Yields=============
+DATA: 12016
+
+BKGD Yields 
+QCD: 3012.52
+W: 1188.33
+TOP: 534.196
+VV: 70.0473
+ZLFT: 546.569
+ZJFT: 202.543
+ZTT: 6758.71
+BACKGROUND=12312.917969 +-211.638321 
+Total Background & 12312.92 $\pm$ 514.82 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236511 + 47.739868 
+Create VV
+      Diboson events before inflation = 78.770203 + 2.266814 
+      Diboson events in signal region = 78.770203 + 23.739534 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903748 + 136.300491 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699341 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.840820 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362587 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079697 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362587 -275.790924 -20.079697= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.237
+VV: 78.7702
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.016602 +-219.883133 
+Total Background & 13354.02 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 597.785522 + 47.629200 
+Create VV
+      Diboson events before inflation = 78.731819 + 2.266792 
+      Diboson events in signal region = 78.731819 + 23.728071 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7287.893066 + 108.383278 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926514 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3903.000000 + 62.473995 
+      Z events in SS Signal QCD sideband region = 275.790863 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.039925 + 6.413134 
+      VV events in SS Signal QCD sideband region = 19.990990 + 0.938964 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3903.000000 -377.848175 -97.039925 -275.790863 -19.990990= 3132.000000 +- 75.047173 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3132.000000 *1.060000 = 3319.919922 +- 101.252022 
+=============Data Yields=============
+DATA: 12963
+
+BKGD Yields 
+QCD: 3319.92
+W: 1287.93
+TOP: 597.786
+VV: 78.7318
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7287.89
+BACKGROUND=13337.860352 +-219.749573 
+Total Background & 13337.86 $\pm$ 551.74 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 487.702820 + 39.350250 
+Create VV
+      Diboson events before inflation = 63.761330 + 2.035287 
+      Diboson events in signal region = 63.761330 + 19.236372 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 531.052917 + 130.823349 
+Create ZJFT
+      Z (j->tau) in signal region = 189.804062 + 25.848562 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 6411.332520 + 101.611427 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1120.147705 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3326.000000 + 57.671482 
+      Z events in SS Signal QCD sideband region = 233.057205 + 19.415432 
+      TOP events in SS Signal QCD sideband region = 63.548195 + 5.356734 
+      VV events in SS Signal QCD sideband region = 15.012295 + 0.777915 
+      (MonteCarlo) W events in SS region = 292.240112 + 30.828833 
+SS QCD in  core  =3326.000000 -292.240112 -63.548195 -233.057205 -15.012295= 2722.000000 +- 68.430077 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =2722.000000 *1.060000 = 2885.319824 +- 90.692703 
+=============Data Yields=============
+DATA: 11394
+
+BKGD Yields 
+QCD: 2885.32
+W: 1120.15
+TOP: 487.703
+VV: 63.7613
+ZLFT: 531.053
+ZJFT: 189.804
+ZTT: 6411.33
+BACKGROUND=11689.121094 +-204.535828 
+Total Background & 11689.12 $\pm$ 489.86 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 595.291077 + 47.444500 
+Create VV
+      Diboson events before inflation = 78.071198 + 2.253089 
+      Diboson events in signal region = 78.071198 + 23.529482 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903870 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7286.431641 + 108.373886 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1284.521362 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3910.000000 + 62.529991 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 96.289993 + 6.403941 
+      VV events in SS Signal QCD sideband region = 19.957096 + 0.939189 
+      (MonteCarlo) W events in SS region = 374.505859 + 35.057999 
+SS QCD in  core  =3910.000000 -374.505859 -96.289993 -275.790894 -19.957096= 3143.000000 +- 75.018593 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3143.000000 *1.060000 = 3331.579834 +- 101.364502 
+=============Data Yields=============
+DATA: 12969
+
+BKGD Yields 
+QCD: 3331.58
+W: 1284.52
+TOP: 595.291
+VV: 78.0712
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7286.43
+BACKGROUND=13341.498047 +-219.709106 
+Total Background & 13341.50 $\pm$ 551.62 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 598.676819 + 47.698181 
+Create VV
+      Diboson events before inflation = 78.285484 + 2.261239 
+      Diboson events in signal region = 78.285484 + 23.594254 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699402 + 28.126453 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7288.104980 + 108.386833 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3914.000000 + 62.561970 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.588181 + 6.424600 
+      VV events in SS Signal QCD sideband region = 20.047331 + 0.940297 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3914.000000 -377.848145 -97.588181 -275.790894 -20.047331= 3143.000000 +- 75.121422 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3143.000000 *1.060000 = 3331.579834 +- 101.450035 
+=============Data Yields=============
+DATA: 12965
+
+BKGD Yields 
+QCD: 3331.58
+W: 1287.93
+TOP: 598.677
+VV: 78.2855
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7288.1
+BACKGROUND=13350.176758 +-219.843185 
+Total Background & 13350.18 $\pm$ 551.80 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236450 + 47.739861 
+Create VV
+      Diboson events before inflation = 78.770264 + 2.266814 
+      Diboson events in signal region = 78.770264 + 23.739553 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903870 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.843750 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362617 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079689 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362617 -275.790894 -20.079689= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.019531 +-219.883148 
+Total Background & 13354.02 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236450 + 47.739861 
+Create VV
+      Diboson events before inflation = 78.770264 + 2.266814 
+      Diboson events in signal region = 78.770264 + 23.739553 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.843750 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362617 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079689 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362617 -275.790894 -20.079689= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.019531 +-219.883148 
+Total Background & 13354.02 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.235779 + 47.739815 
+Create VV
+      Diboson events before inflation = 78.766998 + 2.266814 
+      Diboson events in signal region = 78.766998 + 23.738579 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903748 + 136.300491 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699402 + 28.126453 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7288.115234 + 108.386833 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362556 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.077496 + 0.940359 
+      (MonteCarlo) W events in SS region = 377.848236 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848236 -97.362556 -275.790924 -20.077496= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.767
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7288.12
+BACKGROUND=13352.287109 +-219.876160 
+Total Background & 13352.29 $\pm$ 551.81 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 598.870483 + 47.709663 
+Create VV
+      Diboson events before inflation = 78.106293 + 2.257223 
+      Diboson events in signal region = 78.106293 + 23.540358 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903748 + 136.300491 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699387 + 28.126451 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7288.105957 + 108.386833 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362549 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.044582 + 0.940291 
+      (MonteCarlo) W events in SS region = 377.848236 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848236 -97.362549 -275.790924 -20.044582= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 598.87
+VV: 78.1063
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7288.11
+BACKGROUND=13351.251953 +-219.848297 
+Total Background & 13351.25 $\pm$ 551.80 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.156189 + 47.734123 
+Create VV
+      Diboson events before inflation = 78.585976 + 2.261195 
+      Diboson events in signal region = 78.585976 + 23.683983 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903870 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7286.332520 + 108.372345 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1284.521484 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 96.919662 + 6.420923 
+      VV events in SS Signal QCD sideband region = 20.054998 + 0.940328 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -96.919662 -275.790924 -20.054998= 3144.000000 +- 75.127762 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.467705 
+=============Data Yields=============
+DATA: 12973
+
+BKGD Yields 
+QCD: 3332.64
+W: 1284.52
+TOP: 599.156
+VV: 78.586
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7286.33
+BACKGROUND=13346.838867 +-219.835281 
+Total Background & 13346.84 $\pm$ 551.68 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 569.227234 + 45.497761 
+Create VV
+      Diboson events before inflation = 73.764404 + 2.174765 
+      Diboson events in signal region = 73.764404 + 22.235929 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 550.776611 + 135.550507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7271.578613 + 108.243866 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1260.700317 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3898.000000 + 62.433964 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 94.116684 + 6.345946 
+      VV events in SS Signal QCD sideband region = 19.417641 + 0.926812 
+      (MonteCarlo) W events in SS region = 366.180084 + 34.636806 
+SS QCD in  core  =3898.000000 -366.180084 -94.116684 -275.790894 -19.417641= 3142.000000 +- 74.737358 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3142.000000 *1.060000 = 3330.519775 +- 101.118378 
+=============Data Yields=============
+DATA: 12890
+
+BKGD Yields 
+QCD: 3330.52
+W: 1260.7
+TOP: 569.227
+VV: 73.7644
+ZLFT: 550.777
+ZJFT: 211.699
+ZTT: 7271.58
+BACKGROUND=13268.265625 +-218.345779 
+Total Background & 13268.27 $\pm$ 550.03 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236511 + 47.739868 
+Create VV
+      Diboson events before inflation = 78.770256 + 2.266814 
+      Diboson events in signal region = 78.770256 + 23.739550 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903809 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.842773 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362625 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079689 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848145 -97.362625 -275.790894 -20.079689= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.237
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.018555 +-219.883148 
+Total Background & 13354.02 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236328 + 47.739853 
+Create VV
+      Diboson events before inflation = 78.770195 + 2.266814 
+      Diboson events in signal region = 78.770195 + 23.739532 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903687 + 136.300476 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699371 + 28.126450 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.841797 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926392 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790955 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362595 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079687 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362595 -275.790955 -20.079687= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7702
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.017578 +-219.883118 
+Total Background & 13354.02 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236328 + 47.739853 
+Create VV
+      Diboson events before inflation = 78.770195 + 2.266814 
+      Diboson events in signal region = 78.770195 + 23.739532 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903687 + 136.300476 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699371 + 28.126450 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.841797 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926392 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790955 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362595 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079687 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362595 -275.790955 -20.079687= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7702
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.017578 +-219.883118 
+Total Background & 13354.02 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.235901 + 47.739822 
+Create VV
+      Diboson events before inflation = 78.770248 + 2.266814 
+      Diboson events in signal region = 78.770248 + 23.739548 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903748 + 136.300491 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.837402 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790863 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362602 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079685 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362602 -275.790863 -20.079685= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7702
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.84
+BACKGROUND=13354.012695 +-219.883118 
+Total Background & 13354.01 $\pm$ 551.92 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 589.574158 + 46.975945 
+Create VV
+      Diboson events before inflation = 78.491478 + 2.262673 
+      Diboson events in signal region = 78.491478 + 23.655905 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903748 + 136.300491 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7288.105469 + 108.386932 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926392 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3911.000000 + 62.537987 
+      Z events in SS Signal QCD sideband region = 275.790894 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 94.128555 + 6.263689 
+      VV events in SS Signal QCD sideband region = 19.937216 + 0.935032 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3911.000000 -377.848145 -94.128555 -275.790894 -19.937216= 3143.000000 +- 75.087791 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3143.000000 *1.060000 = 3331.579834 +- 101.422058 
+=============Data Yields=============
+DATA: 12961
+
+BKGD Yields 
+QCD: 3331.58
+W: 1287.93
+TOP: 589.574
+VV: 78.4915
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7288.11
+BACKGROUND=13341.281250 +-219.681366 
+Total Background & 13341.28 $\pm$ 551.70 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 598.688110 + 47.691147 
+Create VV
+      Diboson events before inflation = 78.764854 + 2.266813 
+      Diboson events in signal region = 78.764854 + 23.737938 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903870 + 136.300507 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699356 + 28.126448 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7288.117188 + 108.386932 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926636 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790863 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.205727 + 6.407597 
+      VV events in SS Signal QCD sideband region = 20.074539 + 0.940355 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848145 -97.205727 -275.790863 -20.074539= 3144.000000 +- 75.126625 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.466759 
+=============Data Yields=============
+DATA: 12973
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 598.688
+VV: 78.7649
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7288.12
+BACKGROUND=13351.739258 +-219.864899 
+Total Background & 13351.74 $\pm$ 551.81 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236389 + 47.739857 
+Create VV
+      Diboson events before inflation = 78.770294 + 2.266814 
+      Diboson events in signal region = 78.770294 + 23.739561 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903687 + 136.300476 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699432 + 28.126453 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.850586 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926880 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362610 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079676 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848145 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848145 -97.362610 -275.790924 -20.079676= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.85
+BACKGROUND=13354.027344 +-219.883118 
+Total Background & 13354.03 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236572 + 47.739872 
+Create VV
+      Diboson events before inflation = 78.770294 + 2.266814 
+      Diboson events in signal region = 78.770294 + 23.739561 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903687 + 136.300476 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699432 + 28.126453 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.850586 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362617 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079679 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362617 -275.790924 -20.079679= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.237
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.85
+BACKGROUND=13354.027344 +-219.883133 
+Total Background & 13354.03 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236511 + 47.739868 
+Create VV
+      Diboson events before inflation = 78.770294 + 2.266814 
+      Diboson events in signal region = 78.770294 + 23.739561 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903687 + 136.300476 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699432 + 28.126453 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.851074 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362617 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079679 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362617 -275.790924 -20.079679= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.237
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.85
+BACKGROUND=13354.027344 +-219.883133 
+Total Background & 13354.03 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape
+HighStat has 0 entries ,LowStat has 0 entries
+ -------------------------------------
+ --------New Variable--------
+ -------------------------------------
+INCLUSIVE: MT Cut:  preselection -------------------------------------
+using preselection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6
+runOSLSMT
+Tau ID Scale Factor is 1.000 
+Create Data
+      Data Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&mt_1<40&&charge==0
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Create Top
+      TTbar events in signal region = 599.236389 + 47.739857 
+Create VV
+      Diboson events before inflation = 78.770279 + 2.266814 
+      Diboson events in signal region = 78.770279 + 23.739557 
+Create ZLFT
+      Factor ZLFT: 1
+      Z (l->tau) in signal region = 553.903687 + 136.300476 
+Create ZJFT
+      Z (j->tau) in signal region = 211.699432 + 28.126453 
+Create ZTT
+      ZTT Selection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&charge==0&&pt_1>-100
+      Selection ZTT events in signal region = 7289.850098 + 108.400757 
+Create W
+WSelection: pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&pt_1>-100&&charge==0&&mt_1>80
+          OS W  in MC = 1287.926758 
+Create QCD
+QCD Selections= (pt_1>24&&pt_2>20&&vertices>0&&dilepton_veto==0&&iso_1<0.1&&byTightIsolationMVArun2v1DBoldDMwLT_2>0.5&&tightElectrons<=1&&tightMuons==0&&againstElectronTightMVA6_2>0&&againstMuonLoose3_2>0&&tauDecayMode!=5&&tauDecayMode!=6&&pt_1>0&&mt_1<40&&abs(charge)==2&&pt_1>-100)
+      Data events in SS Signal QCD sideband region = 3915.000000 + 62.569962 
+      Z events in SS Signal QCD sideband region = 275.790924 + 21.138460 
+      TOP events in SS Signal QCD sideband region = 97.362625 + 6.428559 
+      VV events in SS Signal QCD sideband region = 20.079678 + 0.940360 
+      (MonteCarlo) W events in SS region = 377.848175 + 35.216957 
+SS QCD in  core  =3915.000000 -377.848175 -97.362625 -275.790924 -20.079678= 3144.000000 +- 75.128418 
+5. Extrapolate SS QCD -> OS QCD 
+OS QCD in  core  =3144.000000 *1.060000 = 3332.639893 +- 101.468246 
+=============Data Yields=============
+DATA: 12976
+
+BKGD Yields 
+QCD: 3332.64
+W: 1287.93
+TOP: 599.236
+VV: 78.7703
+ZLFT: 553.904
+ZJFT: 211.699
+ZTT: 7289.85
+BACKGROUND=13354.026367 +-219.883118 
+Total Background & 13354.03 $\pm$ 551.93 & - & - & - \\ 
+Make Higgs Shape
+susyggH
+Made Higgs Shape

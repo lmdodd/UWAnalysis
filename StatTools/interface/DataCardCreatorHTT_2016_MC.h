@@ -38,10 +38,10 @@ struct BkgOutput {
 
 
 
-class DataCardCreatorHTT_Twiki {
+class DataCardCreatorHTT_2016_MC {
 	public:
 
-		DataCardCreatorHTT_Twiki(optutl::CommandLineParser parser) {
+		DataCardCreatorHTT_2016_MC(optutl::CommandLineParser parser) {
 			channel_ = parser.stringValue("channel");
 			shifts_  = parser.stringVector("shifts");
 			energy_ = parser.stringValue("energy");
@@ -180,44 +180,44 @@ class DataCardCreatorHTT_Twiki {
 			if(muID_==0&&eleID_!=0) {legCorr*=eleID_*tauID_;}
                         std::cout<<"Make Higgs Shape"<<std::endl;
 			//tmp= createHistogramAndShiftsFinal(dir_+"ggH120.root","ggH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"ggH125.root","ggH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"ggH125.root","ggH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 			//tmp= createHistogramAndShiftsFinal(dir_+"ggH130.root","ggH130",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 			//tmp= createHistogramAndShiftsFinal(dir_+"vbfH120.root","qqH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"vbfH125.root","qqH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"vbfH125.root","qqH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 			//tmp= createHistogramAndShiftsFinal(dir_+"vbfH130.root","qqH130",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
                         std::cout<<"susyggH"<<std::endl;
 
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_80.root","ggH80",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_90.root","ggH90",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_100.root","ggH100",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_110.root","ggH110",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_120.root","ggH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_140.root","ggH140",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_160.root","ggH160",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_180.root","ggH180",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_200.root","ggH200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_250.root","ggH250",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_400.root","ggH400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_450.root","ggH450",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_500.root","ggH500",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_600.root","ggH600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_700.root","ggH700",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_800.root","ggH800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_900.root","ggH900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1000.root","ggH1000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1200.root","ggH1200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1400.root","ggH1400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1600.root","ggH1600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1800.root","ggH1800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2000.root","ggH2000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2300.root","ggH2300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2600.root","ggH2600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2900.root","ggH2900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_3200.root","ggH3200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_80.root","ggH80",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_90.root","ggH90",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_100.root","ggH100",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_110.root","ggH110",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_120.root","ggH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_140.root","ggH140",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_160.root","ggH160",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_180.root","ggH180",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_200.root","ggH200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_250.root","ggH250",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_400.root","ggH400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_450.root","ggH450",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_500.root","ggH500",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_600.root","ggH600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_700.root","ggH700",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_800.root","ggH800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_900.root","ggH900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1000.root","ggH1000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1200.root","ggH1200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1400.root","ggH1400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1600.root","ggH1600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1800.root","ggH1800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2000.root","ggH2000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2300.root","ggH2300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2600.root","ggH2600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2900.root","ggH2900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShiftsFinal(dir_+"susyggH_3200.root","ggH3200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 
 
+/*
                         std::cout<<"susybbH"<<std::endl;
-
 			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_80.root","bbH80",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_90.root","bbH90",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_100.root","bbH100",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
@@ -249,8 +249,8 @@ class DataCardCreatorHTT_Twiki {
 			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_3200.root","bbH3200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 
 
-
                         std::cout<<"Made Higgs Shape"<<std::endl;
+*/
 		}
 
 
@@ -649,66 +649,6 @@ class DataCardCreatorHTT_Twiki {
 			std::pair<float,float> ssWLow       = createHistogramAndShifts(wFile_,"WQCD",("("+preSelection+"&&"+trigSelection_+"&&"+ssSignalSelection_+"&&"+categorySelection+")*"+weight_),luminosity_*leg1Corr,prefix,false);
 			printf("      (MonteCarlo) W events in SS region = %f + %f \n",ssWLow.first,ssWLow.second);
 
-
-			/* DATA DRIVEN W
-			 *  
-			 * OS W Low MT = R_W * SS_W * highMt->lowMt 
-			 * so SS W Low Mt = SS_W * highMt->lowMt
-			 * R_W = OS/SS (no Mt cut)
-			 * SS_W MT>70 = [OS - OS_MCBKG - R_QCD*(SS - SS_MCBKG) ]
-			 *         _______________________________________
-			 * 			(R_W - R_QCD) 
-			 *
-			 * highMtlowMt per category
-			 */
-
-			std::pair<float,float> Rw = extractRFactor(wFile_,preSelection+"&&"+categorySelection,prefix);
-			printf("       QCD:   R_W = %f +- %f\n",Rw.first,Rw.second);
-			//
-
-			printf("      2. Find QCD in SS sideband \n");
-			std::pair<float,float> dataSSQCDSdb     = createHistogramAndShifts(dataFile_,"data_ss_sdb","("+preSelection+"&&"+trigSelection50ns_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSelection_+")",scaleUp_,prefix);
-			std::pair<float,float> topSSQCDSdb      = createHistogramAndShifts(topFile_,"TT_SS_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSelection_+")*"+weight_+"*"+TTweight_),luminosity_*tauID_*topExtrap,prefix);
-			std::pair<float,float> vvSSQCDSdb       = createHistogramAndShifts(vvFile_,"VV_SS_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSelection_+")*"+weight_),luminosity_*tauID_,prefix);
-			std::pair<float,float> zSSQCDSdb      = createHistogramAndShifts(zttFile_,"Z_SS_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSelection_+")*"+weight_+"*"+Zweight_),luminosity_*tauID_,prefix);
-			std::pair<float,float> wQCDSSQCDSdb		= std::make_pair(TMath::Nint(dataSSQCDSdb.first-topSSQCDSdb.first-vvSSQCDSdb.first-zSSQCDSdb.first),
-					sqrt(dataSSQCDSdb.second*dataSSQCDSdb.second+topSSQCDSdb.second*topSSQCDSdb.second+vvSSQCDSdb.second*vvSSQCDSdb.second+zSSQCDSdb.second*zSSQCDSdb.second));
-			std::pair<float,float> wQCDOSSdb = std::make_pair(wQCDSSQCDSdb.first*qcdFactor_,wQCDSSQCDSdb.second*qcdFactor_);
-
-
-			std::pair<float,float> dataSdb     = createHistogramAndShifts(dataFile_,"data_os_sdb","("+preSelection+"&&"+trigSelection50ns_+"&&"+categorySelection+"&&"+charge_+"&&"+wSelection_+")",scaleUp_,prefix);
-			std::pair<float,float> topSdb      = createHistogramAndShifts(topFile_,"TT_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+charge_+"&&"+wSelection_+")*"+weight_+"*"+TTweight_),luminosity_*tauID_*topExtrap,prefix);
-			std::pair<float,float> vvSdb      = createHistogramAndShifts(vvFile_,"VV_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+charge_+"&&"+wSelection_+")*"+weight_),luminosity_*tauID_,prefix);
-			std::pair<float,float> zSdb      = createHistogramAndShifts(zttFile_,"Z_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+charge_+"&&"+wSelection_+")*"+weight_+"*"+Zweight_),luminosity_*tauID_,prefix);
-
-			std::pair<float,float> osWHigh = std::make_pair(TMath::Nint(dataSdb.first-topSdb.first-vvSdb.first-zSdb.first),
-					sqrt(dataSdb.second*dataSdb.second+topSdb.second*topSdb.second+vvSdb.second*vvSdb.second+zSdb.second*zSdb.second+wQCDOSSdb.second*wQCDOSSdb.second));
-
-			printf("          qcd in W Sdb = %f +- %f\n",wQCDOSSdb.first,wQCDOSSdb.second);
-
-			std::pair<float,float> ssWHigh = std::make_pair(osWHigh.first/(Rw.first-qcdFactor_),osWHigh.second*Rw.second);
-
-			printf("          dataWSdb = %f +- %f\n",dataSdb.first,dataSdb.second);
-			printf("        - topWSdb = %f +- %f\n",topSdb.first,topSdb.second);
-			printf("        - vvWSdb = %f +- %f\n",vvSdb.first,vvSdb.second);
-			printf("        - zSdb = %f +- %f\n",zSdb.first,zSdb.second);
-			printf("        - wQCDSdb = %f +- %f\n",wQCDOSSdb.first,wQCDOSSdb.second);
-			printf("        = osWHigh = %f \n",osWHigh.first);
-			printf("          Same Sign ssWHigh = %f = %f /( %f - %f) \n",ssWHigh.first,osWHigh.first,Rw.first,qcdFactor_);
-
-
-			printf("      4. Extrapolate W in the low MT region\n");
-			//std::pair<float,float> wFactor = extractWFactor(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix,charge_+"&&"+wSel,osSignalSelection_);
-			std::pair<float,float> wFactor = extractWFactorFinal(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix);
-			printf("          W extrapolation factor as measured in category MC = %f +- %f\n",wFactor.first,wFactor.second);
-
-			std::pair<float,float> ssWLowDD = std::make_pair(ssWHigh.first*wFactor.first,
-					sqrt(ssWHigh.first*ssWHigh.first*wFactor.second*wFactor.second+ssWHigh.second*ssWHigh.second*wFactor.first*wFactor.first));
-
-
-			renormalizeHistogram(filelabel_+prefix,"WQCD",ssWLowDD.first);
-
-
 			/*
 			 * DATADRIVEN W FOUND 
 			 */
@@ -720,12 +660,12 @@ class DataCardCreatorHTT_Twiki {
 			subtractHistogram(filelabel_+prefix,"QCD","WQCD");
 
 			std::pair<float,float> ssQCD = std::make_pair(TMath::Nint(dataQCD.first
-						-ssWLowDD.first
+						-ssWLow.first
 						-TopQCD.first
 						-VVQCD.first
 						-ZQCD.first),
 					sqrt(dataQCD.second*dataQCD.second
-						+ssWLowDD.second*ssWLowDD.second
+						+ssWLow.second*ssWLow.second
 						+TopQCD.second*TopQCD.second
 						+VVQCD.second*VVQCD.second
 						+ZQCD.second*ZQCD.second));
@@ -738,7 +678,7 @@ class DataCardCreatorHTT_Twiki {
 
 			printf("SS QCD in  core  =%f -%f -%f -%f -%f= %f +- %f \n",
 					dataQCD.first,
-					ssWLowDD.first,
+					ssWLow.first,
 					TopQCD.first,
 					ZQCD.first,
 					VVQCD.first,
@@ -769,79 +709,19 @@ class DataCardCreatorHTT_Twiki {
 		}
 
 
-		/* 
-		 * W = R_W * SS_W * highMtlowMt 
-		 * R_W = OS/SS (no Mt cut)
-		 * SS_W MT>70 = [OS - OS_MCBKG - R_QCD*(SS - SS_MCBKG) ]
-		 *         _______________________________________
-		 * 			(R_W - R_QCD) 
-		 *
-		 * highMtlowMt per category
-		 */
-
 		bool runW(std::string preSelection,std::string prefix,std::string zShape, float topExtrap, BkgOutput &output, std::string categorySelection, std::string relaxedSelection, std::string wSel) {
 
 
-			std::pair<float,float> Rw = extractRFactor(wFile_,preSelection+"&&"+categorySelection,prefix);
-
-			printf("          R_W = %f +- %f\n",Rw.first,Rw.second);
 			//WShape is relaxed
-			std::pair<float,float> wShape         = createHistogramAndShiftsFinal(wFile_,"W",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+")*"+weight_),luminosity_,prefix,false);
-			std::cout<<"Relaxed Selection: "<<relaxedSelection<<std::endl;
-			std::pair<float,float> wYield         = createHistogramAndShiftsFinal(wFile_,"WYield",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_),luminosity_,prefix,false);
+			//std::pair<float,float> wShape         = createHistogramAndShiftsFinal(wFile_,"W",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+")*"+weight_),luminosity_,prefix,false);
+			//std::cout<<"Relaxed Selection: "<<relaxedSelection<<std::endl;
+			std::pair<float,float> wYield         = createHistogramAndShiftsFinal(wFile_,"W",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_),luminosity_,prefix,false);
 			std::cout<<"Straight W MC Yield: "<<wYield.first<<" stat error:" <<wYield.second<<std::endl;
 			std::cout<<"Straight W MC Yield: "<<preSelection+"&&"<<trigSelection_<<"&&"<<categorySelection<<"&&"<<osSignalSelection_<<std::endl; 
 
-
-			std::pair<float,float> dataSdb     = createHistogramAndShifts(dataFile_,"data_os_sdb","("+preSelection+"&&"+trigSelection50ns_+"&&"+categorySelection+"&&"+charge_+"&&"+wSel+")",scaleUp_,prefix);
-			printf("      1. Select OS high MT W sideband in data: %f +- %f \n",dataSdb.first,dataSdb.second);
-			std::pair<float,float> topSdb      = createHistogramAndShifts(topFile_,"TT_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+charge_+"&&"+wSel+")*"+weight_+"*"+TTweight_),luminosity_*tauID_*topExtrap,prefix);
-			std::pair<float,float> vvSdb      = createHistogramAndShifts(vvFile_,"VV_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+charge_+"&&"+wSel+")*"+weight_),luminosity_*tauID_,prefix);
-			std::pair<float,float> zSdb      = createHistogramAndShifts(zttFile_,"Z_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+charge_+"&&"+wSel+")*"+weight_+"*"+Zweight_),luminosity_*tauID_,prefix);
-
-			printf("      2. Find QCD in SS sideband \n");
-			std::pair<float,float> dataSSQCDSdb     = createHistogramAndShifts(dataFile_,"data_ss_sdb","("+preSelection+"&&"+trigSelection50ns_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSel+")",scaleUp_,prefix);
-			std::pair<float,float> topSSQCDSdb      = createHistogramAndShifts(topFile_,"TT_SS_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSel+")*"+weight_+"*"+TTweight_),luminosity_*tauID_*topExtrap,prefix);
-			std::pair<float,float> vvSSQCDSdb       = createHistogramAndShifts(vvFile_,"VV_SS_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSel+")*"+weight_),luminosity_*tauID_,prefix);
-			std::pair<float,float> zSSQCDSdb      = createHistogramAndShifts(zttFile_,"Z_SS_SDB",("("+preSelection+"&&"+trigSelection_+"&&"+categorySelection+"&&"+"charge!=0"+"&&"+wSel+")*"+weight_+"*"+Zweight_),luminosity_*tauID_,prefix);
-			std::pair<float,float> wQCDSSQCDSdb		= std::make_pair(TMath::Nint(dataSSQCDSdb.first-topSSQCDSdb.first-vvSSQCDSdb.first-zSSQCDSdb.first),
-					sqrt(dataSSQCDSdb.second*dataSSQCDSdb.second+topSSQCDSdb.second*topSSQCDSdb.second+vvSSQCDSdb.second*vvSSQCDSdb.second+zSSQCDSdb.second*zSSQCDSdb.second));
-			std::pair<float,float> wQCDOSSdb = std::make_pair(wQCDSSQCDSdb.first*qcdFactor_,wQCDSSQCDSdb.second*qcdFactor_);
-
-
-			printf("          qcd in W Sdb = %f +- %f\n",wQCDOSSdb.first,wQCDOSSdb.second);
-
-
-			printf("      3. Subtract TTbar and diboson and ZJets and (datadriven) QCD from sideband \n");
-			std::pair<float,float> osWHigh = std::make_pair(TMath::Nint(dataSdb.first-topSdb.first-vvSdb.first-zSdb.first-wQCDOSSdb.first),
-					sqrt(dataSdb.second*dataSdb.second+topSdb.second*topSdb.second+vvSdb.second*vvSdb.second+zSdb.second*zSdb.second+wQCDOSSdb.second*wQCDOSSdb.second));
-
-			std::pair<float,float> ssWHigh = std::make_pair(osWHigh.first/(Rw.first-qcdFactor_),osWHigh.second*Rw.second);
-
-			printf("          dataWSdb = %f +- %f\n",dataSdb.first,dataSdb.second);
-			printf("        - topWSdb = %f +- %f\n",topSdb.first,topSdb.second);
-			printf("        - vvWSdb = %f +- %f\n",vvSdb.first,vvSdb.second);
-			printf("        - zSdb = %f +- %f\n",zSdb.first,zSdb.second);
-			printf("        - wQCDSdb = %f +- %f\n",wQCDOSSdb.first,wQCDOSSdb.second);
-			printf("        = osWHigh = %f \n",osWHigh.first);
-			printf("          Same Sign ssWHigh = %f = %f /( %f - %f) \n",ssWHigh.first,osWHigh.first,Rw.first,qcdFactor_);
-
-
-			printf("      4. Extrapolate W in the low MT region\n");
-			//std::pair<float,float> wFactor = extractWFactor(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix,charge_+"&&"+wSel,osSignalSelection_);
-			std::pair<float,float> wFactor = extractWFactorFinal(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix);
-			printf("          W extrapolation factor as measured in category MC = %f +- %f\n",wFactor.first,wFactor.second);
-
-			std::pair<float,float> osWLow = std::make_pair(Rw.first*ssWHigh.first*wFactor.first,
-					sqrt(Rw.first*Rw.first+ssWHigh.first*ssWHigh.first*wFactor.second*wFactor.second+ssWHigh.second*ssWHigh.second*wFactor.first*wFactor.first));
-
-			printf("          OS W  in core  =%f *%f*%f  = %f +- %f \n",ssWHigh.first,Rw.first, wFactor.first,osWLow.first,osWLow.second);
-			printf("          OS W  in MC = %f \n",wYield.first);
-
-
-			renormalizeHistogram(filelabel_+prefix,"W",osWLow.first);
-			output.W  = osWLow.first;
-			output.dW  = osWLow.second;
+			//renormalizeHistogram(filelabel_+prefix,"W",wYield.first);
+			output.W  = wYield.first;
+			output.dW  = wYield.second;
 
 			return true;
 		}

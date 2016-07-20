@@ -23,8 +23,22 @@
 <bin   name="MakeDataCardSS" file="MakeDataCardSS.cc">
 </bin>
 
+<bin   name="MakeDataCardTauMass" file="MakeDataCardTauMass.cc">
+</bin>
+
+
 <bin   name="MakeDataCardHTT" file="MakeDataCardHTT.cc">
 </bin>
+
+<bin   name="MakeDataCardHTT_2016" file="MakeDataCardHTT_2016.cc">
+</bin>
+
+<bin   name="MakeDataCardHTT_2016_MC" file="MakeDataCardHTT_2016_MC.cc">
+</bin>
+
+<bin   name="MakeDataCardXTT" file="MakeDataCardXTT.cc">
+</bin>
+
 
 <bin   name="MakeDataCardBtag" file="MakeDataCardBtag.cc">
 </bin>
@@ -33,6 +47,8 @@
 <bin   name="MakeDataCardBtag1d" file="MakeDataCardBtag1d.cc">
 </bin>
 <bin   name="MakeDataCardZTT" file="MakeDataCardZTT.cc">
+</bin>
+<bin   name="MakeDataCardZTT_2016" file="MakeDataCardZTT_2016.cc">
 </bin>
 <bin   name="MakeDataCardZTT_Twiki" file="MakeDataCardZTT_Twiki.cc">
 </bin>

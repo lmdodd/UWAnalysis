@@ -38,10 +38,10 @@ struct BkgOutput {
 
 
 
-class DataCardCreatorHTT_Twiki {
+class DataCardCreatorHTT_2016 {
 	public:
 
-		DataCardCreatorHTT_Twiki(optutl::CommandLineParser parser) {
+		DataCardCreatorHTT_2016(optutl::CommandLineParser parser) {
 			channel_ = parser.stringValue("channel");
 			shifts_  = parser.stringVector("shifts");
 			energy_ = parser.stringValue("energy");
@@ -179,78 +179,78 @@ class DataCardCreatorHTT_Twiki {
 			if(muID_!=0&&eleID_==0) {legCorr*=muID_*tauID_;}
 			if(muID_==0&&eleID_!=0) {legCorr*=eleID_*tauID_;}
                         std::cout<<"Make Higgs Shape"<<std::endl;
-			//tmp= createHistogramAndShiftsFinal(dir_+"ggH120.root","ggH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"ggH125.root","ggH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			//tmp= createHistogramAndShiftsFinal(dir_+"ggH130.root","ggH130",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			//tmp= createHistogramAndShiftsFinal(dir_+"vbfH120.root","qqH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"vbfH125.root","qqH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			//tmp= createHistogramAndShiftsFinal(dir_+"vbfH130.root","qqH130",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"ggH120.root","ggH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"ggH125.root","ggH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"ggH130.root","ggH130",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"vbfH120.root","qqH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"vbfH125.root","qqH125",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"vbfH130.root","qqH130",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
                         std::cout<<"susyggH"<<std::endl;
 
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_80.root","ggH80",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_90.root","ggH90",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_100.root","ggH100",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_110.root","ggH110",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_120.root","ggH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_140.root","ggH140",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_160.root","ggH160",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_180.root","ggH180",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_200.root","ggH200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_250.root","ggH250",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_400.root","ggH400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_450.root","ggH450",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_500.root","ggH500",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_600.root","ggH600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_700.root","ggH700",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_800.root","ggH800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_900.root","ggH900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1000.root","ggH1000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1200.root","ggH1200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1400.root","ggH1400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1600.root","ggH1600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_1800.root","ggH1800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2000.root","ggH2000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2300.root","ggH2300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2600.root","ggH2600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_2900.root","ggH2900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susyggH_3200.root","ggH3200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_80.root","ggH80",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_90.root","ggH90",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_100.root","ggH100",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_110.root","ggH110",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_120.root","ggH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_140.root","ggH140",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_160.root","ggH160",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_180.root","ggH180",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_200.root","ggH200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_250.root","ggH250",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_400.root","ggH400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_450.root","ggH450",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_500.root","ggH500",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_600.root","ggH600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_700.root","ggH700",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_800.root","ggH800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_900.root","ggH900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_1000.root","ggH1000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_1200.root","ggH1200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_1400.root","ggH1400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_1600.root","ggH1600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_1800.root","ggH1800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_2000.root","ggH2000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_2300.root","ggH2300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_2600.root","ggH2600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_2900.root","ggH2900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susyggH_3200.root","ggH3200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 
 
+/*
                         std::cout<<"susybbH"<<std::endl;
-
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_80.root","bbH80",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_90.root","bbH90",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_100.root","bbH100",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_110.root","bbH110",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_120.root","bbH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_140.root","bbH140",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_160.root","bbH160",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_180.root","bbH180",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_200.root","bbH200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_250.root","bbH250",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_300.root","bbH300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_350.root","bbH350",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_400.root","bbH400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_450.root","bbH450",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_500.root","bbH500",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_600.root","bbH600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_700.root","bbH700",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_800.root","bbH800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_900.root","bbH900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_1000.root","bbH1000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_1200.root","bbH1200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			//tmp= createHistogramAndShiftsFinal(dir_+"susybbH_1400.root","bbH1400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_1600.root","bbH1600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_1800.root","bbH1800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_2000.root","bbH2000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_2300.root","bbH2300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_2600.root","bbH2600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_2900.root","bbH2900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-			tmp= createHistogramAndShiftsFinal(dir_+"susybbH_3200.root","bbH3200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
-
+			tmp= createHistogramAndShifts(dir_+"susybbH_80.root","bbH80",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_90.root","bbH90",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_100.root","bbH100",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_110.root","bbH110",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_120.root","bbH120",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_140.root","bbH140",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_160.root","bbH160",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_180.root","bbH180",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_200.root","bbH200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_250.root","bbH250",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_300.root","bbH300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_350.root","bbH350",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_400.root","bbH400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_450.root","bbH450",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_500.root","bbH500",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_600.root","bbH600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_700.root","bbH700",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_800.root","bbH800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_900.root","bbH900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_1000.root","bbH1000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_1200.root","bbH1200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			//tmp= createHistogramAndShifts(dir_+"susybbH_1400.root","bbH1400",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_1600.root","bbH1600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_1800.root","bbH1800",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_2000.root","bbH2000",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_2300.root","bbH2300",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_2600.root","bbH2600",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_2900.root","bbH2900",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
+			tmp= createHistogramAndShifts(dir_+"susybbH_3200.root","bbH3200",("("+preselection+"&&"+categoryselection+"&&"+trigSelection_+"&&"+osSignalSelection_+")*"+weight_),luminosity_*legCorr,prefix);
 
 
                         std::cout<<"Made Higgs Shape"<<std::endl;
+*/
 		}
 
 
@@ -271,7 +271,7 @@ class DataCardCreatorHTT_Twiki {
 			std::cout<<"      Data Selection: "<<preSelection<<"&&"<<osSignalSelection_<<std::endl;
 
 
-			std::pair<float,float> dataY         = createHistogramAndShiftsFinal(dataFile_,"data_obs","("+preSelection+"&&"+trigSelection50ns_+"&&"+osSignalSelection_+"&&"+blinding_+")",scaleUp_,prefix);
+			std::pair<float,float> dataY         = createHistogramAndShifts(dataFile_,"data_obs","("+preSelection+"&&"+trigSelection50ns_+"&&"+osSignalSelection_+"&&"+blinding_+")",scaleUp_,prefix);
 			output.DATA = dataY.first;
 
 
@@ -420,7 +420,7 @@ class DataCardCreatorHTT_Twiki {
 			printf("Tau ID Scale Factor is %.3f \n",tauID_);
 
 			std::cout<<"Select DATA"<<std::endl;
-			std::pair<float,float> dataY         = createHistogramAndShiftsFinal(dataFile_,"data_obs","("+preSelection+"&&"+trigSelection50ns_+"&&"+osSignalSelection_+"&&"+categorySelection+")",scaleUp_,prefix);
+			std::pair<float,float> dataY         = createHistogramAndShifts(dataFile_,"data_obs","("+preSelection+"&&"+trigSelection50ns_+"&&"+osSignalSelection_+"&&"+categorySelection+")",scaleUp_,prefix);
 			output.DATA = dataY.first;
 			std::cout<<"      DATA Yield: "<< output.DATA<<std::endl;
 			std::cout<<"      DATA Selection: "<<preSelection<<"&&"<<trigSelection50ns_<<"&&"<<osSignalSelection_<<"&&"<<categorySelection<<std::endl; 
@@ -429,7 +429,7 @@ class DataCardCreatorHTT_Twiki {
 
                         std::cout<<"Create DiBoson"<<std::endl;
 			//Create Diboson
-			std::pair<float,float> vvYield      = createHistogramAndShiftsFinal(vvFile_,"VV",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_),luminosity_*leg1Corr*tauID_,prefix);
+			std::pair<float,float> vvYield      = createHistogramAndShifts(vvFile_,"VV",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_),luminosity_*leg1Corr*tauID_,prefix);
 			std::cout<<"      VV before error inflation: "<<vvYield.first<<std::endl;
 			std::pair<float,float> vvInflYield  = inflateError(vvYield,vvErr_);
 			printf("      Diboson events in signal region = %f + %f \n",vvInflYield.first,vvInflYield.second);
@@ -441,10 +441,10 @@ class DataCardCreatorHTT_Twiki {
 
                         std::cout<<"Create ZLFT"<<std::endl;
 			//ZL Yield
-			std::pair<float,float> zlftYield   = createHistogramAndShiftsFinal(zllFile_,"ZLTmp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection_+"&&"+ZLFT_genLSel_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zlftFactor_*zttScale_,prefix,false);
+			std::pair<float,float> zlftYield   = createHistogramAndShifts(zllFile_,"ZLTmp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection_+"&&"+ZLFT_genLSel_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zlftFactor_*zttScale_,prefix,false);
 			//ZLShape
-			//std::pair<float,float> zlftShape   = createHistogramAndShiftsFinal(zllFile_,"ZL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+"&&"+ZLFT_genLSel_+")*"+weight_),luminosity_*leg1Corr*zlftFactor_*zttScale_,prefix,false);
-			std::pair<float,float> zlftShape   = createHistogramAndShiftsFinal(zllFile_,"ZL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZLFT_genLSel_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zlftFactor_*zttScale_,prefix,false);
+			//std::pair<float,float> zlftShape   = createHistogramAndShifts(zllFile_,"ZL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+"&&"+ZLFT_genLSel_+")*"+weight_),luminosity_*leg1Corr*zlftFactor_*zttScale_,prefix,false);
+			std::pair<float,float> zlftShape   = createHistogramAndShifts(zllFile_,"ZL",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZLFT_genLSel_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zlftFactor_*zttScale_,prefix,false);
 
 			std::pair<float,float> zlftInflYield  = inflateError(zlftYield,zlftErr_);
 			printf("      Z (l->tau) in signal region = %f + %f \n",zlftInflYield.first,zlftInflYield.second);
@@ -464,11 +464,11 @@ class DataCardCreatorHTT_Twiki {
 
                         std::cout<<"Create ZJFT"<<std::endl;
 			//ZJ Yield
-			std::pair<float,float> zjftYield      = createHistogramAndShiftsFinal(zllFile_,"ZJTmp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection_+"&&"+ZJFT_genLReject_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zttScale_,prefix);    
+			std::pair<float,float> zjftYield      = createHistogramAndShifts(zllFile_,"ZJTmp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection_+"&&"+ZJFT_genLReject_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zttScale_,prefix);    
 
 			//ZJ Shape
-			//std::pair<float,float> zjftShape      = createHistogramAndShiftsFinal(zllFile_,"ZJ",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+"&&"+ZJFT_genLReject_+")*"+weight_),luminosity_*leg1Corr*zttScale_,prefix);    
-			std::pair<float,float> zjftShape      = createHistogramAndShiftsFinal(zllFile_,"ZJ",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZJFT_genLReject_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zttScale_,prefix);    
+			//std::pair<float,float> zjftShape      = createHistogramAndShifts(zllFile_,"ZJ",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+"&&"+ZJFT_genLReject_+")*"+weight_),luminosity_*leg1Corr*zttScale_,prefix);    
+			std::pair<float,float> zjftShape      = createHistogramAndShifts(zllFile_,"ZJ",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZJFT_genLReject_+")*"+weight_+"*"+Zweight_),luminosity_*leg1Corr*zttScale_,prefix);    
 
 			std::pair<float,float> zjftInflYield  = inflateError(zjftYield,zjftErr_);
 			printf("      Z (j->tau) in signal region = %f + %f \n",zjftInflYield.first,zjftInflYield.second);
@@ -585,9 +585,9 @@ class DataCardCreatorHTT_Twiki {
 			if(eleID_!=0) leg1Corr*=eleID_;
 
 
-			std::pair<float,float> ztt  = createHistogramAndShiftsFinal(zttFile_,"ZTT",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZTT_genTauSel_+")*"+weight_+"*"+Zweight_),luminosity_*zttScale_*leg1Corr*tauID_,prefix);
-			std::pair<float,float> zttDyUp  = createHistogramAndShiftsFinal(zttFile_,"ZTT_CMS_htt_dyShape_13TeVUp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZTT_genTauSel_+")*"+weight_+"*"+Zweight_+"*"+Zweight_),luminosity_*zttScale_*leg1Corr*tauID_,prefix);
-			std::pair<float,float> zttDyDown  = createHistogramAndShiftsFinal(zttFile_,"ZTT_CMS_htt_dyShape_13TeVDown",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZTT_genTauSel_+")*"+weight_),luminosity_*zttScale_*leg1Corr*tauID_,prefix);
+			std::pair<float,float> ztt  = createHistogramAndShifts(zttFile_,"ZTT",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZTT_genTauSel_+")*"+weight_+"*"+Zweight_),luminosity_*zttScale_*leg1Corr*tauID_,prefix);
+			std::pair<float,float> zttDyUp  = createHistogramAndShifts(zttFile_,"ZTT_CMS_htt_dyShape_13TeVUp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZTT_genTauSel_+")*"+weight_+"*"+Zweight_+"*"+Zweight_),luminosity_*zttScale_*leg1Corr*tauID_,prefix);
+			std::pair<float,float> zttDyDown  = createHistogramAndShifts(zttFile_,"ZTT_CMS_htt_dyShape_13TeVDown",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+"&&"+ZTT_genTauSel_+")*"+weight_),luminosity_*zttScale_*leg1Corr*tauID_,prefix);
 
 			std::cout<<"      ZTT Selection: "<<preSelection<<"&&"<<trigSelection_<<"&&"<<osSignalSelection_<<"&&"<<categorySelection<<std::endl;
 			output.ZTT  = ztt.first;
@@ -606,11 +606,11 @@ class DataCardCreatorHTT_Twiki {
 			if(muID_!=0) leg1Corr*=muID_;
 			if(eleID_!=0) leg1Corr*=eleID_;
 
-			std::pair<float,float> topShape      = createHistogramAndShiftsFinal(topFile_,"TT",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_+"*"+TTweight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
-			std::pair<float,float> topShapeUp      = createHistogramAndShiftsFinal(topFile_,"TT_CMS_htt_ttbarShape_13TeVUp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_+"*"+TTweight_+"*"+TTweight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
-			std::pair<float,float> topShapeDown      = createHistogramAndShiftsFinal(topFile_,"TT_CMS_htt_ttbarShape_13TeVDown",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
+			std::pair<float,float> topShape      = createHistogramAndShifts(topFile_,"TT",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_+"*"+TTweight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
+			std::pair<float,float> topShapeUp      = createHistogramAndShifts(topFile_,"TT_CMS_htt_ttbarShape_13TeVUp",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_+"*"+TTweight_+"*"+TTweight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
+			std::pair<float,float> topShapeDown      = createHistogramAndShifts(topFile_,"TT_CMS_htt_ttbarShape_13TeVDown",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
 
-			std::pair<float,float> topYield      = createHistogramAndShiftsFinal(topFile_,"TTYield",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_+"*"+TTweight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
+			std::pair<float,float> topYield      = createHistogramAndShifts(topFile_,"TTYield",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_+"*"+TTweight_), luminosity_*leg1Corr*tauID_*topExtrap, prefix);
 
 
 			std::pair<float,float> topInflYield  = inflateError(topYield,topErr_);
@@ -786,9 +786,9 @@ class DataCardCreatorHTT_Twiki {
 
 			printf("          R_W = %f +- %f\n",Rw.first,Rw.second);
 			//WShape is relaxed
-			std::pair<float,float> wShape         = createHistogramAndShiftsFinal(wFile_,"W",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+")*"+weight_),luminosity_,prefix,false);
+			std::pair<float,float> wShape         = createHistogramAndShifts(wFile_,"W",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+relaxedSelection+")*"+weight_),luminosity_,prefix,false);
 			std::cout<<"Relaxed Selection: "<<relaxedSelection<<std::endl;
-			std::pair<float,float> wYield         = createHistogramAndShiftsFinal(wFile_,"WYield",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_),luminosity_,prefix,false);
+			std::pair<float,float> wYield         = createHistogramAndShifts(wFile_,"WYield",("("+preSelection+"&&"+trigSelection_+"&&"+osSignalSelection_+"&&"+categorySelection+")*"+weight_),luminosity_,prefix,false);
 			std::cout<<"Straight W MC Yield: "<<wYield.first<<" stat error:" <<wYield.second<<std::endl;
 			std::cout<<"Straight W MC Yield: "<<preSelection+"&&"<<trigSelection_<<"&&"<<categorySelection<<"&&"<<osSignalSelection_<<std::endl; 
 
@@ -828,8 +828,8 @@ class DataCardCreatorHTT_Twiki {
 
 
 			printf("      4. Extrapolate W in the low MT region\n");
-			//std::pair<float,float> wFactor = extractWFactor(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix,charge_+"&&"+wSel,osSignalSelection_);
-			std::pair<float,float> wFactor = extractWFactorFinal(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix);
+			std::pair<float,float> wFactor = extractWFactor(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix,charge_+"&&"+wSel,osSignalSelection_);
+			//std::pair<float,float> wFactor = extractWFactorFinal(wFile_,preSelection+"&&"+trigSelection_+"&&"+categorySelection,prefix);
 			printf("          W extrapolation factor as measured in category MC = %f +- %f\n",wFactor.first,wFactor.second);
 
 			std::pair<float,float> osWLow = std::make_pair(Rw.first*ssWHigh.first*wFactor.first,
