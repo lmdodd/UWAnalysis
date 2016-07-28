@@ -46,7 +46,7 @@ makeLTauStack(TString name,TString file,TString dir,int s,TString labelX,TString
 	lumi_7TeV  = "4.9 fb^{-1}";  // default is "5.1 fb^{-1}"
 	lumi_sqrtS = "13 TeV";
 	if (json=="FuckMuons") lumi_13TeV = channel+"    2016, 3.4 fb^{-1}";
-	if (json=="Golden") lumi_13TeV = channel+"    2016, 4 fb^{-1}";
+	if (json=="Golden") lumi_13TeV = channel+"    2016, 12.9 fb^{-1}";
 
 	int iPeriod = 4;    // 1=7TeV, 2=8TeV, 3=7+8TeV, 7=7+8+13TeV 
 
@@ -158,22 +158,6 @@ makeLTauStack(TString name,TString file,TString dir,int s,TString labelX,TString
 
 
 	//more signal styles to be added later
-	if(s==3) {
-		TH1F * SM = (TH1F*)(f->Get(dir+"/ggH125"));
-		TH1F *sm = SM;
-		sm->Scale(100);//FIXME
-		//TH1F * SM2 = (TH1F*)(f->Get(dir+"/qqH125"));
-		//TH1F *sm2 = SM2;
-		//sm2->Scale(100);//FIXME
-		//sm->Add(sm2);
-		sm->SetLineStyle(11);
-		signal=sm;
-
-		if (dndm) convertToDNDM(signal);
-
-		applySignalStyle(signal);
-	}
-
 	THStack *hs = new THStack("hs","");
 	//hs->SetLineWidth(2);
 	hs->Add(ttbar);
@@ -183,17 +167,20 @@ makeLTauStack(TString name,TString file,TString dir,int s,TString labelX,TString
 	if(channel == "#tau_{#mu}#tau_{h}") hs->Add(ZEE);
 	hs->Add(ZTT);
 
-	//if(s>0&(!log))
-	//  hs->Add(signal);
-	//if(sm) {
-	//  TH1F * SM = (TH1F*)(f->Get(dir+"/ggH125"));
-	//  SM->Add((TH1F*)(f->Get(dir+"/qqH125")));
-	//  applyStyle(SM,kGray+2,1,3005);
-	//  hs->Add(SM);
-	// }
-	//  else {
-	//  hs->Add(MSSM);
+	if(s==3) {
+		TH1F * SM = (TH1F*)(f->Get(dir+"/ggH125"));
+		TH1F *sm = SM;
+		sm->Scale(100);//FIXME
+		//TH1F * SM2 = (TH1F*)(f->Get(dir+"/qqH125"));
+		//TH1F *sm2 = SM2;
+		//sm2->Scale(100);//FIXME
+		//sm->Add(sm2);
+		signal=sm;
 
+		applyStyle(signal,kGray+2,1,3005);
+		if (dndm) convertToDNDM(signal);
+		//hs->Add(SM);
+	}
 
 
 	hs->Draw("HIST");
@@ -237,8 +224,20 @@ makeLTauStack(TString name,TString file,TString dir,int s,TString labelX,TString
 	if(dndm)
 		hs->GetYaxis()->SetTitle("dN/d"+labelX);
 
-	if(s>0)
+	if(s>0){
 		signal->Draw("HIST,SAME");
+		int numb=signal->GetNbinsX();
+		float y=0;
+		for (int i=0; i<numb;i++){
+			float sig = signal->GetBinContent(i+1)/100;
+			TH1 *last = (TH1*)hs->GetStack()->Last();
+			float bkg = last->GetBinContent(i+1);
+			y = sig/(TMath::Sqrt(bkg + (0.09*bkg)*(0.09*bkg)));
+			if (y>=0.5) { 
+				std::cout<<" blinding bin "<<i+1<<std::endl;
+				data->SetBinContent(i+1,0);}
+		}
+	}
 
 	data->Draw("e,SAME");
 

@@ -36,6 +36,10 @@
 <bin   name="MakeDataCardHTT_2016_MC" file="MakeDataCardHTT_2016_MC.cc">
 </bin>
 
+<bin   name="MakeDataCardXTT_MC" file="MakeDataCardXTT_MC.cc">
+</bin>
+
+
 <bin   name="MakeDataCardXTT" file="MakeDataCardXTT.cc">
 </bin>
 
