@@ -360,6 +360,7 @@ class CompositePtrCandidateT1T2MEtAlgorithm
 	  }
 	  if( genTau1 ){
 		  compositePtrCandidate.setP4VisLeg1gen(getVisMomentum(genTau1, genParticles));
+		  compositePtrCandidate.setPdg1(genTau1->pdgId());
 
 	  }    
 	  const reco::GenParticle* genLeg2 = findGenParticle(compositePtrCandidate.leg2()->p4(), *genParticles, 0.2, -1,&pdgIdsEMU,true);
@@ -381,6 +382,7 @@ class CompositePtrCandidateT1T2MEtAlgorithm
 	  }
 	  if( genTau2 ){
 		  compositePtrCandidate.setP4VisLeg2gen(getVisMomentum(genTau2, genParticles));
+		  compositePtrCandidate.setPdg2(genTau2->pdgId());
 	  }
 
 	  float genBosonMass = getGenBosonMass(*genParticles);

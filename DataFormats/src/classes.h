@@ -8,6 +8,7 @@
 #include "DataFormats/PatCandidates/interface/Muon.h"
 #include "DataFormats/PatCandidates/interface/Tau.h"
 #include "DataFormats/PatCandidates/interface/Jet.h"
+#include "DataFormats/PatCandidates/interface/PackedCandidate.h"
 
 
 namespace {
@@ -29,6 +30,7 @@ namespace {
     //    edm::Ptr<pat::Tau> dummyPATTauPtr;
     //  edm::Ptr<pat::Jet> dummyPATJetPtr;
     // edm::Ptr<pat::MET> dummyPATMETPtr;
+    //edm::Ptr<reco::RecoChargedCandidate> dummyRecoChargeCandPtr;
     edm::Ptr<reco::RecoChargedCandidate> dummyRecoChargeCandPtr;
     edm::Ptr<reco::RecoEcalCandidate> dummyRecoEcalCandPtr;
     std::vector<edm::Ptr<pat::Jet> > dummyPATJetPtrVector;

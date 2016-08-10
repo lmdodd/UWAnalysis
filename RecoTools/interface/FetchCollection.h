@@ -25,6 +25,27 @@ void fetchCollection(T& c,
   }
   
 }
+
+template<class T, class G>
+void fetchCollection(T& c,
+		     edm::InputTag const& it, 
+             edm::EDGetTokenT<G> const& tag,
+		     const edm::Event& iEvent) {
+  
+  if( tag.isUninitialized() ) return;
+  
+  bool found = iEvent.getByToken(tag, c);
+  
+  if(!found ) {
+    std::ostringstream  err;
+    err<<" cannot fetchCollection (getToken) "
+    <<it<<std::endl;
+    edm::LogError("PFPAT")<<err.str();
+    throw cms::Exception( "MissingProduct", err.str());
+  }
+  
+}
+
  
 }
 

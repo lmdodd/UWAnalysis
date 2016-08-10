@@ -10,6 +10,8 @@
 
 #include "DataFormats/RecoCandidate/interface/RecoChargedCandidate.h"
 #include "DataFormats/RecoCandidate/interface/RecoEcalCandidate.h"
+#include "DataFormats/PatCandidates/interface/PackedCandidate.h"
+
 #include "DataFormats/Candidate/interface/LeafCandidate.h"
 #include "DataFormats/Common/interface/Ptr.h"
 
@@ -135,6 +137,7 @@ class CompositePtrCandidateT1T2MEt : public reco::LeafCandidate
   double mJJHMassSort() const { return mJJHMassSort_; }
 
   double lVeto() const { return lVeto_; }
+  double lIso() const { return lIso_; }
 
   /// get "pseudo" four-momentum computed by CDF method
   /// (for a description of the method, see e.g. CDF note 8972)
@@ -291,6 +294,7 @@ class CompositePtrCandidateT1T2MEt : public reco::LeafCandidate
   }
 
 
+  void setLIso(double LIso) { lIso_ = LIso; }
   void setLVeto(double LVeto) { lVeto_ = LVeto; }
   void setSVMass(double svMass) { svMass_ = svMass; }
   void setSVPt(double svPt) { svPt_ = svPt; }
@@ -631,6 +635,7 @@ class CompositePtrCandidateT1T2MEt : public reco::LeafCandidate
   int vbfNJetsGap30_;
 
   double lVeto_;
+  double lIso_;
 
   double svMass_;
   double svPt_;
@@ -654,11 +659,11 @@ typedef CompositePtrCandidateT1T2MEt<pat::Electron, pat::Tau> PATElecTauPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Electron, reco::RecoEcalCandidate> PATElecSCPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Muon, pat::Tau> PATMuTauPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Muon, pat::Jet> PATMuJetPair;
-typedef CompositePtrCandidateT1T2MEt<pat::Muon, reco::RecoChargedCandidate> PATMuTrackPair;
+typedef CompositePtrCandidateT1T2MEt<pat::Muon, pat::PackedCandidate> PATMuTrackPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Tau, pat::Tau> PATDiTauPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Electron, pat::Muon> PATElecMuPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Electron, pat::Electron> PATElecPair;
-typedef CompositePtrCandidateT1T2MEt<pat::Electron, reco::RecoChargedCandidate> PATEleTrackPair;
+typedef CompositePtrCandidateT1T2MEt<pat::Electron, pat::PackedCandidate> PATEleTrackPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Muon, pat::Muon> PATMuPair;
 typedef CompositePtrCandidateT1T2MEt<pat::Jet, pat::Jet> PATJetPair;
 

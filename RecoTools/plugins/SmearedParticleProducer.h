@@ -1,8 +1,8 @@
 #ifndef TauAnalysis_SmearedParticleProducer
 #define TauAnalysis_SmearedParticleProducer
 /* Smeared Particle Producer 
-Module that changes the energy scale PT, ETA 
-for a general PAT Particle 
+   Module that changes the energy scale PT, ETA 
+   for a general PAT Particle 
 Author : Michail Bachtis 
 University of Wisconsin
 */
@@ -18,39 +18,39 @@ University of Wisconsin
 
 template <typename T,typename G>
 class SmearedParticleProducer : public edm::EDProducer {
-   public:
-  explicit SmearedParticleProducer(const edm::ParameterSet& iConfig):
-    src_(consumes<std::vector<T> >(iConfig.getParameter<edm::InputTag>("src"))) 
+    public:
+        explicit SmearedParticleProducer(const edm::ParameterSet& iConfig):
+            src_(consumes<std::vector<T> >(iConfig.getParameter<edm::InputTag>("src"))) 
     {
-      smearingModule = new SmearedParticleMaker<T,G>(iConfig);
-      produces<std::vector<T> >();
+        smearingModule = new SmearedParticleMaker<T,G>(iConfig);
+        produces<std::vector<T> >();
 
     }
-  ~SmearedParticleProducer() 
-    {
+        ~SmearedParticleProducer() 
+        {
 
-    }
-    
-   protected:
-    
-     virtual void produce(edm::Event& iEvent, const edm::EventSetup& iSetup) {
-       using namespace edm;
-       
-       std::auto_ptr<std::vector<T> > out(new std::vector<T> );
-       Handle<std::vector<T> > srcH;
-       
-       if(iEvent.getByToken(src_,srcH)) 
-	 for(unsigned int i=0;i<srcH->size();++i) {
-	   T object = srcH->at(i);
-	   smearingModule->smear(object);
-	   out->push_back(object);
-	 }
-       iEvent.put(out);
-     } 
+        }
+
+    protected:
+
+        virtual void produce(edm::Event& iEvent, const edm::EventSetup& iSetup) {
+            using namespace edm;
+
+            std::auto_ptr<std::vector<T> > out(new std::vector<T> );
+            Handle<std::vector<T> > srcH;
+
+            if(iEvent.getByToken(src_,srcH)) 
+                for(unsigned int i=0;i<srcH->size();++i) {
+                    T object = srcH->at(i);
+                    smearingModule->smear(object);
+                    out->push_back(object);
+                }
+            iEvent.put(out);
+        } 
 
 
-      edm::EDGetTokenT<std::vector<T> > src_;           //input Collection
-      SmearedParticleMaker<T,G> *smearingModule;
+        edm::EDGetTokenT<std::vector<T> > src_;           //input Collection
+        SmearedParticleMaker<T,G> *smearingModule;
 };
 
 

@@ -197,13 +197,14 @@ class CutSequenceProducer(cms._ParameterTypeBase):
         self.sequence=counter
 
 
-    def addDiCandidateModule(self,moduleName,moduleType, src1,src2,met,taus,jets,min = 1,max=9999,text = '',leadingObjectsOnly = False,dR = 0.3,recoMode = "",genParticles = 'genTaus'):
+    def addDiCandidateModule(self,moduleName,moduleType, src1,src2,met,taus,jets,min = 1,max=9999,text = '',leadingObjectsOnly = False,dR = 0.3,recoMode = "",genParticles = 'genTaus',drmax=False):
                dicand  = cms.EDProducer(moduleType)
                dicand.useLeadingTausOnly = cms.bool(False)
                dicand.srcLeg1 = cms.InputTag(src1)
                dicand.srcLeg2 = cms.InputTag(src2)
                dicand.srcJets = cms.InputTag(jets)
                dicand.dRmin12 = cms.double(dR)
+               dicand.dRmax = cms.bool(drmax)
                dicand.srcMET = cms.InputTag(met)
                dicand.srcTaus = cms.InputTag(taus)
                dicand.srcPrimaryVertex = cms.InputTag("offlineSlimmedPrimaryVertices")
@@ -344,6 +345,7 @@ class CutSequenceProducer(cms._ParameterTypeBase):
 ################################################################################
 #currently used
 
+
     def addMuTauLVeto(self,moduleName,srcEle,srcMu):
 			dicand  = cms.EDProducer('PATMuTauLVeto')
 			dicand.src = cms.InputTag(self.input)
@@ -373,10 +375,57 @@ class CutSequenceProducer(cms._ParameterTypeBase):
 			self.sequence*=dicand
 			self.input=moduleName
                
-                  
+    def addMuTrackLVeto(self,moduleName,srcEle,srcMu):
+			dicand  = cms.EDProducer('PATMuTrackLVeto')
+			dicand.src = cms.InputTag(self.input)
+			dicand.srcE = cms.InputTag(srcEle)
+			dicand.srcM = cms.InputTag(srcMu)
+			dicand.hasMu = cms.bool(True)
+			
+			pyModule = sys.modules[self.pyModuleName[0]]
+			if pyModule is None:
+			 raise ValueError("'pyModuleName' Parameter invalid")
+			setattr(pyModule,moduleName,dicand)
+			self.sequence*=dicand
+			self.input=moduleName
 
+               
+    def addEleTrackLVeto(self,moduleName,srcEle,srcMu):
+			dicand  = cms.EDProducer('PATEleTrackLVeto')
+			dicand.src = cms.InputTag(self.input)
+			dicand.srcE = cms.InputTag(srcEle)
+			dicand.srcM = cms.InputTag(srcMu)
+			dicand.hasMu = cms.bool(False)
+			
+			pyModule = sys.modules[self.pyModuleName[0]]
+			if pyModule is None:
+			 raise ValueError("'pyModuleName' Parameter invalid")
+			setattr(pyModule,moduleName,dicand)
+			self.sequence*=dicand
+			self.input=moduleName
+               
+    def addMuTrackLeptonIso(self,moduleName):
+			dicand  = cms.EDProducer('PATMuTrackLeptonIso')
+			dicand.src = cms.InputTag(self.input)
+			
+			pyModule = sys.modules[self.pyModuleName[0]]
+			if pyModule is None:
+			 raise ValueError("'pyModuleName' Parameter invalid")
+			setattr(pyModule,moduleName,dicand)
+			self.sequence*=dicand
+			self.input=moduleName
 
-                 
+               
+    def addEleTrackLeptonIso(self,moduleName):
+			dicand  = cms.EDProducer('PATEleTrackLeptonIso')
+			dicand.src = cms.InputTag(self.input)
+			
+			pyModule = sys.modules[self.pyModuleName[0]]
+			if pyModule is None:
+			 raise ValueError("'pyModuleName' Parameter invalid")
+			setattr(pyModule,moduleName,dicand)
+			self.sequence*=dicand
+			self.input=moduleName
 
 
     def setSRC(self,src):
@@ -488,7 +537,31 @@ class CutSequenceProducer(cms._ParameterTypeBase):
                    self.sequence*=counter
 
 
-    def addSmearing(self,taus,muons,electrons,jets,mets,mpost=''):
+    def addSmearing(self,taus,muons,electrons,jets,mets,tracks,mpost=''):
+          smearedTracks = cms.EDProducer("SmearedTrackProducer",
+                                       src = cms.InputTag(tracks),
+                                       smearMCParticle = cms.bool(False),
+                                       module_label = cms.string("CRAP"),
+                                       energyScale  = cms.double(1.00),
+                                       deltaEta     = cms.double(0.0),
+                                       deltaPhi     = cms.double(0.0),
+                                       deltaPtB     = cms.double(0.0),
+                                       deltaPtE     = cms.double(0.0),
+                                       smearConstituents = cms.bool(False),
+                                       hadronEnergyScale = cms.double(1.0),
+                                       gammaEnergyScale = cms.double(1.0)
+                                       )
+
+          pyModule = sys.modules[self.pyModuleName[0]]
+          if pyModule is None:
+              raise ValueError("'pyModuleName' Parameter invalid")
+          setattr(pyModule,'smearedTracks'+mpost,smearedTracks)
+          self.sequence*=smearedTracks
+
+
+        
+        
+        
           smearedTaus = cms.EDProducer("SmearedTauProducer",
                                        src = cms.InputTag(taus),
                                        smearMCParticle = cms.bool(False),
