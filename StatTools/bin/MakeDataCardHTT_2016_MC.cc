@@ -27,13 +27,12 @@ int main (int argc, char* argv[])
 	parser.addOption("wselection",optutl::CommandLineParser::kString,"W sideband defintion ","mt_1>70");
 	parser.addOption("qcdSelection",optutl::CommandLineParser::kString,"QCD Shape definition");
 	parser.addOption("relaxedselection",optutl::CommandLineParser::kString,"Relaxed Selection");
-	parser.addOption("bselection",optutl::CommandLineParser::kString,"Btagging requirement for MSSM","nbtag>=1");
-	parser.addOption("antibselection",optutl::CommandLineParser::kString,"Anti Btagging requirement for MSSM","(nbtag==0&&njets<2)");
+	parser.addOption("vbfselection",optutl::CommandLineParser::kString,"vbf Selection","njets==2&&mjj>300&&jdeta>3.5&&nbtagNoSF==0");
+	parser.addOption("0jselection",optutl::CommandLineParser::kString,"0j Selection","njets==0");
+	parser.addOption("1jselection",optutl::CommandLineParser::kString,"1j Selection","njets==1&&nbtagNoSF==0");
 	parser.addOption("bTagSF",optutl::CommandLineParser::kString,"bTagSF","1");
 	parser.addOption("bTagSF2",optutl::CommandLineParser::kString,"bTagSF","1");
-	//breaks without this currently
-	parser.addOption("btagRelaxedSelection",optutl::CommandLineParser::kString,"bTag Relaxed Selection","");
-	parser.addOption("btagRelaxedSelection2",optutl::CommandLineParser::kString,"2 bTag Relaxed Selection","");
+    //need these
 	parser.addOption("trigSelection",optutl::CommandLineParser::kString,"Trigger Selection","crossTrigger>0||(lTrigger>0&&pt_1>25)");
 	parser.addOption("trigSelection50ns",optutl::CommandLineParser::kString,"Trigger Selection","crossTrigger_50ns>0||(lTrigger_50ns>0&&pt_1>25)");
 	parser.addOption("trigSelection25ns",optutl::CommandLineParser::kString,"Trigger Selection","crossTrigger_25ns>0||(lTrigger_25ns>0&&pt_1>25)");
@@ -136,13 +135,13 @@ int main (int argc, char* argv[])
 		printf(" -------------------------------------\n"); 
 		creator.setBinning(parser.doubleVector("binningHighStat"));
 
-		printf("INCLUSIVE: No bJets-------------------------------------\n"); 
+		printf("INCLUSIVE: 0 Jets-------------------------------------\n"); 
 		std::string inclSel = parser.stringValue("preselection"); 
-		std::string catSel = parser.stringValue("antibselection"); 
+		std::string catSel = parser.stringValue("0jselection"); 
 		std::string bTagSF = parser.stringValue("bTagSF");					 
 
-		creator.makeHiggsShape(inclSel,catSel,"_nobtag");
-		BkgOutput outputIncl = creator.runFullExtrapBtag(inclSel,parser.stringValue("wselection"),inclSel,catSel,"_nobtag",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
+		creator.makeHiggsShape(inclSel,catSel,"_0j");
+		BkgOutput outputIncl = creator.runFullExtrapBtag(inclSel,parser.stringValue("wselection"),inclSel,catSel,"_0j",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
 				1,//parser.doubleValue("zExtrap"),
 				1,//parser.doubleValue("zExtrapErr"),
 				bTagSF
@@ -152,20 +151,42 @@ int main (int argc, char* argv[])
 	if(bitmask[2]==1){
 
 		printf(" -------------------------------------\n"); 
-		std::cout<<"========Running btag selection========"<<std::endl;
+		std::cout<<"========Running 1j selection========"<<std::endl;
 		creator.setBinning(parser.doubleVector("binningLowStat"));
 		std::string inclSel = parser.stringValue("preselection"); 
 		std::string relSel = parser.stringValue("relaxedselection");//To be relaxed Btag discriminator 
-		std::string catSel = parser.stringValue("bselection"); 
+		std::string catSel = parser.stringValue("1jselection"); 
 		std::string bTagSF = parser.stringValue("bTagSF");					 
 
-		creator.makeHiggsShape(inclSel,catSel,"_btag");
-		BkgOutput outputIncl = creator.runFullExtrapBtag(relSel,parser.stringValue("wselection"),inclSel,catSel,"_btag",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
+		creator.makeHiggsShape(inclSel,catSel,"_1j");
+		BkgOutput outputIncl = creator.runFullExtrapBtag(relSel,parser.stringValue("wselection"),inclSel,catSel,"_1j",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
 				1,//parser.doubleValue("zExtrap"),
 				1,//parser.doubleValue("zExtrapErr"),
 				bTagSF
 				);
 	}
+
+
+	if(bitmask[3]==1){
+
+		printf(" -------------------------------------\n"); 
+		std::cout<<"========Running vbf selection========"<<std::endl;
+		creator.setBinning(parser.doubleVector("binningLowStat"));
+		std::string inclSel = parser.stringValue("preselection"); 
+		std::string relSel = parser.stringValue("relaxedselection");//To be relaxed Btag discriminator 
+		std::string catSel = parser.stringValue("vbfselection"); 
+		std::string bTagSF = parser.stringValue("bTagSF");					 
+
+		creator.makeHiggsShape(inclSel,catSel,"_vbf");
+		BkgOutput outputIncl = creator.runFullExtrapBtag(relSel,parser.stringValue("wselection"),inclSel,catSel,"_vbf",parser.stringValue("zEmbeddedSample"),parser.doubleValue("topSF"),
+				1,//parser.doubleValue("zExtrap"),
+				1,//parser.doubleValue("zExtrapErr"),
+				bTagSF
+				);
+	}
+
+
+
 
 	creator.close();
 }

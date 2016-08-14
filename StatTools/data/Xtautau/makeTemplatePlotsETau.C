@@ -14,7 +14,7 @@
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_neuIso","eleTauPlots/eleTau_neuIso.root","et_inclusive",3,"Neutral #tau Iso","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_puIso","eleTauPlots/eleTau_puIso.root","et_inclusive",3,"PU #tau Iso","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_mt_1","eleTauPlots/eleTau_mt_1.root","et_inclusive",3,"m_{T}","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
-   makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_mt_2","eleTauPlots/eleTau_mt_2.root","et_inclusive",3,"e +MET m_{T}","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
+   makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_mt_2","eleTauPlots/eleTau_mt_2.root","et_inclusive",3,"#tau+MET m_{T}","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_mt_2_nocut","eleTauPlots/eleTau_mt_2_nocut.root","et_inclusive",3,"e +MET m_{T}(no mt cut)","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_iso_1","eleTauPlots/eleTau_iso_1.root","et_inclusive",3,"e iso dR=0.3","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_iso04_1","eleTauPlots/eleTau_iso04_1.root","et_inclusive",3,"e iso dR=0.4","GeV",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
@@ -29,13 +29,13 @@
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_eta_2","eleTauPlots/eleTau_eta_2.root","et_inclusive",3,"#eta_{#tau}","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_jeta_1","eleTauPlots/eleTau_jeta_1.root","et_inclusive",3,"Leading Jet #eta","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_jeta_2","eleTauPlots/eleTau_jeta_2.root","et_inclusive",3,"Sub-Leading Jet #eta","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
-   makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_pth","eleTauPlots/eleTau_pth.root","et_inclusive",3,"Higgs Pt","GeV",false,"#tau_{e}#tau_{h}","Golden",true,false,true);
+   makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_pth","eleTauPlots/eleTau_pth.root","et_inclusive",3,"e-#tau Pt","GeV",false,"#tau_{e}#tau_{h}","Golden",true,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_q_1","eleTauPlots/eleTau_q_1.root","et_inclusive",3,"q_{e}","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_q_2","eleTauPlots/eleTau_q_2.root","et_inclusive",3,"q_{#tau}","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
 
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_OldMVAIso","eleTauPlots/eleTau_OldMVAIso.root","et_inclusive",3,"OldMVAIso","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_vertices","eleTauPlots/eleTau_vertices.root","et_inclusive",3,"vertices","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
-   makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_npv","eleTauPlots/eleTau_npvs.root","et_inclusive",3,"npv","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
+   makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_npv","eleTauPlots/eleTau_npv.root","et_inclusive",3,"npv","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_nCands","eleTauPlots/eleTau_nCands.root","et_inclusive",3,"nCand pairs","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_tauDecayMode","eleTauPlots/eleTau_tauDecayMode.root","et_inclusive",3,"#tau decay mode","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
    makeLTauStack("~/www/ztt/2016/ETau/XTT/eleTau_tauZIP","eleTauPlots/eleTau_tauZIP.root","et_inclusive",3,"#tau ZIP","",false,"#tau_{e}#tau_{h}","Golden",false,false,true);
