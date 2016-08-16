@@ -24,7 +24,8 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 100
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-'/store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/40000/00523438-F829-E611-A908-0025905A6138.root'
+#'file:tester.root'
+'/store/mc/RunIISpring16MiniAODv2/ZprimeToA0hToA0chichihtautau_2HDM_MZp-600_MA0-400_13TeV-madgraph/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/20000/20EC6D85-8D3A-E611-BB26-0025905B85DE.root'
 		),
 		inputCommands=cms.untracked.vstring(
 						'keep *',
@@ -36,15 +37,13 @@ process.source = cms.Source("PoolSource",
 
 
 #added in etau and mutau triggers
-from UWAnalysis.Configuration.tools.analysisToolsHTauTau_WIP import *
-defaultReconstructionMC(process,'HLT',
+from UWAnalysis.Configuration.tools.analysisToolsXTauTau import *
+defaultReconstructionMC(process,'HLT2',
                       [
 			'HLT_IsoMu18_v', 
 			'HLT_IsoMu20_v', 
 			'HLT_IsoMu22_v', 
 			'HLT_IsoMu22_eta2p1_v', 
-			'HLT_IsoTkMu22_eta2p1_v',
-			'HLT_IsoTkMu22_v',
 			'HLT_IsoMu24_v', 
 			'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_v',
 			'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1_v',
@@ -76,12 +75,13 @@ defaultReconstructionMC(process,'HLT',
                       
 
 #EventSelection
-process.load("UWAnalysis.Configuration.hTauTau_cff")
+process.load("UWAnalysis.Configuration.monohiggs_cff")
 
 process.metCalibration.applyCalibration = cms.bool(False)
 
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)
+process.eventSelectionTT = cms.Path(process.selectionSequenceTT)
 
 createGeneratedParticles(process,
                          'genDaughters',
@@ -112,14 +112,19 @@ createGeneratedParticles(process,
 )
 
 
-from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addMuTauEventTree
+from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addMuTauEventTree
 addMuTauEventTree(process,'muTauEventTree')
 addMuTauEventTree(process,'muTauEventTreeFinal','muTausOS','diMuonsOSSorted')
 
-from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addEleTauEventTree
+from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addEleTauEventTree
 addEleTauEventTree(process,'eleTauEventTree')
 addEleTauEventTree(process,'eleTauEventTreeFinal','eleTausOS','diElectronsOSSorted')
 
+from UWAnalysis.Configuration.tools.ntupleTools_monohiggs import addDiTauEventTree
+addDiTauEventTree(process,'diTauEventTree')
+addDiTauEventTree(process,'diTauEventTreeFinal','diTausOS')
+
 addEventSummary(process,True,'MT','eventSelectionMT')
 addEventSummary(process,True,'ET','eventSelectionET')
+addEventSummary(process,True,'TT','eventSelectionTT')
 
