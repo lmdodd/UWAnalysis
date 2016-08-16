@@ -3,48 +3,44 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("ANALYSIS")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
-process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2_v1'
+
+process.GlobalTag.globaltag = '80X_dataRun2_Prompt_ICHEP16JEC_v0'
+#process.GlobalTag.globaltag = '80X_dataRun2_Prompt_v9'
 
 
-
-#process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
 process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
 process.options.allowUnscheduled = cms.untracked.bool(True)
 
 
-process.maxEvents = cms.untracked.PSet(
-        input = cms.untracked.int32(-1)
-        )
-
-
-# Make the framework shut up.
-process.load("FWCore.MessageLogger.MessageLogger_cfi")
-process.MessageLogger.cerr.FwkReport.reportEvery = 100
-
 
 process.source = cms.Source("PoolSource",
-        fileNames = cms.untracked.vstring(
-            #'file:tester.root'
-            '/store/mc/RunIISpring16MiniAODv2/WJetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14_ext1-v1/40000/0002BEE4-D55B-E611-B35D-0017A4770C08.root'
-            #'/store/mc/RunIISpring16MiniAODv2/ZprimeToA0hToA0chichihtautau_2HDM_MZp-2500_MA0-400_13TeV-madgraph/MINIAODSIM/PUSpring16RAWAODSIM_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/70000/96A23DDC-FE25-E611-93E6-D8D385AF8AB2.root'
-),
-        inputCommands=cms.untracked.vstring(
-            'keep *',
-            'keep *_l1extraParticles_*_*',
-            )
-        )
+    fileNames = cms.untracked.vstring(
+		$inputFileNames
+		),
+		inputCommands=cms.untracked.vstring(
+						'keep *',
+		)
+)
 
-process.dump=cms.EDAnalyzer('EventContentAnalyzer')
+import FWCore.PythonUtilities.LumiList as LumiList
+process.source.lumisToProcess = LumiList.LumiList(filename = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/Cert_271036-276811_13TeV_PromptReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
+
+
+process.maxEvents = cms.untracked.PSet(
+    input = cms.untracked.int32(-1)
+)
 
 
 #added in etau and mutau triggers
 from UWAnalysis.Configuration.tools.analysisToolsBoostedHiggsObject import *
-defaultReconstructionMC(process,'HLT',
+defaultReconstruction(process,'HLT',
         [
             'HLT_IsoMu18_v', 
             'HLT_IsoMu20_v', 
             'HLT_IsoMu22_v', 
             'HLT_IsoMu22_eta2p1_v', 
+            'HLT_IsoTkMu22_v',
+            'HLT_IsoTkMu22_eta2p1_v',
             'HLT_IsoMu24_v', 
             'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_v',
             'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1_v',
@@ -74,43 +70,12 @@ defaultReconstructionMC(process,'HLT',
 
 
 
-
-#EventSelection
 process.load("UWAnalysis.Configuration.boostedHiggs_cff")
 
 process.metCalibration.applyCalibration = cms.bool(False)
 
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)
-
-createGeneratedParticles(process,
-                         'genDaughters',
-                          [
-                           "keep++ pdgId = {Z0}",
-                           "keep pdgId = {tau+}",
-                           "keep pdgId = {tau-}",
-                           "keep pdgId = {mu+}",
-                           "keep pdgId = {mu-}",
-                           "keep pdgId = 6",
-                           "keep pdgId = -6",
-                           "keep pdgId = 11",
-                           "keep pdgId = -11",
-                           "keep pdgId = 25",
-                           "keep pdgId = 35",
-                           "keep pdgId = 37",
-                           "keep pdgId = 36"
-                          ]
-)
-
-
-createGeneratedParticles(process,
-                         'genTauCands',
-                          [
-                           "keep pdgId = {tau+} & mother.pdgId()= {Z0}",
-                           "keep pdgId = {tau-} & mother.pdgId() = {Z0}"
-                          ]
-)
-
 
 from UWAnalysis.Configuration.tools.ntupleToolsBoostedHiggs import addMuTrackEventTree
 addMuTrackEventTree(process,'muTrackEventTree')
@@ -123,5 +88,6 @@ addEleTrackEventTree(process,'eleTrackEventTreeFinal','eleTracksOS','diElectrons
 addEventSummary(process,True,'MT','eventSelectionMT')
 addEventSummary(process,True,'ET','eventSelectionET')
 
-dump_file = open('dump.py','w')
-dump_file.write(process.dumpPython())
+
+process.TFileService.fileName=cms.string("$outputFileName")
+

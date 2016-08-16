@@ -60,7 +60,13 @@ def makeMuTrackMET(sourceDiTaus, sourceMET, prefix):
    )
    return PSet
 
-
+def makeMuTrackPOGSF(sourceDiTaus):
+   PSet = cms.PSet(
+         pluginType  = cms.string("PATMuTrackPairPOGSFsFiller"),
+         src         = cms.InputTag(sourceDiTaus),
+         isMu      = cms.bool(True)
+   )
+   return PSet
 
 def makeMuTrackJetCountPair(sourceDiTaus,tagName,methodName,leadingOnly=True):
     PSet = cms.PSet(
@@ -81,6 +87,14 @@ def makeEleTrackPair(sourceDiTaus,tagName,methodName,leadingOnly=True):
             leadingOnly = cms.untracked.bool(leadingOnly)
             )
     return PSet
+
+def makeEleTrackPOGSF(sourceDiTaus):
+   PSet = cms.PSet(
+         pluginType  = cms.string("PATEleTrackPairPOGSFsFiller"),
+         src         = cms.InputTag(sourceDiTaus),
+         isMu      = cms.bool(False)
+   )
+   return PSet
 
 
 def makeEleTrackJetCountPair(sourceDiTaus,tagName,methodName,leadingOnly=True):
@@ -138,6 +152,7 @@ def addMuTrackEventTree(process,name,src = 'muTracksSorted', srcLL = 'diMuonsOSS
                src        = cms.InputTag("offlineSlimmedPrimaryVertices"),
                tag        = cms.string("vertices")
                ),
+           muTrackPOG = makeMuTrackPOGSF(src),#FILLED
 
            muTrackSize = makeCollSize(src,"nCands"),
            muTrackOS = makeCollSizeOS(src,0,"os"),
@@ -344,6 +359,7 @@ def addEleTrackEventTree(process,name,src='eleTracksSorted',srcLL='diElectronsOS
                tag        = cms.string("vertices")
                ),
 
+           eTrackPOG = makeEleTrackPOGSF(src),#FILLED
 
            muonsSizeET = makeCollSize(srcU,"tightMuons"),
            muonsSizeETVeto = makeCollSizeVeto(srcU,0,"extramuon_veto"),
