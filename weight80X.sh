@@ -1,14 +1,14 @@
 #!/bin/sh
-#mkdir /nfs_scratch/$USER/80X_charged_weighted
-#cp /nfs_scratch/$USER/80X_charged_unweighted/* /nfs_scratch/$USER/80X_charged_weighted/.
-cd /nfs_scratch/$USER/80X_TT/
+mkdir /nfs_scratch/$USER/monohiggs_boosted_weighted
+cp /nfs_scratch/$USER/monohiggs_boosted_unweighted/* /nfs_scratch/$USER/monohiggs_boosted_weighted/.
+cd /nfs_scratch/$USER/monohiggs_boosted_weighted/
 
 
-weight=0;
+weight=1;
 weightTT=1;
-weightH=0;
-weightW=0;
-weightZ=0;
+weightH=1;
+weightW=1;
+weightZ=1;
 
 
 
@@ -22,6 +22,8 @@ fi
 if [ $weightZ -eq 1 ]
     then
     #make sure Zpt root file is around!!!
+    cp ZJets_ext1.root ZJets.root
+    EventWeightsIterativeGen outputFile='ZJets.root'      weight=6025.2   histoName='MT/results' sumHistoName='sumweights/genWeights'
     EventWeightsIterativeZJets    weight=1    histoName='MT/results' 
     hadd ZJETS.root ZJets_ext1.root Z1Jets.root Z2Jets.root Z3Jets.root Z4Jets.root ZJets_150.root
     #EventWeightsIterativeZPt    weight=1    histoName='MT/results' 
@@ -30,10 +32,11 @@ fi
 
 if [ $weightW -eq 1 ]
     then
-    #EventWeightsIterativeGen outputFile='WJetsAMC.root'      weight=61526.7   histoName='MT/results' sumHistoName='sumweights/genWeights'
-    EventWeightsIterativeWJets    weight=1    histoName='MT/results' 
-    hadd WJETS.root WJetsMLM.root W1Jets.root W2Jets.root W3Jets.root W4Jets.root
- 
+    EventWeightsIterativeGen outputFile='WJets.root'      weight=61526.7   histoName='MT/results' sumHistoName='sumweights/genWeights'
+    #EventWeightsIterativeWJets    weight=1    histoName='MT/results' 
+    #hadd WJETS.root WJetsMLM.root W1Jets.root W2Jets.root W3Jets.root W4Jets.root
+    EventWeightsIterativeWJetsHT    weight=1    histoName='MT/results' 
+    hadd WJETSHT.root WJetsMLM.root WJetsHT*.root
 fi
 
 

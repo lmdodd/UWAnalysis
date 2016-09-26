@@ -1,6 +1,15 @@
 #!/bin/sh
 voms-proxy-init --voms cms --valid 100:00
 
+
+
+############ZH#################
+
+/cms/sw/farmout/farmoutAnalysisJobs.fix $1 --vsize-limit=8000 --skip-existing-output --assume-input-files-exist --input-dbs-path=/ZHToTauTau_M120_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM 20160809_80X_ZHtautau_120 $CMSSW_BASE $CMSSW_BASE/src/UWAnalysis/CRAB/XTT_25ns/SUB-MC.py  
+/cms/sw/farmout/farmoutAnalysisJobs.fix $1 --vsize-limit=8000 --skip-existing-output --assume-input-files-exist --input-dbs-path=/ZHToTauTau_M125_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM 20160809_80X_ZHtautau_125 $CMSSW_BASE $CMSSW_BASE/src/UWAnalysis/CRAB/XTT_25ns/SUB-MC.py  
+/cms/sw/farmout/farmoutAnalysisJobs.fix $1 --vsize-limit=8000 --skip-existing-output --assume-input-files-exist --input-dbs-path=/ZHToTauTau_M130_13TeV_powheg_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/MINIAODSIM 20160809_80X_ZHtautau_130 $CMSSW_BASE $CMSSW_BASE/src/UWAnalysis/CRAB/XTT_25ns/SUB-MC.py  
+
+
 ########ZJETS SAMPLES#############
 
 /cms/sw/farmout/farmoutAnalysisJobs.fix $1 --vsize-limit=8000 --skip-existing-output --assume-input-files-exist --input-dbs-path=/ZJetsToNuNu_HT-100To200_13TeV-madgraph/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/MINIAODSIM 20160809_80X_ZNuNuJets_HT200 $CMSSW_BASE $CMSSW_BASE/src/UWAnalysis/CRAB/XTT_25ns/SUB-MC.py  

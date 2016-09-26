@@ -66,6 +66,7 @@ class CompositePtrCandidateT1T2MEtProducer : public edm::EDProducer
 		srcLeg2_ = consumes<T2View>(cfg.getParameter<edm::InputTag>("srcLeg2"));
 		srcJets_ = consumes<edm::View<pat::Jet> >(cfg.getParameter<edm::InputTag>("srcJets"));
 		dRmin12_ = cfg.getParameter<double>("dRmin12");
+        dRmax_ = cfg.getParameter<bool>("dRmax"); //switches drMin to be a max;
 		srcMET_ = consumes<edm::View<pat::MET>>(cfg.getParameter<edm::InputTag>("srcMET"));
 		//srcMET_ = consumes<reco::CandidateView>(cfg.getParameter<edm::InputTag>("srcMET"));
 		srcTaus_ =  consumes<std::vector<pat::Tau> >(cfg.getParameter<edm::InputTag>("srcTaus"));
@@ -185,8 +186,9 @@ class CompositePtrCandidateT1T2MEtProducer : public edm::EDProducer
 				if ( idxLeadingLeg1 != -1 ) {
 					T1Ptr leadingLeg1Ptr = leg1Collection->ptrAt(idxLeadingLeg1);
 					double dR = reco::deltaR(leadingLeg1Ptr->p4(), leg2Ptr->p4());
-					if ( dR < dRmin12_ ) continue;
-				}
+					if ( dR < dRmin12_  && !dRmax_ ) continue;
+                    else if ( dR > dRmin12_ && dRmax_ ) continue;
+                }
 
 				if ( idxLeadingLeg2 == -1 || leg2Ptr->pt() > leg2PtMax ) {
 					idxLeadingLeg2 = idxLeg2;
@@ -228,7 +230,8 @@ class CompositePtrCandidateT1T2MEtProducer : public edm::EDProducer
 					//--- do not create CompositePtrCandidateT1T2MEt object 
 					//    for combination of particle with itself
 					double dR = reco::deltaR(leg1Ptr->p4(), leg2Ptr->p4());
-					if ( dR < dRmin12_ ) continue;
+                    if ( dR < dRmin12_ && !dRmax_ ) continue;
+                    else if ( dR > dRmin12_ && dRmax_ ) continue;
 					bool foundMET = false;
 					if ( metCollection->size() == 1 ) 
 					{
@@ -311,6 +314,7 @@ class CompositePtrCandidateT1T2MEtProducer : public edm::EDProducer
 	edm::EDGetTokenT<T2View> srcLeg2_;
 	edm::EDGetTokenT<edm::View<pat::Jet> >  srcJets_;
 	double dRmin12_;
+    bool dRmax_;
 	edm::EDGetTokenT<edm::View<pat::MET>> srcMET_;
 	//edm::EDGetTokenT<reco::CandidateView> srcMET_;
 	edm::EDGetTokenT<std::vector<pat::Tau> > srcTaus_;

@@ -179,5 +179,6 @@ class METFiller : public NtupleFillerBase {
 typedef METFiller<PATMuTauPair> PATMuTauPairMETFiller;
 typedef METFiller<PATElecTauPair> PATEleTauPairMETFiller;
 typedef METFiller<PATDiTauPair> PATDiTauPairMETFiller;
-
+typedef METFiller<PATMuTrackPair> PATMuTrackPairMETFiller;
+typedef METFiller<PATEleTrackPair> PATEleTrackPairMETFiller;
 

@@ -19,6 +19,7 @@ University of Wisconsin
 #include "DataFormats/PatCandidates/interface/Muon.h"
 #include "DataFormats/PatCandidates/interface/Jet.h"
 #include "DataFormats/PatCandidates/interface/Tau.h"
+#include "DataFormats/PatCandidates/interface/PackedCandidate.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "FWCore/ServiceRegistry/interface/Service.h"
 #include "FWCore/Utilities/interface/RandomNumberGenerator.h"
@@ -31,6 +32,22 @@ University of Wisconsin
 #include <TRandom3.h>
 
 /*Helper classes to return the generated Lorentz Vector in case of leptons and jets*/
+
+template <typename T>
+class GenTrackRetriever {
+ public:
+  GenTrackRetriever() {}
+  ~GenTrackRetriever() {}
+  GenTrackRetriever(const T& particle) {
+      p4_ = particle.p4();
+  }
+
+  math::XYZTLorentzVector genP4() { return p4_; }
+  
+ private:
+  math::XYZTLorentzVector p4_;
+};
+
 
 template <typename T>
 class GenParticleRetriever {

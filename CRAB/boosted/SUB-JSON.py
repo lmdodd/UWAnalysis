@@ -5,13 +5,9 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condD
 
 
 process.GlobalTag.globaltag = '80X_dataRun2_Prompt_ICHEP16JEC_v0'
-#process.GlobalTag.globaltag = '80X_dataRun2_Prompt_v9'
-
 
 process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(False))
 process.options.allowUnscheduled = cms.untracked.bool(True)
-
-
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
@@ -32,7 +28,7 @@ process.maxEvents = cms.untracked.PSet(
 
 
 #added in etau and mutau triggers
-from UWAnalysis.Configuration.tools.analysisToolsXTauTau import *
+from UWAnalysis.Configuration.tools.analysisToolsBoostedHiggsObject import *
 defaultReconstruction(process,'HLT',
         [
             'HLT_IsoMu18_v', 
@@ -42,6 +38,7 @@ defaultReconstruction(process,'HLT',
             'HLT_IsoTkMu22_v',
             'HLT_IsoTkMu22_eta2p1_v',
             'HLT_IsoMu24_v', 
+            'HLT_Mu50_v', 
             'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_v',
             'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1_v',
             'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_v',
@@ -60,6 +57,7 @@ defaultReconstruction(process,'HLT',
             'HLT_Ele27_WPTight_Gsf_v',
             'HLT_Ele27_eta2p1_WPLoose_Gsf_v',
             'HLT_Ele27_eta2p1_WPTight_Gsf_v',
+            'HLT_Ele45_WPLoose_Gsf_v',
             'HLT_VLooseIsoPFTau140_Trk50_eta2p1_v',
             'HLT_VLooseIsoPFTau120_Trk50_eta2p1_v',
             'HLT_PFMET170_NoiseCleaned',
@@ -71,25 +69,45 @@ defaultReconstruction(process,'HLT',
 
 
         #EventSelection
-process.load("UWAnalysis.Configuration.xTauTau_cff")
+process.load("UWAnalysis.Configuration.boostedHiggs_cff")
 
 process.metCalibration.applyCalibration = cms.bool(False)
 
+
+process.eventSelectionTT = cms.Path(process.selectionSequenceTT)
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)
+process.eventSelectionETK = cms.Path(process.selectionSequenceETK)
+process.eventSelectionMTK = cms.Path(process.selectionSequenceMTK)
 
+#boosted taus 
 
-from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addMuTauEventTree
+from UWAnalysis.Configuration.tools.ntupleToolsBoostedHiggs import addDiTauEventTree
+addDiTauEventTree(process,'diTauEventTree')
+addDiTauEventTree(process,'diTauEventTreeFinal','diTausOS')
+
+from UWAnalysis.Configuration.tools.ntupleToolsBoostedHiggs import addMuTauEventTree
 addMuTauEventTree(process,'muTauEventTree')
 addMuTauEventTree(process,'muTauEventTreeFinal','muTausOS','diMuonsOSSorted')
 
-
-from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addEleTauEventTree
+from UWAnalysis.Configuration.tools.ntupleToolsBoostedHiggs import addEleTauEventTree
 addEleTauEventTree(process,'eleTauEventTree')
 addEleTauEventTree(process,'eleTauEventTreeFinal','eleTausOS','diElectronsOSSorted')
 
-addEventSummary(process,False,'MT','eventSelectionMT')
-addEventSummary(process,False,'ET','eventSelectionET')
+#track trees
+from UWAnalysis.Configuration.tools.ntupleToolsBoostedHiggs import addMuTrackEventTree
+addMuTrackEventTree(process,'muTrackEventTree')
+addMuTrackEventTree(process,'muTrackEventTreeFinal','muTracksOS','diMuonsTrkOSSorted')
+
+from UWAnalysis.Configuration.tools.ntupleToolsBoostedHiggs import addEleTrackEventTree
+addEleTrackEventTree(process,'eleTrackEventTree')
+addEleTrackEventTree(process,'eleTrackEventTreeFinal','eleTracksOS','diElectronsOSSorted')
+
+addEventSummary(process,True,'TT','eventSelectionTT')
+addEventSummary(process,True,'MT','eventSelectionMT')
+addEventSummary(process,True,'ET','eventSelectionET')
+addEventSummary(process,True,'MTK','eventSelectionMTK')
+addEventSummary(process,True,'ETK','eventSelectionETK')
 
 
 process.TFileService.fileName=cms.string("$outputFileName")

@@ -1,4 +1,3 @@
-
 #include "UWAnalysis/DataFormats/interface/CompositePtrCandidateT1T2MEt.h"
 #include "UWAnalysis/DataFormats/interface/CompositePtrCandidateT1T2MEtFwd.h"
 #include "UWAnalysis/DataFormats/interface/CompositePtrCandidateTMEt.h"
@@ -8,6 +7,8 @@
 #include "DataFormats/PatCandidates/interface/Muon.h"
 #include "DataFormats/PatCandidates/interface/Tau.h"
 #include "DataFormats/PatCandidates/interface/Jet.h"
+#include "DataFormats/PatCandidates/interface/PackedCandidate.h"
+
 
 
 namespace {

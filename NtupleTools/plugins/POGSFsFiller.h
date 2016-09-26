@@ -148,4 +148,5 @@ class POGSFsFiller : public NtupleFillerBase {
 
 typedef POGSFsFiller<PATMuTauPair> PATMuTauPairPOGSFsFiller;
 typedef POGSFsFiller<PATElecTauPair> PATEleTauPairPOGSFsFiller;
-
+typedef POGSFsFiller<PATMuTrackPair> PATMuTrackPairPOGSFsFiller;
+typedef POGSFsFiller<PATEleTrackPair> PATEleTrackPairPOGSFsFiller;
