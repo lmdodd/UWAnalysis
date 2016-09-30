@@ -42,6 +42,7 @@ defaultReconstruction(process,'HLT',
             'HLT_IsoTkMu22_v',
             'HLT_IsoTkMu22_eta2p1_v',
             'HLT_IsoMu24_v', 
+            'HLT_Mu50_v', 
             'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_v',
             'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1_v',
             'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_v',
@@ -60,8 +61,11 @@ defaultReconstruction(process,'HLT',
             'HLT_Ele27_WPTight_Gsf_v',
             'HLT_Ele27_eta2p1_WPLoose_Gsf_v',
             'HLT_Ele27_eta2p1_WPTight_Gsf_v',
+            'HLT_Ele45_WPLoose_Gsf_v',
             'HLT_VLooseIsoPFTau140_Trk50_eta2p1_v',
             'HLT_VLooseIsoPFTau120_Trk50_eta2p1_v',
+            'HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1_Reg_v',
+            'HLT_DoubleMediumIsoPFTau40_Trk1_eta2p1_Reg_v',
             'HLT_PFMET170_NoiseCleaned',
             'HLT_PFMET90_PFMHT90_IDTight',
             'HLT_CaloJet500_NoJetID',
@@ -70,26 +74,32 @@ defaultReconstruction(process,'HLT',
 
 
 
-        #EventSelection
-process.load("UWAnalysis.Configuration.xTauTau_cff")
+#EventSelection
+process.load("UWAnalysis.Configuration.monohiggs_cff")
 
 process.metCalibration.applyCalibration = cms.bool(False)
 
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)
+process.eventSelectionTT = cms.Path(process.selectionSequenceTT)
 
 
-from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addMuTauEventTree
+from UWAnalysis.Configuration.tools.ntupleTools_monohiggs import addMuTauEventTree
 addMuTauEventTree(process,'muTauEventTree')
 addMuTauEventTree(process,'muTauEventTreeFinal','muTausOS','diMuonsOSSorted')
 
 
-from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addEleTauEventTree
+from UWAnalysis.Configuration.tools.ntupleTools_monohiggs import addEleTauEventTree
 addEleTauEventTree(process,'eleTauEventTree')
 addEleTauEventTree(process,'eleTauEventTreeFinal','eleTausOS','diElectronsOSSorted')
 
+from UWAnalysis.Configuration.tools.ntupleTools_monohiggs import addDiTauEventTree
+addDiTauEventTree(process,'diTauEventTree')
+addDiTauEventTree(process,'diTauEventTreeFinal','diTausOS')
+
 addEventSummary(process,False,'MT','eventSelectionMT')
 addEventSummary(process,False,'ET','eventSelectionET')
+addEventSummary(process,False,'TT','eventSelectionTT')
 
 
 process.TFileService.fileName=cms.string("$outputFileName")

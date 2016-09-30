@@ -51,12 +51,13 @@ defaultReconstructionMC(process,'HLT2',
 
 
         #EventSelection
-process.load("UWAnalysis.Configuration.xTauTau_cff")
+process.load("UWAnalysis.Configuration.monohiggs_cff")
 
 process.metCalibration.applyCalibration = cms.bool(False)
 
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)
+process.eventSelectionTT = cms.Path(process.selectionSequenceTT)
 #Systematic Shifts 1sigma
 #process.eventSelectionMTTauUp    = createSystematics(process,process.selectionSequenceMT,'TauUp',1.0,1.0,1.03,0,1.0)
 #process.eventSelectionMTTauDown  = createSystematics(process,process.selectionSequenceMT,'TauDown',1.0,1.0,0.97,0,1.0)
@@ -91,17 +92,23 @@ createGeneratedParticles(process,
         )
 
 
-from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addMuTauEventTree
+from UWAnalysis.Configuration.tools.ntupleTools_monohiggs import addMuTauEventTree
 addMuTauEventTree(process,'muTauEventTree')
 addMuTauEventTree(process,'muTauEventTreeFinal','muTausOS','diMuonsOSSorted')
 
 
-from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addEleTauEventTree
+from UWAnalysis.Configuration.tools.ntupleTools_monohiggs import addEleTauEventTree
 addEleTauEventTree(process,'eleTauEventTree')
 addEleTauEventTree(process,'eleTauEventTreeFinal','eleTausOS','diElectronsOSSorted')
 
+from UWAnalysis.Configuration.tools.ntupleTools_monohiggs import addDiTauEventTree
+addDiTauEventTree(process,'diTauEventTree')
+addDiTauEventTree(process,'diTauEventTreeFinal','diTausOS')
+
+
 addEventSummary(process,True,'MT','eventSelectionMT')
 addEventSummary(process,True,'ET','eventSelectionET')
+addEventSummary(process,True,'TT','eventSelectionTT')
 
 
 #Final trees afor shapes after shifts

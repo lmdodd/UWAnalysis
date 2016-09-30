@@ -13,8 +13,8 @@ process.options.allowUnscheduled = cms.untracked.bool(True)
 
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
-)
+        input = cms.untracked.int32(-1)
+        )
 
 
 # Make the framework shut up.
@@ -23,58 +23,59 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 100
 
 
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(
-#'file:tester.root'
-'/store/mc/RunIISpring16MiniAODv2/ZprimeToA0hToA0chichihtautau_2HDM_MZp-600_MA0-400_13TeV-madgraph/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/20000/20EC6D85-8D3A-E611-BB26-0025905B85DE.root'
-		),
-		inputCommands=cms.untracked.vstring(
-						'keep *',
-						'keep *_l1extraParticles_*_*',
-		)
-)
+        fileNames = cms.untracked.vstring(
+            #'file:tester.root'
+            #'/store/mc/RunIISpring16MiniAODv2/ZprimeToA0hToA0chichihtautau_2HDM_MZp-600_MA0-400_13TeV-madgraph/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/20000/20EC6D85-8D3A-E611-BB26-0025905B85DE.root'
+'/store/mc/RunIISpring16MiniAODv2/ZprimeToA0hToA0chichihtautau_2HDM_MZp-600_MA0-300_13TeV-madgraph-pythia8/MINIAODSIM/premix_withHLT_80X_mcRun2_asymptotic_v14-v1/70000/6E36FCDE-187A-E611-A02B-848F69FD47A5.root'
+),
+        inputCommands=cms.untracked.vstring(
+            'keep *',
+            'keep *_l1extraParticles_*_*',
+            )
+        )
 
 #process.dump=cms.EDAnalyzer('EventContentAnalyzer')
 
 
 #added in etau and mutau triggers
 from UWAnalysis.Configuration.tools.analysisToolsXTauTau import *
-defaultReconstructionMC(process,'HLT2',
-                      [
-			'HLT_IsoMu18_v', 
-			'HLT_IsoMu20_v', 
-			'HLT_IsoMu22_v', 
-			'HLT_IsoMu22_eta2p1_v', 
-			'HLT_IsoMu24_v', 
-			'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_v',
-			'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1_v',
-			'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_v',
-			'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v',
-			'HLT_IsoMu21_eta2p1_LooseIsoPFTau20_SingleL1_v',
-		        'HLT_Ele22_eta2p1_WPLoose_LooseIsoPFTau20_v',
-		        'HLT_Ele22_eta2p1_WPLoose_LooseIsoPFTau20_SingleL1_v',
-			'HLT_Ele23_WPLoose_Gsf_v',
-		        'HLT_Ele24_eta2p1_WPLoose_Gsf_v',
-		        'HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_v',
-		        'HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1_v',
-			'HLT_Ele24_WPLoose_Gsf_v',
-			'HLT_Ele25_eta2p1_WPLoose_Gsf_v',
-			'HLT_Ele25_eta2p1_WPTight_Gsf_v',	
-			'HLT_Ele27_WPLoose_Gsf_v',
-			'HLT_Ele27_WPTight_Gsf_v',
-			'HLT_Ele27_eta2p1_WPLoose_Gsf_v',
-			'HLT_Ele27_eta2p1_WPTight_Gsf_v',
-			'HLT_VLooseIsoPFTau140_Trk50_eta2p1_v',
-			'HLT_VLooseIsoPFTau120_Trk50_eta2p1_v',
-			'HLT_PFMET170_NoiseCleaned',
-			'HLT_PFMET90_PFMHT90_IDTight',
-			'HLT_CaloJet500_NoJetID',
-			'HLT_ECALHT800'
-                      ])
+defaultReconstructionMC(process,'HLT',
+        [
+            'HLT_IsoMu18_v', 
+            'HLT_IsoMu20_v', 
+            'HLT_IsoMu22_v', 
+            'HLT_IsoMu22_eta2p1_v', 
+            'HLT_IsoMu24_v', 
+            'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_v',
+            'HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1_v',
+            'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_v',
+            'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v',
+            'HLT_IsoMu21_eta2p1_LooseIsoPFTau20_SingleL1_v',
+            'HLT_Ele22_eta2p1_WPLoose_LooseIsoPFTau20_v',
+            'HLT_Ele22_eta2p1_WPLoose_LooseIsoPFTau20_SingleL1_v',
+            'HLT_Ele23_WPLoose_Gsf_v',
+            'HLT_Ele24_eta2p1_WPLoose_Gsf_v',
+            'HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_v',
+            'HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1_v',
+            'HLT_Ele24_WPLoose_Gsf_v',
+            'HLT_Ele25_eta2p1_WPLoose_Gsf_v',
+            'HLT_Ele25_eta2p1_WPTight_Gsf_v',	
+            'HLT_Ele27_WPLoose_Gsf_v',
+            'HLT_Ele27_WPTight_Gsf_v',
+            'HLT_Ele27_eta2p1_WPLoose_Gsf_v',
+            'HLT_Ele27_eta2p1_WPTight_Gsf_v',
+            'HLT_VLooseIsoPFTau140_Trk50_eta2p1_v',
+            'HLT_VLooseIsoPFTau120_Trk50_eta2p1_v',
+            'HLT_PFMET170_NoiseCleaned',
+            'HLT_PFMET90_PFMHT90_IDTight',
+            'HLT_CaloJet500_NoJetID',
+            'HLT_ECALHT800'
+            ])
 
 
-                      
 
-#EventSelection
+
+        #EventSelection
 process.load("UWAnalysis.Configuration.monohiggs_cff")
 
 process.metCalibration.applyCalibration = cms.bool(False)
@@ -84,32 +85,32 @@ process.eventSelectionET = cms.Path(process.selectionSequenceET)
 process.eventSelectionTT = cms.Path(process.selectionSequenceTT)
 
 createGeneratedParticles(process,
-                         'genDaughters',
-                          [
-                           "keep++ pdgId = {Z0}",
-                           "keep pdgId = {tau+}",
-                           "keep pdgId = {tau-}",
-                           "keep pdgId = {mu+}",
-                           "keep pdgId = {mu-}",
-                           "keep pdgId = 6",
-                           "keep pdgId = -6",
-                           "keep pdgId = 11",
-                           "keep pdgId = -11",
-                           "keep pdgId = 25",
-                           "keep pdgId = 35",
-                           "keep pdgId = 37",
-                           "keep pdgId = 36"
-                          ]
-)
+        'genDaughters',
+        [
+            "keep++ pdgId = {Z0}",
+            "keep pdgId = {tau+}",
+            "keep pdgId = {tau-}",
+            "keep pdgId = {mu+}",
+            "keep pdgId = {mu-}",
+            "keep pdgId = 6",
+            "keep pdgId = -6",
+            "keep pdgId = 11",
+            "keep pdgId = -11",
+            "keep pdgId = 25",
+            "keep pdgId = 35",
+            "keep pdgId = 37",
+            "keep pdgId = 36"
+            ]
+        )
 
 
 createGeneratedParticles(process,
-                         'genTauCands',
-                          [
-                           "keep pdgId = {tau+} & mother.pdgId()= {Z0}",
-                           "keep pdgId = {tau-} & mother.pdgId() = {Z0}"
-                          ]
-)
+        'genTauCands',
+        [
+            "keep pdgId = {tau+} & mother.pdgId()= {Z0}",
+            "keep pdgId = {tau-} & mother.pdgId() = {Z0}"
+            ]
+        )
 
 
 from UWAnalysis.Configuration.tools.ntupleToolsXTauTau import addMuTauEventTree
