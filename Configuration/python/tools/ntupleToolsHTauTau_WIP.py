@@ -313,6 +313,12 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                                   paths      = cms.vstring(TriggerPaths)
                               ),
 
+                              pu = cms.PSet(
+                                  pluginType = cms.string("PUFiller"),
+                                  src        = cms.InputTag("slimmedAddPileupInfo"),
+                                  tag        = cms.string("pu")
+                              ),
+
                               cov = cms.PSet(
                                   pluginType = cms.string("METSignificanceFiller"),
                                   src        = cms.InputTag("METSignificance"),
@@ -336,6 +342,13 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               #muTauNBTags = makeMuTauNBTag(src),#FILLED
                               muTauEffCSV = makeMuTauEffCSV(src),#FILLED
                               muTauCSVShape = makeMuTauCSVShape(src),#FILLED
+
+                              muonsSizeET = makeCollSize(srcU,"tightMuons"),
+                              muonsSizeETVeto = makeCollSizeVeto(srcU,0,"extramuon_veto"),
+                              electronsSizeET = makeCollSize(srcE,"tightElectrons"),
+                              electronsSizeETVeto = makeCollSizeVeto(srcE, 1,"extraelec_veto"),
+
+
                               muTauSize = makeCollSize(src,"nCands"),#FILLED
                               muTauOS = makeCollSizeOS(src,0,"os"),#FILLED
                               muMuSize = makeCollSize(srcLL,"diLeptons"),#CHECKME
@@ -346,6 +359,8 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauVBFMass2 = makeMuTauPair(src,"mjj","vbfMass"),#vbfMass
                               muTauVBFJets20 = makeMuTauPair(src,"njetigap20","vbfNJetsGap20"),
                               muTauVBFJets30 = makeMuTauPair(src,"njetingap","vbfNJetsGap30"),
+                              muTauJetsPt30njets = makeMuTauJetCountPair(src,"njets",'pt()>30&&abs(eta)<4.7&&userFloat("idLoose")'),
+                              muTauJetsPt20njets = makeMuTauJetCountPair(src,"njets20",'pt()>20&&abs(eta)<4.7&&userFloat("idLoose")'),
 
                               #Muon IDs and Isolation
                               muTauRelPFIsoDB03 = makeMuTauPair(src,"iso03_1",'leg1.userFloat("dBRelIso03")'),
@@ -459,6 +474,14 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               #muTauNBTags = makeMuTauNBTag(src),#FILLED
                               muTauEffCSV = makeMuTauEffCSV(src),#FILLED
                               muTauCSVShape = makeMuTauCSVShape(src),#FILLED
+
+
+                              muonsSizeET = makeCollSize(srcU,"tightMuons"),
+                              muonsSizeETVeto = makeCollSizeVeto(srcU,0,"extramuon_veto"),
+                              electronsSizeET = makeCollSize(srcE,"tightElectrons"),
+                              electronsSizeETVeto = makeCollSizeVeto(srcE, 1,"extraelec_veto"),
+
+
                               muTauSize = makeCollSize(src,"nCands"),#FILLED
                               muTauOS = makeCollSizeOS(src,0,"os"),#FILLED
                               genTaus = makeCollSize("genTauCands","genTaus"), 
@@ -802,6 +825,12 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                                   tag        = cms.string("LHEProduct"),
                               ),#WHAT IS THIS
  
+                              pu = cms.PSet(
+                                  pluginType = cms.string("PUFiller"),
+                                  src        = cms.InputTag("slimmedAddPileupInfo"),
+                                  tag        = cms.string("pu")
+                              ),
+
                               eTauPOG = makeEleTauPOGSF(src),#FILLED
                               eleEleSizeVeto = makeCollSizeVeto(srcLL,0,"dilepton_veto"),
                               eTauEventWeight = makeEleTauEventWeight(src),#FILLED
@@ -817,6 +846,8 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                               eleTauVBFJets20 = makeEleTauPair(src,"njetigap20","vbfNJetsGap20"),
                               eleTauVBFJets30 = makeEleTauPair(src,"njetingap","vbfNJetsGap30"),
 
+                              eleTauJetsPt30njets = makeEleTauJetCountPair(src,"njets",'pt()>30&&abs(eta)<4.7&&userFloat("idLoose")'),
+                              eleTauJetsPt20njets = makeEleTauJetCountPair(src,"njets20",'pt()>20&&abs(eta)<4.7&&userFloat("idLoose")'),
                               #Muon IDs and Isolation
                               eleTauRelPFIsoDB03 = makeEleTauPair(src,"iso03_1",'leg1.userFloat("dBRelIso03")'),
                               eleTauRelPFIsoDB03_1 = makeEleTauPair(src,"iso_1",'leg1.userFloat("dBRelIso03")'),

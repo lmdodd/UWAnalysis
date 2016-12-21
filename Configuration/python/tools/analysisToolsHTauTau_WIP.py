@@ -112,6 +112,7 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   
   #Build good vertex collection
   #goodVertexFilter(process)  
+  genmatchtaus(process)  
   tauEffi(process,'slimmedTaus',False)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   
@@ -129,6 +130,45 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   process.runAnalysisSequence = cms.Path(process.analysisSequence)
 
 
+def genmatchtaus(process):
+    process.tauGenJets = cms.EDProducer(
+        "TauGenJetProducer",
+        GenParticles =  cms.InputTag('prunedGenParticles'),
+        includeNeutrinos = cms.bool( False ),
+        verbose = cms.untracked.bool( False )
+        )
+    # Create filtered groups of tau decay paths
+    process.tauGenJetsSelectorAllHadrons = cms.EDFilter("TauGenJetDecayModeSelector",
+         src = cms.InputTag("tauGenJets"),
+         select = cms.vstring('oneProng0Pi0', 
+                              'oneProng1Pi0', 
+                              'oneProng2Pi0', 
+                              'oneProngOther',
+                              'threeProng0Pi0', 
+                              'threeProng1Pi0', 
+                              'threeProngOther', 
+                              'rare'),
+         filter = cms.bool(False)
+    )
+    process.tauGenJetsSelectorElectrons = cms.EDFilter("TauGenJetDecayModeSelector",
+         src = cms.InputTag("tauGenJets"),
+         select = cms.vstring('electron'), 
+         filter = cms.bool(False)
+    )
+    
+    process.tauGenJetsSelectorMuons = cms.EDFilter("TauGenJetDecayModeSelector",
+         src = cms.InputTag("tauGenJets"),
+         select = cms.vstring('muon'), 
+         filter = cms.bool(False)
+    )
+
+    process.buildGenTaus = cms.Sequence( 
+        process.tauGenJets 
+        * process.tauGenJetsSelectorAllHadrons
+        * process.tauGenJetsSelectorElectrons
+        * process.tauGenJetsSelectorMuons
+    )
+    process.analysisSequence*=process.buildGenTaus
 
 def jetOverloading(process,jets, data):
 
