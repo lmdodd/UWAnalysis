@@ -77,33 +77,39 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
 	  }
 	  else if(obj->IsA()->InheritsFrom(TTree::Class())) {
 		  float weight = parser.doubleValue("weight")/(ev);
-		  float weight2;
-		  float weight3;
+		  float weighttau; 
+		  float weightpth; 
+		  float weightmjj; 
 
 		  TTree *t = (TTree*)obj;
 		  TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
-		  TBranch *newBranch2 = t->Branch("fakeTauEffiUp",&weight2,"fakeTauEffiUp/F");
-		  TBranch *newBranch3 = t->Branch("fakeTauEffiDown",&weight3,"fakeTauEffiDown/F");
+		  TBranch *newBranch2 = t->Branch("tauPdfScale",&weighttau,"tauPdfScale/F");
+		  TBranch *newBranch3 = t->Branch("pthPdfScale",&weightpth,"pthPdfScale/F");
+		  TBranch *newBranch4 = t->Branch("mjjPdfScale",&weightmjj,"mjjPdfScale/F");
 
 		  float tauPt=0;
+		  float ptH=0;
+		  float JJ=0;
 		  t->SetBranchAddress("pt_2",&tauPt); //genPy
+		  t->SetBranchAddress("p_sv",&ptH); //genPy
+		  t->SetBranchAddress("vbfMass",&JJ); //genPy
+
 
 
 		  printf("Found tree -> weighting\n");
 		  for(Int_t i=0;i<t->GetEntries();++i)
 		  {
-              t->GetEntry(i);
-              if (tauPt>200)
-                  tauPt=200.;
-
-              weight = parser.doubleValue("weight")/(ev);
-              weight2 = 0.8 *tauPt/100.0;
-              weight3 = 1.2 *tauPt/100.0;
-              newBranch->Fill();
-              newBranch2->Fill();
-              newBranch3->Fill();
-          }
-          t->Write("",TObject::kOverwrite);
-      }//end else if object A
+			  t->GetEntry(i);
+			  weight = parser.doubleValue("weight")/(ev);
+              weighttau = 0.929+0.0001702*tauPt;
+              weightpth = 0.919+0.0010055*ptH;
+              weightmjj = 1.026+0.000066*JJ;
+			  newBranch->Fill();
+			  newBranch2->Fill();
+			  newBranch3->Fill();
+			  newBranch4->Fill();
+		  }
+		  t->Write("",TObject::kOverwrite);
+	  }//end else if object A
   }//end while key
 }//end read directory

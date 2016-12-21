@@ -18,7 +18,6 @@ int main (int argc, char* argv[])
 {
    optutl::CommandLineParser parser ("Sets Event Weights in the ntuple");
    parser.addOption("histoName",optutl::CommandLineParser::kString,"Counter Histogram Name","EventSummary");
-   parser.addOption("sumHistoName",optutl::CommandLineParser::kString,"Sum Histogram Name","EventSummary");
    parser.addOption("weight",optutl::CommandLineParser::kDouble,"Weight to apply",1.0);
    parser.addOption("branch",optutl::CommandLineParser::kString,"Branch","__WEIGHT__");
 
@@ -32,22 +31,14 @@ int main (int argc, char* argv[])
    TH1F* evC  = (TH1F*)g->Get(parser.stringValue("histoName").c_str());
    float ev = evC->GetBinContent(1);
    
-   TH1F* sumC  = (TH1F*)g->Get(parser.stringValue("sumHistoName").c_str());
-   float sumPos = sumC->GetBinContent(2);
-   float sumNeg = sumC->GetBinContent(1);
 
-   float evGen =sumPos-sumNeg;
-   
    g->Close();
    
    printf("Found  %f Events Counted\n",ev);
-   printf("Found  %f Positive NLO Weights Counted\n",sumPos);
-   printf("Found  %f Negative NLO Weights Counted\n",sumNeg);
-   printf("Weighting by  %f Events\n",evGen);
    
    TFile *f = new TFile(parser.stringValue("outputFile").c_str(),"UPDATE");   
    
-   readdir(f,parser,evGen);
+   readdir(f,parser,ev);
 
    f->Close();
 
@@ -77,33 +68,20 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
 	  }
 	  else if(obj->IsA()->InheritsFrom(TTree::Class())) {
 		  float weight = parser.doubleValue("weight")/(ev);
-		  float weight2;
-		  float weight3;
 
 		  TTree *t = (TTree*)obj;
 		  TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
-		  TBranch *newBranch2 = t->Branch("fakeTauEffiUp",&weight2,"fakeTauEffiUp/F");
-		  TBranch *newBranch3 = t->Branch("fakeTauEffiDown",&weight3,"fakeTauEffiDown/F");
-
-		  float tauPt=0;
-		  t->SetBranchAddress("pt_2",&tauPt); //genPy
-
 
 		  printf("Found tree -> weighting\n");
 		  for(Int_t i=0;i<t->GetEntries();++i)
 		  {
-              t->GetEntry(i);
-              if (tauPt>200)
-                  tauPt=200.;
+			  t->GetEntry(i);
 
-              weight = parser.doubleValue("weight")/(ev);
-              weight2 = 0.8 *tauPt/100.0;
-              weight3 = 1.2 *tauPt/100.0;
-              newBranch->Fill();
-              newBranch2->Fill();
-              newBranch3->Fill();
-          }
-          t->Write("",TObject::kOverwrite);
-      }//end else if object A
+			  weight = parser.doubleValue("weight")/(ev);
+
+			  newBranch->Fill();
+		  }
+		  t->Write("",TObject::kOverwrite);
+	  }//end else if object A
   }//end while key
 }//end read directory

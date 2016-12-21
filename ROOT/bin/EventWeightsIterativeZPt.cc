@@ -97,8 +97,8 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser, TH2D* hist)
                 weight = hist->GetBinContent(hist->GetXaxis()->FindBin(mLL),hist->GetYaxis()->FindBin(genPt));
 				//printf("Found Zweight -> %f,\n",weight);
 				weight2 = 0.2 * genTauPt/1000.; 
-                if (std::abs(TauEta)<1.460)  weight3=1.8;
-                else  weight3=1.3;
+                if (std::abs(TauEta)<1.460)  weight3=1.994;
+                else  weight3=1.505;
                 
                 if (std::abs(TauEta)<1.2)  weight4=1.28;
                 else if (std::abs(TauEta)<1.7)  weight4=2.6;

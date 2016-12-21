@@ -16,6 +16,8 @@
 <bin   name="SVFitStandAloneRecoil" file="SVFitStandAloneRecoil.cc">
 </bin>
 
+<bin   name="MoveAVariable" file="MoveAVariable.cc">
+</bin>
 <bin   name="GetErrors" file="GetErrors.cc">
 </bin>
 <bin   name="MVATrainer" file="MVATrainer.cc">
@@ -35,6 +37,8 @@
 </bin>
 <bin   name="EventWeightsIterativeGen" file="EventWeightsIterativeGen.cc">
 </bin>
+<bin   name="EventWeightsIterativeHiggs" file="EventWeightsIterativeHiggs.cc">
+</bin>
 <bin   name="EventWeightsIterativeGenTauPt" file="EventWeightsIterativeGenTauPt.cc">
 </bin>
 <bin   name="EventWeightsIterativeGenPU" file="EventWeightsIterativeGenPU.cc">
@@ -48,6 +52,8 @@
 <bin   name="EventWeightsIterativeWJetsHT" file="EventWeightsIterativeWJetsHT.cc">
 </bin>
 <bin   name="EventWeightsIterativeZJets" file="EventWeightsIterativeZJets.cc">
+</bin>
+<bin   name="EventWeightsIterativeZSync" file="EventWeightsIterativeZsync.cc">
 </bin>
 <bin   name="EventWeightsIterativeZNuNu" file="EventWeightsIterativeZNuNu.cc">
 </bin>
@@ -63,7 +69,7 @@
 <bin   name="EventWeightsFromHisto" file="EventWeightsFromHisto.cc">
 </bin>
 
-<bin   name="EventWeightsForEfficiency" file="EventWeightsForEfficiency.cc">
+<bin   name="EventWeightsForEfficiencyIsolation" file="EventWeightsForEfficiencyIsolation.cc">
 </bin>
 <bin   name="EventWeightsForEfficiencyTagAndProbe" file="EventWeightsForEfficiencyTagAndProbe.cc">
 </bin>
