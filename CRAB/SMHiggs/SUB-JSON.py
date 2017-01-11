@@ -4,8 +4,7 @@ process = cms.Process("ANALYSIS")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
 
-process.GlobalTag.globaltag = '80X_dataRun2_Prompt_ICHEP16JEC_v0'
-#process.GlobalTag.globaltag = '80X_dataRun2_Prompt_v9'
+process.GlobalTag.globaltag = '80X_dataRun2_Prompt_v14'
 
 
 process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(False))
@@ -22,15 +21,15 @@ process.source = cms.Source("PoolSource",
 		)
 )
 
+#from UWAnalysis.Configuration.JSONBtoF import myLumiList
+#myLumiList(process);
 import FWCore.PythonUtilities.LumiList as LumiList
-#process.source.lumisToProcess = LumiList.LumiList(filename = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/Cert_271036-280385_13TeV_PromptReco_Collisions16_JSON_NoL1T_v2.txt').getVLuminosityBlockRange()
-from UWAnalysis.Configuration.JSONBtoF import myLumiList
-myLumiList(process);
+process.source.lumisToProcess = LumiList.LumiList(filename = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/Cert_271036-284044_13TeV_PromptReco_Collisions16_JSON_NoL1T.txt').getVLuminosityBlockRange()
+
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
 )
-
 
 #added in etau and mutau triggers
 from UWAnalysis.Configuration.tools.analysisToolsHTauTau_WIP import *
@@ -74,7 +73,6 @@ defaultReconstruction(process,'HLT',
         #EventSelection
 process.load("UWAnalysis.Configuration.hTauTau_cff")
 
-process.metCalibration.applyCalibration = cms.bool(False)
 
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)

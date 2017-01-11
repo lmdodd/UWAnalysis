@@ -24,7 +24,6 @@ defaultReconstructionMC(process,'HLT2',
 #EventSelection
 process.load("UWAnalysis.Configuration.hTauTauSync_cff")
 
-process.metCalibration.applyCalibration = cms.bool(False)
 
 process.eventSelectionET = cms.Path(process.selectionSequenceET)
 

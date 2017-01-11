@@ -543,8 +543,6 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauPhi1LL = makeLTauGeneric("PATMuPairFiller",srcLL,"LLphi_1","leg1.phi"),#FILLED
                               muTauPhi2LL = makeLTauGeneric("PATMuPairFiller",srcLL,"LLphi_2","leg2.phi"),#FILLED
 
-                              #muTauMETCal = makeMuTauPair(src,"metCal","calibratedMET.pt()"),#NOLONGLERUSED
-                              #muTauMETPhi = makeMuTauPair(src,"metphi","metPhi"),#NOLONGERUSED
                               muTauMET1 = makeMuTauMET(src,"slimmedMETs","pf"),#FILLED
                               muTauMET2 = makeMuTauMET(src,"slimmedMETsPuppi","puppi"),#FILLED
                               muTauMET3 = makeMuTauMET(src,"MVAMET:MVAMET","mva"),#FILLED
@@ -1029,7 +1027,6 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
 
 
                               #eleTauMETUnc = makeEleTauPair(src,"metUnc","met.pt()"),#curretnly identical
-                              #eleTauMET = makeEleTauPair(src,"met","calibratedMET.pt()"),#currently identical
                               #eleTauMETPhi = makeEleTauPair(src,"metphi","metPhi"),
                               #eleTauGenMET = makeEleTauPair(src,"genMET","met.genMET()"),
 

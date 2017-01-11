@@ -13,7 +13,7 @@ process.options.allowUnscheduled = cms.untracked.bool(True)
 
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1)
+    input = cms.untracked.int32(-1)
 )
 
 
@@ -78,7 +78,6 @@ defaultReconstructionMC(process,'HLT',
         #EventSelection
 process.load("UWAnalysis.Configuration.hTauTau_cff")
 
-process.metCalibration.applyCalibration = cms.bool(False)
 
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)

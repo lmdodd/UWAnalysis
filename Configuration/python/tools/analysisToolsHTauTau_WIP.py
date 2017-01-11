@@ -41,7 +41,7 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
 
   recorrectJets(process, True) #adds patJetsReapplyJEC
   
-  mvaMet2(process, True) #isData
+  #mvaMet2(process, True) #isData
   metSignificance(process)
 
   muonTriggerMatchMiniAOD(process,triggerProcess,HLT,"miniAODMuonID") 
@@ -98,7 +98,7 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
 
   recorrectJets(process, True) #adds patJetsReapplyJEC
   
-  mvaMet2(process, True) #isData
+  #mvaMet2(process, True) #isData
   metSignificance(process)
 
   muonTriggerMatchMiniAOD(process,triggerProcess,HLT,"miniAODMuonID") 
@@ -157,7 +157,7 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
 
   #reapplyPUJetID(process) 
   recorrectJets(process, False) #adds patJetsReapplyJEC
-  mvaMet2(process, False) #isData
+  #mvaMet2(process, False) #isData
   metSignificance(process)
 
 
@@ -734,9 +734,6 @@ def createRecoilSystematics(process,sequence,postfix,metScale,metResolution):
         if(hasattr(mod,'name')):
           newValue = mod.name.value()+postfix
           mod.name=cms.string(newValue)
-    if(hasattr(mod,'metCalibration')):
-          mod.metCalibration.shiftScale = cms.untracked.double(metScale)
-          mod.metCalibration.shiftRes   = cms.untracked.double(metResolution)
       
   return cms.Path(p) 
 
