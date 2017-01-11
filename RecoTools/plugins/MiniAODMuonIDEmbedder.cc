@@ -19,6 +19,7 @@
 #include "DataFormats/VertexReco/interface/VertexFwd.h"
 
 #include "DataFormats/PatCandidates/interface/Muon.h"
+#include "DataFormats/MuonReco/interface/MuonSelectors.h"
 
 #include <math.h>
 
@@ -27,17 +28,62 @@ class MiniAODMuonIDEmbedder : public edm::EDProducer {
 	public:
 		explicit MiniAODMuonIDEmbedder(const edm::ParameterSet& pset);
 		virtual ~MiniAODMuonIDEmbedder(){}
-		void produce(edm::Event& evt, const edm::EventSetup& es);
+        bool isICHEPmedium(const reco::Muon & recoMu);
+        bool is2016BCDEFmedium(const reco::Muon & recoMu);
+        bool is2016GHmedium(const reco::Muon & recoMu);void produce(edm::Event& evt, const edm::EventSetup& es);
 
 	private:
 		edm::EDGetTokenT<pat::MuonCollection> muonsCollection_;
 		edm::EDGetTokenT<reco::VertexCollection> vtxToken_;
 		reco::Vertex pv_;
+        bool HIP;
 };
+
+
+bool MiniAODMuonIDEmbedder::isICHEPmedium(const reco::Muon & recoMu)
+{
+    // Fixes inefficiency due to HIP/(strip dynamic inefficiency)
+    // https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2?Short_Term_Medium_Muon_Definitio=#Short_Term_Medium_Muon_Definitio
+    bool goodGlob = recoMu.isGlobalMuon() &&
+        recoMu.globalTrack()->normalizedChi2() < 3 &&
+        recoMu.combinedQuality().chi2LocalPosition < 12 &&
+        recoMu.combinedQuality().trkKink < 20;
+    bool isMedium = muon::isLooseMuon(recoMu) &&
+        recoMu.innerTrack()->validFraction() > 0.49 &&
+        muon::segmentCompatibility(recoMu) > (goodGlob ? 0.303 : 0.451);
+    return isMedium;
+}
+
+bool MiniAODMuonIDEmbedder::is2016BCDEFmedium(const reco::Muon & recoMu)
+{
+    bool goodGlob = recoMu.isGlobalMuon() && 
+        recoMu.globalTrack()->normalizedChi2() < 3 && 
+        recoMu.combinedQuality().chi2LocalPosition < 12 && 
+        recoMu.combinedQuality().trkKink < 20; 
+    bool isMedium = muon::isLooseMuon(recoMu) && 
+        recoMu.innerTrack()->validFraction() > 0.49 && 
+        muon::segmentCompatibility(recoMu) > (goodGlob ? 0.303 : 0.451); 
+    return isMedium; 
+}
+
+bool MiniAODMuonIDEmbedder::is2016GHmedium(const reco::Muon & recoMu)
+{
+    bool goodGlob = recoMu.isGlobalMuon() && 
+        recoMu.globalTrack()->normalizedChi2() < 3 && 
+        recoMu.combinedQuality().chi2LocalPosition < 12 && 
+        recoMu.combinedQuality().trkKink < 20; 
+    bool isMedium = muon::isLooseMuon(recoMu) && 
+        recoMu.innerTrack()->validFraction() > 0.8 && 
+        muon::segmentCompatibility(recoMu) > (goodGlob ? 0.303 : 0.451); 
+    return isMedium; 
+}
+
+
 
 // class member functions
 MiniAODMuonIDEmbedder::MiniAODMuonIDEmbedder(const edm::ParameterSet& pset) {
 	muonsCollection_ = consumes<pat::MuonCollection>(pset.getParameter<edm::InputTag>("src"));
+    HIP   = pset .getParameter<bool>("isHip");
 	vtxToken_            = consumes<reco::VertexCollection>(pset.getParameter<edm::InputTag>("vertices"));
 
 	produces<pat::MuonCollection>();
@@ -88,10 +134,14 @@ void MiniAODMuonIDEmbedder::produce(edm::Event& evt, const edm::EventSetup& es) 
 		//std::cout<<"     iso_1: "<<muIso03<<std::endl;
 
 		int muId = 0; 
-		if (muon.isLooseMuon()&&muon.innerTrack()->validFraction()>0.49&&((muon.isGlobalMuon()&&muon.globalTrack()->normalizedChi2()<3&&muon.combinedQuality().chi2LocalPosition<12&&muon.combinedQuality().trkKink<20&&muon.segmentCompatibility()>0.303)||(muon.segmentCompatibility()>0.451)))
-		{
-			muId=1;
-		}
+		//if (muon.isLooseMuon()&&muon.innerTrack()->validFraction()>0.49&&((muon.isGlobalMuon()&&muon.globalTrack()->normalizedChi2()<3&&muon.combinedQuality().chi2LocalPosition<12&&muon.combinedQuality().trkKink<20&&muon.segmentCompatibility()>0.303)||(muon.segmentCompatibility()>0.451)))
+		//{
+		//	muId=1;
+		//}
+        muId =MiniAODMuonIDEmbedder::is2016GHmedium(muon); 
+        if (HIP)
+            muId =MiniAODMuonIDEmbedder::is2016BCDEFmedium(muon); 
+
 
 		muon.addUserFloat("dBRelIso",muIso);
 		muon.addUserFloat("iso",muIso);

@@ -202,11 +202,12 @@ def PATJetMVAEmbedder(process,jets):
   process.analysisSequence*=process.jetMVAEmbedding
 
 
-def MiniAODMuonIDEmbedder(process,muons):
+def MiniAODMuonIDEmbedder(process,muons, isHIP=False):
   process.miniAODMuonID = cms.EDProducer(
       "MiniAODMuonIDEmbedder",
       src=cms.InputTag(muons),
-      vertices=cms.InputTag("offlineSlimmedPrimaryVertices")
+      vertices=cms.InputTag("offlineSlimmedPrimaryVertices"),
+      isHip=cms.bool(isHIP)
       )
 
   process.embedMuonIDs = cms.Sequence(process.miniAODMuonID)

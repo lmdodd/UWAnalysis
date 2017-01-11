@@ -12,6 +12,63 @@ from PhysicsTools.PatAlgos.tools.pfTools import *
 from PhysicsTools.PatAlgos.tools.trigTools import *
 import sys
 
+def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults'):
+  process.load("UWAnalysis.Configuration.startUpSequence_cff")
+  process.load("Configuration.StandardSequences.Services_cff")
+  process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
+  process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
+  process.load("DQMServices.Core.DQM_cfg")
+  process.load("DQMServices.Components.DQMEnvironment_cfi")
+  process.load('Configuration.StandardSequences.Services_cff')
+  process.load('Configuration.EventContent.EventContent_cff')
+  process.load('SimGeneral.MixingModule.mixNoPU_cfi')
+  process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
+  process.load('Configuration.StandardSequences.MagneticField_38T_cff')
+  process.load('Configuration.StandardSequences.EndOfProcess_cff')
+ 
+  #Make the TriggerPaths Global variable to be accesed by the ntuples
+  global TriggerPaths
+  TriggerPaths= triggerPaths
+  global TriggerProcess
+  TriggerProcess= triggerProcess
+  global TriggerRes
+  TriggerRes=HLT 
+  
+  process.analysisSequence = cms.Sequence()
+
+  MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
+  MiniAODMuonIDEmbedder(process,"slimmedMuons",True) #is HIP  
+
+  recorrectJets(process, True) #adds patJetsReapplyJEC
+  
+  mvaMet2(process, True) #isData
+  metSignificance(process)
+
+  muonTriggerMatchMiniAOD(process,triggerProcess,HLT,"miniAODMuonID") 
+  electronTriggerMatchMiniAOD(process,triggerProcess,HLT,"miniAODElectronVID") 
+  #tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"slimmedTaus") #ESTaus
+  
+  #Build good vertex collection
+  #goodVertexFilter(process)  
+  tauEffi(process,'slimmedTaus',True)
+  tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
+  #tauOverloading(process,'slimmedTaus','triggeredPatMuons','offlineSlimmedPrimaryVertices')
+  
+  triLeptons(process)
+  #jetOverloading(process,"slimmedJets",True)
+  jetOverloading(process,"patJetsReapplyJEC",True)
+  #jetOverloading(process,"patJetsReapplyJEC") #"slimmedJets")
+  jetFilter(process,"patOverloadedJets")
+
+
+  #Default selections for systematics
+  applyDefaultSelectionsPT(process)
+
+  process.runAnalysisSequence = cms.Path(process.analysisSequence)
+
+
+
+
 def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults'):
   process.load("UWAnalysis.Configuration.startUpSequence_cff")
   process.load("Configuration.StandardSequences.Services_cff")
@@ -202,11 +259,12 @@ def PATJetMVAEmbedder(process,jets):
   process.analysisSequence*=process.jetMVAEmbedding
 
 
-def MiniAODMuonIDEmbedder(process,muons):
+def MiniAODMuonIDEmbedder(process,muons, isHIP=False):
   process.miniAODMuonID = cms.EDProducer(
       "MiniAODMuonIDEmbedder",
       src=cms.InputTag(muons),
-      vertices=cms.InputTag("offlineSlimmedPrimaryVertices")
+      vertices=cms.InputTag("offlineSlimmedPrimaryVertices"),
+      isHip=cms.bool(isHIP)
       )
 
   process.embedMuonIDs = cms.Sequence(process.miniAODMuonID)
