@@ -3,12 +3,12 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("ANALYSIS")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
-process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_miniAODv2_v1'
+process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v7'
 
 
 
 #process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
-process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
+process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(False))
 process.options.allowUnscheduled = cms.untracked.bool(True)
 
 
@@ -24,8 +24,7 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 100
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-'file:pickevents.root'
-#'/store/mc/RunIISpring16MiniAODv2/TT_TuneCUETP8M1_13TeV-powheg-pythia8/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14_ext3-v1/10000/C811B4E4-6F3A-E611-9A0A-002590550504.root'
+'/store/mc/RunIISummer16MiniAODv2/VBFHToTauTau_M125_13TeV_powheg_pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120000/0A1C9276-92C4-E611-B966-00266CF2CD48.root'
 		),
 		inputCommands=cms.untracked.vstring(
 						'keep *',
@@ -38,7 +37,7 @@ process.source = cms.Source("PoolSource",
 
 #added in etau and mutau triggers
 from UWAnalysis.Configuration.tools.analysisToolsHTauTau_WIP import *
-defaultReconstructionMC(process,'HLT2',
+defaultReconstructionMC(process,'HLT',
         [
             'HLT_IsoMu18_v', 
             'HLT_IsoMu20_v', 
@@ -129,6 +128,7 @@ addMuTauShortEventTree(process,'muTauEventTreeJetUp','muTausSortedJetUp','diMuon
 
 from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addEleTauShortEventTree
 addEleTauShortEventTree(process,'muTauEventTreeJetUp','eleTausSortedJetUp','diElectronsOSJetUp')
+
 addEventSummary(process,True,'MT','eventSelectionMT')
 addEventSummary(process,True,'ET','eventSelectionET')
 
