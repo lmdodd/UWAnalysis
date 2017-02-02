@@ -109,11 +109,12 @@ if [ $weight -eq 1 ]
     nohup EventWeightsIterativeGen outputFile='WZTo2L2Q.root'      weight=5.595   histoName='MT/results' sumHistoName='sumweights/genWeights' &
     echo 'Weight WZ 1L3Nu'
     nohup EventWeightsIterativeGen outputFile='WZTo1L3Nu.root'      weight=3.05   histoName='MT/results' sumHistoName='sumweights/genWeights' &
-#add m_ll>30
+    #add m_ll>30
     #nohup EventWeightsIterativeGen outputFile='ZZTo4L.root'     weight=1.212     histoName='MT/results' sumHistoName='sumweights/genWeights' &
 
     echo 'Weight WW to L1Nu QQ'
     nohup EventWeightsIterativeGen outputFile='WWTo1L1Nu2Q.root'     weight=49.997     histoName='MT/results' sumHistoName='sumweights/genWeights' &
+    #nohup EventWeightsIterativeGen outputFile='WWTo1L1Nu2Q.root'     weight=49.997     histoName='MT/results' sumHistoName='sumweights/genWeights' &
 
     echo 'Weight VV to 2L2Nu'
     nohup  EventWeightsIterativeGen outputFile='VVTo2L2Nu.root'     weight=11.95    histoName='MT/results' sumHistoName='sumweights/genWeights' &

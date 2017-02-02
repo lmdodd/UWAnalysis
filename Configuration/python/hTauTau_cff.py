@@ -1,3 +1,8 @@
+######################################3
+# NOtes:
+# Do not duplicate filter names the resulting results plot will be wrong
+######################################
+
 import FWCore.ParameterSet.Config as cms
 
 
@@ -27,7 +32,7 @@ ETanalysisConfigurator.addSelector('eleTausEleConvRej','PATEleTauPairSelector','
 ETanalysisConfigurator.addSelector('eleTausEleVertices','PATEleTauPairSelector','abs(leg1.userFloat("dZ"))<0.2&&abs(leg1.userFloat("dXY"))<0.045','ETelectronVertices',1)
 ETanalysisConfigurator.addSelector('eleTausDecayFound','PATEleTauPairSelector','leg2.tauID("decayModeFinding")>0.5','ETTauDecayFound',1)
 ETanalysisConfigurator.addSelector('eleTausDecayVertex','PATEleTauPairSelector','abs(leg2.userFloat("taudZ"))<0.2','ETTauVertexFound',1)
-ETanalysisConfigurator.addSelector('eleTausTauLooseIsolation','PATEleTauPairSelector','leg2.tauID("byLooseIsolationMVArun2v1DBoldDMwLT") > 0.5','ETTauLooseIso',1)
+ETanalysisConfigurator.addSelector('eleTausTauLooseIsolation','PATEleTauPairSelector','leg2.tauID("byVLooseIsolationMVArun2v1DBoldDMwLT") > 0.5','ETTauLooseIso',1)
 #ETanalysisConfigurator.addSelector('eleTausTauLooseIsolation','PATEleTauPairSelector','(leg2.tauID("chargedIsoPtSumdR03"))/(leg2.pt()) < 0.3','ETTauLooseIso',1)
 ETanalysisConfigurator.addSelector('eleTausChargeNot2','PATEleTauPairSelector','abs(leg2.charge())==1','ETChargeIsABS1',1)
 ETanalysisConfigurator.addEleTauLVeto('eleTausLVeto','TightElectrons','TightMuons')
@@ -60,9 +65,9 @@ MTanalysisConfigurator.addSelector('diMuonsOS','PATMuPairSelector','leg1.isPFMuo
 MTanalysisConfigurator.addSorter('diMuonsOSSorted','PATMuPairSorter')
 
 #Make DiTaus   
-MTanalysisConfigurator.addDiCandidateModule('muTaus','PATMuTauPairProducer','smearedMuonsMT','smearedTausMT','smearedMETMT','smearedTausMT','smearedJetsMT',1,9999,text='AtLeastOneDiTau',leadingObjectsOnly = False,dR = 0.5,recoMode ="",genParticles='prunedGenParticles')
+MTanalysisConfigurator.addDiCandidateModule('muTaus','PATMuTauPairProducer','smearedMuonsMT','smearedTausMT','smearedMETMT','smearedTausMT','smearedJetsMT',1,9999,text='AtLeastOneMuTau',leadingObjectsOnly = False,dR = 0.5,recoMode ="",genParticles='prunedGenParticles')
 #MTanalysisConfigurator.addSelector('muTausTausMuTrigMatch','PATMuTauPairSelector','leg1.userFloat("hltL3crIsoL1sMu16L1f0L2f10QL3f18QL3trkIsoFiltered0p09")>0','MTMuTrigMatch',1)
-MTanalysisConfigurator.addSelector('muTausMuonPtEta','PATMuTauPairSelector','leg1.pt()>23&&abs(leg1.eta())<2.4','MTMuonPtEta',1)
+MTanalysisConfigurator.addSelector('muTausMuonPtEta','PATMuTauPairSelector','leg1.pt()>25&&abs(leg1.eta())<2.4','MTMuonPtEta',1)
 MTanalysisConfigurator.addSelector('muTausTauPtEta','PATMuTauPairSelector','leg2.pt()>20&&abs(leg2.eta())<2.3','MTTauPtEta',1)
 MTanalysisConfigurator.addSelector('muTausMuonMediumID','PATMuTauPairSelector','leg1.userInt("mediumID")>0.5','MTMuonMediumID',1)
 #use ICHEP ID
@@ -71,7 +76,7 @@ MTanalysisConfigurator.addSelector('muTausMuonVertices','PATMuTauPairSelector','
 MTanalysisConfigurator.addSelector('muTausDecayFound','PATMuTauPairSelector','leg2.tauID("decayModeFinding")>0.5','MTTauDecayFound',1)
 MTanalysisConfigurator.addSelector('muTausDecayVertex','PATMuTauPairSelector','abs(leg2.userFloat("taudZ"))<0.2','MTTauVertex',1)
 #MTanalysisConfigurator.addSelector('muTausTauLooseID','PATMuTauPairSelector','(leg2.tauID("chargedIsoPtSumdR03"))/(leg2.pt()) < 0.3','MTTauLooseID',1)
-MTanalysisConfigurator.addSelector('muTausTauLooseID','PATMuTauPairSelector','leg2.tauID("byLooseIsolationMVArun2v1DBoldDMwLT")>0.5','MTTauLooseID',1)
+MTanalysisConfigurator.addSelector('muTausTauLooseID','PATMuTauPairSelector','leg2.tauID("byVLooseIsolationMVArun2v1DBoldDMwLT")>0.5','MTTauLooseID',1)
 MTanalysisConfigurator.addMuTauLVeto('muTausLVeto','TightElectrons','TightMuons')
 MTanalysisConfigurator.addSelector('muTausMuonVeto','PATMuTauPairSelector','lVeto==0','MTMuonVeto',1)
 MTanalysisConfigurator.addSelector('muTausChargeNot2','PATMuTauPairSelector','abs(leg2.charge())==1','MTChargeIsABS1',1)

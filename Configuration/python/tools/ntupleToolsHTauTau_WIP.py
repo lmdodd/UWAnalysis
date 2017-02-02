@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-from UWAnalysis.Configuration.tools.analysisToolsHTauTau_WIP import TriggerPaths,TriggerRes,TriggerProcess
+from UWAnalysis.Configuration.tools.analysisToolsHTauTau_WIP import TriggerPaths,TriggerRes,TriggerProcess,TriggerFilter
 
 
 
@@ -312,7 +312,20 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                                   prescales = cms.InputTag("patTrigger"),
                                   paths      = cms.vstring(TriggerPaths)
                               ),
-
+                              metfilter = cms.PSet(
+                                  pluginType = cms.string("TriggerFilterFiller"),
+                                  src = cms.InputTag(TriggerRes,"",TriggerFilter),
+                                  BadChargedCandidateFilter = cms.InputTag("BadChargedCandidateFilter"),
+                                  BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
+                                  paths      = cms.vstring(
+                                      "Flag_HBHENoiseFilter",
+                                      "Flag_HBHENoiseIsoFilter",
+                                      "Flag_globalTightHalo2016Filter",
+                                      "Flag_goodVertices",
+                                      "Flag_eeBadScFilter",
+                                      "Flag_EcalDeadCellTriggerPrimitiveFilter"
+                                      )
+                                  ),
                               pu = cms.PSet(
                                   pluginType = cms.string("PUFiller"),
                                   src        = cms.InputTag("slimmedAddPileupInfo"),
@@ -394,7 +407,9 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauTopGenPt = makeMuTauPair(src,"topGenPt","topGenPt"),#FIXME
                               muTauAntiTopGenPt = makeMuTauPair(src,"antiTopGenPt","antiTopGenPt"),#FIXME
 
-                              muTauMuTriggerMatch = makeMuTauPair(src,"lTrigger",'leg1.userFloat("hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch = makeMuTauPair(src,"lTrigger",'leg1.userFloat("hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch2 = makeMuTauPair(src,"lTkTrigger",'leg1.userFloat("hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09")'),
+ 
 
                               muTauGenPt1 = makeMuTauPair(src,"genPt1",'p4Leg1gen().pt()'),
                               muTauGenPt2 = makeMuTauPair(src,"genPt2",'p4Leg2gen().pt()'),
@@ -445,7 +460,20 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                                   prescales = cms.InputTag("patTrigger"),
                                   paths      = cms.vstring(TriggerPaths)
                               ),
-
+                              metfilter = cms.PSet(
+                                  pluginType = cms.string("TriggerFilterFiller"),
+                                  src = cms.InputTag(TriggerRes,"",TriggerFilter),
+                                  BadChargedCandidateFilter = cms.InputTag("BadChargedCandidateFilter"),
+                                  BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
+                                  paths      = cms.vstring(
+                                      "Flag_HBHENoiseFilter",
+                                      "Flag_HBHENoiseIsoFilter",
+                                      "Flag_globalTightHalo2016Filter",
+                                      "Flag_goodVertices",
+                                      "Flag_eeBadScFilter",
+                                      "Flag_EcalDeadCellTriggerPrimitiveFilter"
+                                      )
+                              ),
                               pu = cms.PSet(
                                   pluginType = cms.string("PUFiller"),
                                   src        = cms.InputTag("slimmedAddPileupInfo"),
@@ -605,7 +633,8 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauDecayFoundOld = makeMuTauPair(src,"decayModeFindingOldDMs_2",'leg2.tauID("decayModeFinding")'),
                               muTauDecayFoundNew = makeMuTauPair(src,"decayModeFindingNewDMs_2",'leg2.tauID("decayModeFindingNewDMs")'),
                               muTauProngs = makeMuTauPair(src,"tauProngs",'leg2.signalChargedHadrCands.size()'),#see Decay Modes
-                              muTauMuTriggerMatch = makeMuTauPair(src,"lTrigger",'leg1.userFloat("hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch = makeMuTauPair(src,"lTrigger",'leg1.userFloat("hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch2 = makeMuTauPair(src,"lTkTrigger",'leg1.userFloat("hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09")'),
                               muTauMuTriggerMatchTau = makeMuTauPair(src,"lt1Trigger",'leg1.userFloat("hltOverlapFilterSingleIsoMu19LooseIsoPFTau20")'),
                               muTauMuTriggerMatchTau1 = makeMuTauPair(src,"lt2Trigger",'leg1.userFloat("hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09")'),
                               muTauPzeta = makeMuTauPair(src,"pZeta",'pZeta-1.5*pZetaVis'),
@@ -822,6 +851,20 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                                   src        = cms.InputTag("externalLHEProducer"),
                                   tag        = cms.string("LHEProduct"),
                               ),#WHAT IS THIS
+                              metfilter = cms.PSet(
+                                  pluginType = cms.string("TriggerFilterFiller"),
+                                  src = cms.InputTag(TriggerRes,"",TriggerFilter),
+                                  BadChargedCandidateFilter = cms.InputTag("BadChargedCandidateFilter"),
+                                  BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
+                                  paths      = cms.vstring(
+                                      "Flag_HBHENoiseFilter",
+                                      "Flag_HBHENoiseIsoFilter",
+                                      "Flag_globalTightHalo2016Filter",
+                                      "Flag_goodVertices",
+                                      "Flag_eeBadScFilter",
+                                      "Flag_EcalDeadCellTriggerPrimitiveFilter"
+                                      )
+                                  ),
  
                               pu = cms.PSet(
                                   pluginType = cms.string("PUFiller"),
@@ -936,6 +979,21 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
                                   prescales = cms.InputTag("patTrigger"),
                                   paths      = cms.vstring(TriggerPaths)
                               ),
+                              metfilter = cms.PSet(
+                                  pluginType = cms.string("TriggerFilterFiller"),
+                                  src = cms.InputTag(TriggerRes,"",TriggerFilter),
+                                  BadChargedCandidateFilter = cms.InputTag("BadChargedCandidateFilter"),
+                                  BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
+                                  paths      = cms.vstring(
+                                      "Flag_HBHENoiseFilter",
+                                      "Flag_HBHENoiseIsoFilter",
+                                      "Flag_globalTightHalo2016Filter",
+                                      "Flag_goodVertices",
+                                      "Flag_eeBadScFilter",
+                                      "Flag_EcalDeadCellTriggerPrimitiveFilter"
+                                      )
+                                  ),
+ 
                               pu = cms.PSet(
                                   pluginType = cms.string("PUFiller"),
                                   src        = cms.InputTag("slimmedAddPileupInfo"),
@@ -1079,7 +1137,6 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
 
                               #Trigger
                               eleTauEleTriggerMatch2016_25 = makeEleTauPair(src,"lTrigger25",'leg1.userFloat("hltEle25erWPTightGsfTrackIsoFilter")'),
-                              eleTauEleTriggerMatch2016_27 = makeEleTauPair(src,"lTrigger27",'leg1.userFloat("hltEle27erWPLooseGsfTrackIsoFilter")'),
                               eleTauEleTriggerMatch2016_1 = makeEleTauPair(src,"lt1Trigger",'leg1.userFloat("hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau20")'),
                               eleTauEleTriggerMatch2016_2 = makeEleTauPair(src,"lt2Trigger",'leg1.userFloat("hltEle24WPLooseL1SingleIsoEG22erGsfTrackIsoFilter")'),
 

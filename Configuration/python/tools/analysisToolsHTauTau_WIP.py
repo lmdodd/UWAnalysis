@@ -12,7 +12,7 @@ from PhysicsTools.PatAlgos.tools.pfTools import *
 from PhysicsTools.PatAlgos.tools.trigTools import *
 import sys
 
-def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults'):
+def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults',triggerFilter='RECO'):
   process.load("UWAnalysis.Configuration.startUpSequence_cff")
   process.load("Configuration.StandardSequences.Services_cff")
   process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
@@ -33,14 +33,20 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
   TriggerProcess= triggerProcess
   global TriggerRes
   TriggerRes=HLT 
-  
+  global TriggerFilter
+  TriggerFilter=triggerFilter
+
   process.analysisSequence = cms.Sequence()
+
+  BadMuonFilter(process)
+  MiniAODMETfilter(process)
 
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons",True) #is HIP  
 
-  recorrectJets(process, True) #adds patJetsReapplyJEC
-  
+  recorrectJetsSQL(process, True) #adds patJetsReapplyJEC  
+  reRunMET(process,True)
+
   #mvaMet2(process, True) #isData
   metSignificance(process)
 
@@ -69,7 +75,7 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
 
 
 
-def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults'):
+def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults', triggerFilter='RECO'):
   process.load("UWAnalysis.Configuration.startUpSequence_cff")
   process.load("Configuration.StandardSequences.Services_cff")
   process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
@@ -90,13 +96,19 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
   TriggerProcess= triggerProcess
   global TriggerRes
   TriggerRes=HLT 
-  
+  global TriggerFilter
+  TriggerFilter=triggerFilter
+ 
   process.analysisSequence = cms.Sequence()
+
+  BadMuonFilter(process)
+  MiniAODMETfilter(process)
 
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons")  
 
-  recorrectJets(process, True) #adds patJetsReapplyJEC
+  recorrectJetsSQL(process, True) #adds patJetsReapplyJEC
+  reRunMET(process,True)
   
   #mvaMet2(process, True) #isData
   metSignificance(process)
@@ -125,7 +137,7 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
 
 
 
-def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1','HLT_Mu11_PFTau15_v1','HLT_Mu11_PFTau15_v2','HLT_Mu15_v1','HLT_Mu15_v2'],HLT = 'TriggerResults'):
+def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1','HLT_Mu11_PFTau15_v1','HLT_Mu11_PFTau15_v2','HLT_Mu15_v1','HLT_Mu15_v2'],HLT = 'TriggerResults',triggerFilter='PAT'):
   process.load("UWAnalysis.Configuration.startUpSequence_cff")
   process.load("Configuration.StandardSequences.Services_cff")
   process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
@@ -146,7 +158,9 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   TriggerProcess= triggerProcess
   global TriggerRes
   TriggerRes=HLT 
- 
+  global TriggerFilter
+  TriggerFilter=triggerFilter
+  
   process.analysisSequence = cms.Sequence()
 
   #Apply Tau Energy Scale Changes
@@ -155,9 +169,12 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons")  
 
-  #reapplyPUJetID(process) 
-  recorrectJets(process, False) #adds patJetsReapplyJEC
-  #mvaMet2(process, False) #isData
+  BadMuonFilter(process)
+  MiniAODMETfilter(process)
+
+  recorrectJetsSQL(process, False) #adds patJetsReapplyJEC
+  reRunMET(process,False)
+
   metSignificance(process)
 
 
@@ -185,6 +202,68 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   applyDefaultSelectionsPT(process)
 
   process.runAnalysisSequence = cms.Path(process.analysisSequence)
+
+def defaultReconstructionEMB(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults',triggerFilter='LHEembeddingCLEAN'):
+  process.load("UWAnalysis.Configuration.startUpSequence_cff")
+  process.load("Configuration.StandardSequences.Services_cff")
+  process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
+  process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
+  process.load("DQMServices.Core.DQM_cfg")
+  process.load("DQMServices.Components.DQMEnvironment_cfi")
+  process.load('Configuration.StandardSequences.Services_cff')
+  process.load('Configuration.EventContent.EventContent_cff')
+  process.load('SimGeneral.MixingModule.mixNoPU_cfi')
+  process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
+  process.load('Configuration.StandardSequences.MagneticField_38T_cff')
+  process.load('Configuration.StandardSequences.EndOfProcess_cff')
+ 
+  #Make the TriggerPaths Global variable to be accesed by the ntuples
+  global TriggerPaths
+  TriggerPaths= triggerPaths
+  global TriggerProcess
+  TriggerProcess= triggerProcess
+  global TriggerRes
+  TriggerRes=HLT 
+  global TriggerFilter
+  TriggerFilter=triggerFilter
+
+  process.analysisSequence = cms.Sequence()
+
+  BadMuonFilter(process)
+  MiniAODMETfilter(process)
+
+  MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
+  MiniAODMuonIDEmbedder(process,"slimmedMuons") #is not HIP, use standard ID   
+
+  recorrectJetsSQL(process, True) #adds patJetsReapplyJEC  
+  reRunMET(process,True)
+
+  #mvaMet2(process, True) #isData
+  metSignificance(process)
+
+  muonTriggerMatchMiniAOD(process,triggerProcess,HLT,"miniAODMuonID") 
+  electronTriggerMatchMiniAOD(process,triggerProcess,HLT,"miniAODElectronVID") 
+  #tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"slimmedTaus") #ESTaus
+  
+  #Build good vertex collection
+  #goodVertexFilter(process)  
+  tauEffi(process,'slimmedTaus',True)
+  tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
+  #tauOverloading(process,'slimmedTaus','triggeredPatMuons','offlineSlimmedPrimaryVertices')
+  
+  triLeptons(process)
+  #jetOverloading(process,"slimmedJets",True)
+  jetOverloading(process,"patJetsReapplyJEC",True)
+  #jetOverloading(process,"patJetsReapplyJEC") #"slimmedJets")
+  jetFilter(process,"patOverloadedJets")
+
+
+  #Default selections for systematics
+  applyDefaultSelectionsPT(process)
+
+  process.runAnalysisSequence = cms.Path(process.analysisSequence)
+
+
 
 
 def genmatchtaus(process):
@@ -226,6 +305,37 @@ def genmatchtaus(process):
         * process.tauGenJetsSelectorMuons
     )
     process.analysisSequence*=process.buildGenTaus
+
+
+def BadMuonFilter(process):
+
+    process.badGlobalMuonTagger = cms.EDFilter("BadGlobalMuonTagger",
+            muons = cms.InputTag("slimmedMuons"),
+            vtx   = cms.InputTag("offlineSlimmedPrimaryVertices"),
+            muonPtCut = cms.double(20),
+            selectClones = cms.bool(False),
+            taggingMode = cms.bool(False),
+            )
+    process.cloneGlobalMuonTagger = process.badGlobalMuonTagger.clone(
+                selectClones = True
+                )
+
+    process.noBadGlobalMuons = cms.Sequence(~process.cloneGlobalMuonTagger + ~process.badGlobalMuonTagger)
+    process.analysisSequence*=process.noBadGlobalMuons
+
+
+def MiniAODMETfilter(process):
+    process.load('RecoMET.METFilters.BadPFMuonFilter_cfi')
+    process.BadPFMuonFilter.muons = cms.InputTag("slimmedMuons")
+    process.BadPFMuonFilter.PFCandidates = cms.InputTag("packedPFCandidates")
+
+    process.load('RecoMET.METFilters.BadChargedCandidateFilter_cfi')
+    process.BadChargedCandidateFilter.muons = cms.InputTag("slimmedMuons")
+    process.BadChargedCandidateFilter.PFCandidates = cms.InputTag("packedPFCandidates")
+
+    process.BadMuon = cms.Sequence(process.BadPFMuonFilter*process.BadChargedCandidateFilter)
+    process.analysisSequence*=process.BadMuon
+
 
 def jetOverloading(process,jets, data):
 
@@ -376,6 +486,16 @@ def metSignificance(process):
    process.analysisSequence *= process.METSignificance
 
 
+def reRunMET(process, runOnData):
+    from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
+
+    runMetCorAndUncFromMiniAOD(process,
+            isData=runOnData
+            )
+    process.analysisSequence *= process.fullPatMetSequence
+
+
+
 def reapplyPUJetID(process, srcJets = cms.InputTag("slimmedJets")):
     from RecoJets.JetProducers.PileupJetID_cfi import pileupJetId
     process.pileupJetIdUpdated = pileupJetId.clone(
@@ -385,6 +505,44 @@ def reapplyPUJetID(process, srcJets = cms.InputTag("slimmedJets")):
         vertexes = cms.InputTag("offlineSlimmedPrimaryVertices") ) 
     process.analysisSequence *= process.pileupJetIdUpdated
    
+def recorrectJetsSQL(process, isData = False):
+    JECTag = 'Summer16_23Sep2016V3_MC'
+    if(isData):
+      JECTag = 'Summer16_23Sep2016AllV3_DATA'
+    #cmssw_base = os.environ['CMSSW_BASE']
+    ## getting the JEC from the DB
+    #process.load("CondCore.CondDB.CondDB_cfi")
+    process.load("CondCore.DBCommon.CondDBCommon_cfi")
+    process.jec = cms.ESSource("PoolDBESSource",
+                               DBParameters = cms.PSet( messageLevel = cms.untracked.int32(0)),
+                               timetype = cms.string('runnumber'),
+                               toGet = cms.VPSet(cms.PSet(record = cms.string('JetCorrectionsRecord'),
+                                                          tag    = cms.string('JetCorrectorParametersCollection_'+JECTag+'_AK4PFchs'),
+                                                          label  = cms.untracked.string('AK4PFchs')
+                                                          )
+                                                 ),
+                               connect = cms.string('sqlite_fip:UWAnalysis/Configuration/data/'+JECTag+'.db')
+                               #connect = cms.string('sqlite:////'+cmssw_base+'/src/UWAnalysis/Configuration/data/'+JECTag+'.db')
+                               # uncomment above tag lines and this comment to use MC JEC
+                               )
+
+     ## add an es_prefer statement to resolve a possible conflict from simultaneous connection to a global tag
+    process.es_prefer_jec = cms.ESPrefer('PoolDBESSource','jec')
+    ## https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookJetEnergyCorrections#CorrPatJets
+    from PhysicsTools.PatAlgos.producersLayer1.jetUpdater_cff import updatedPatJetCorrFactors
+    process.patJetCorrFactorsReapplyJEC = updatedPatJetCorrFactors.clone(
+      src = cms.InputTag("slimmedJets"),
+      levels = ['L1FastJet', 'L2Relative', 'L3Absolute'],
+      payload = 'AK4PFchs' ) # Make sure to choose the appropriate levels and payload here!
+    from PhysicsTools.PatAlgos.producersLayer1.jetUpdater_cff import updatedPatJets
+    process.patJetsReapplyJEC = updatedPatJets.clone(
+      jetSource = cms.InputTag("slimmedJets"),
+      jetCorrFactorsSource = cms.VInputTag(cms.InputTag("patJetCorrFactorsReapplyJEC"))
+      )
+    if(isData):
+        process.patJetCorrFactorsReapplyJEC.levels = ['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']
+    process.analysisSequence *= process.patJetCorrFactorsReapplyJEC
+
 
 def recorrectJets(process, isData = False):
     ## https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookJetEnergyCorrections#CorrPatJets
@@ -493,7 +651,7 @@ def tauTriggerMatchMiniAOD(process,triggerProcess,HLT,srcTau):
                                             src = cms.InputTag(srcTau),
                                             trigEvent = cms.InputTag(HLT),
                                             filtersAND = cms.vstring(
-                                                'hltOverlapFilterIsoMu17LooseIsoPFTau20',
+                                                'hltOverlapFilterIsoMu19LooseIsoPFTau20',
                                                 'hltOverlapFilterIsoEle22WP75GsfLooseIsoPFTau20',
                                                 'hltOverlapFilterIsoEle22WPLooseGsfLooseIsoPFTau20'
                                             ),
@@ -518,13 +676,13 @@ def muonTriggerMatchMiniAOD(process,triggerProcess,HLT,srcMuon):
                                             src = cms.InputTag(srcMuon),#"miniAODMuonID"
                                             trigEvent = cms.InputTag(HLT),
                                             filters = cms.vstring(
-						'hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09', #2016B
-						'hltL3fL1sMu20erL1f0Tkf22QL3trkIsoFiltered0p09', #2016B
+						'hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09', #2016B
+						'hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09', #2016B
 						'hltOverlapFilterSingleIsoMu19LooseIsoPFTau20' #2016B HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v2
                                             ),
 					    filtersAND = cms.vstring(
-						'hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09', #2016D IsoMu18
-						'hltL3fL1sMu20erL1f0Tkf22QL3trkIsoFiltered0p09', #2016B
+						'hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09', #2016D IsoMu18
+						'hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09', #2016B
 						'hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09' #2016B HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v2
 					    ),
                                             bits = cms.InputTag(HLT,"",triggerProcess),

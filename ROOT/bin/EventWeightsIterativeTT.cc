@@ -77,31 +77,31 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
 		  dirsav->cd();
 	  }
 	  else if(obj->IsA()->InheritsFrom(TTree::Class())) {
-		  float weight = parser.doubleValue("weight")/(ev);
-	          float topweight = 1.0;
+          float weight = parser.doubleValue("weight")/(ev);
+          float topweight = 1.0;
 
-		  TTree *t = (TTree*)obj;
-		  TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
-		  TBranch *ttBranch = t->Branch("topWeight2",&topweight,"topWeight2/F");
-		  float tPt=0;
-		  float atPt=0;
-		  t->SetBranchAddress("topGenPt",&tPt); //NJets
-		  t->SetBranchAddress("antiTopGenPt",&atPt); //NJets
+          TTree *t = (TTree*)obj;
+          TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
+          TBranch *ttBranch = t->Branch("topWeight",&topweight,"topWeight/F");
+          float tPt=0;
+          float atPt=0;
+          t->SetBranchAddress("topGenPt",&tPt); //NJets
+          t->SetBranchAddress("antiTopGenPt",&atPt); //NJets
 
-		  printf("Found tree -> weighting\n");
-		  for(Int_t i=0;i<t->GetEntries();++i)
-		  {
-			  t->GetEntry(i);
-			  topweight = 1.0;
-			  if (tPt>400) tPt=400;
+          printf("Found tree -> weighting\n");
+          for(Int_t i=0;i<t->GetEntries();++i)
+          {
+              t->GetEntry(i);
+              topweight = 1.0;
+              if (tPt>400) tPt=400;
               if (atPt>400) atPt=400;
               topweight =TMath::Sqrt(TMath::Exp(0.0615-0.0005*tPt)*TMath::Exp(0.0615-0.0005*atPt)); 
               //topweight =TMath::Sqrt(TMath::Exp(0.156-0.00137*tPt)*TMath::Exp(0.156-0.00137*atPt)); 
 
               //printf("Found topWeight -> %f \n",topweight);
               //printf("Found topGenPt -> %f, antiTopGenPt -> %f \n",tPt,atPt);
-              ttBranch->Fill();
-              //newBranch->Fill();
+              //ttBranch->Fill();
+              newBranch->Fill();
           }
           t->Write("",TObject::kOverwrite);
       }//end else if object A
