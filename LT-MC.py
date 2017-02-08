@@ -3,12 +3,15 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("ANALYSIS")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
-process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v7'
+from RecoTauTag.RecoTau.PATTauDiscriminationByMVAIsolationRun2_cff import *
+from RecoTauTag.RecoTau.PATTauDiscriminationAgainstElectronMVA6_cfi import *
+
+process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v8'
 
 
 
-#process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
-process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(False))
+process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
+#process.options   = cms.untracked.PSet(wantSummary = cms.untracked.bool(False))
 process.options.allowUnscheduled = cms.untracked.bool(True)
 
 

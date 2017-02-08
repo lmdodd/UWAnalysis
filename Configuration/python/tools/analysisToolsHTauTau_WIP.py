@@ -44,7 +44,7 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons",True) #is HIP  
 
-  recorrectJetsSQL(process, True) #adds patJetsReapplyJEC  
+  recorrectJets(process, True) #adds patJetsReapplyJEC  
   reRunMET(process,True)
 
   #mvaMet2(process, True) #isData
@@ -56,7 +56,9 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
   
   #Build good vertex collection
   #goodVertexFilter(process)  
-  tauEffi(process,'slimmedTaus',True)
+  reRunTaus(process)
+  tauEffi(process,'rerunSlimmedTaus',True)
+  #tauEffi(process,'slimmedTaus',True)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   #tauOverloading(process,'slimmedTaus','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   
@@ -107,7 +109,7 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons")  
 
-  recorrectJetsSQL(process, True) #adds patJetsReapplyJEC
+  recorrectJets(process, True) #adds patJetsReapplyJEC
   reRunMET(process,True)
   
   #mvaMet2(process, True) #isData
@@ -119,7 +121,8 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
   
   #Build good vertex collection
   #goodVertexFilter(process)  
-  tauEffi(process,'slimmedTaus',True)
+  reRunTaus(process)
+  tauEffi(process,'rerunSlimmedTaus',True)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   #tauOverloading(process,'slimmedTaus','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   
@@ -169,10 +172,10 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons")  
 
-  BadMuonFilter(process)
+  #BadMuonFilter(process)
   MiniAODMETfilter(process)
 
-  recorrectJetsSQL(process, False) #adds patJetsReapplyJEC
+  recorrectJets(process, False) #adds patJetsReapplyJEC
   reRunMET(process,False)
 
   metSignificance(process)
@@ -187,7 +190,8 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   #Build good vertex collection
   #goodVertexFilter(process)  
   genmatchtaus(process)  
-  tauEffi(process,'slimmedTaus',False)
+  reRunTaus(process)
+  tauEffi(process,'rerunSlimmedTaus',False)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   
   triLeptons(process)
@@ -235,7 +239,7 @@ def defaultReconstructionEMB(process,triggerProcess = 'HLT',triggerPaths = ['HLT
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons") #is not HIP, use standard ID   
 
-  recorrectJetsSQL(process, True) #adds patJetsReapplyJEC  
+  recorrectJets(process, True) #adds patJetsReapplyJEC  
   reRunMET(process,True)
 
   #mvaMet2(process, True) #isData
@@ -387,7 +391,7 @@ def MiniAODEleVIDEmbedder(process, eles):
   #from PhysicsTools.SelectorUtils.tools.vid_id_tools import  setupAllVIDIdsInModule, setupVIDElectronSelection, switchOnVIDElectronIdProducer, DataFormat
   switchOnVIDElectronIdProducer(process, DataFormat.MiniAOD)
   process.load("RecoEgamma.ElectronIdentification.egmGsfElectronIDs_cfi")
-  process.egmGsfElectronIDs.physicsObjectSrc = cms.InputTag(eles)
+  process.egmGsfElectronIDs.physicsObjectaus = cms.InputTag(eles)
   from PhysicsTools.SelectorUtils.centralIDRegistry import central_id_registry
   #egmGsfElectronIDSequence should already be defined in egmGsfElectronIDs_cfi 
   #process.egmGsfElectronIDSequence = cms.Sequence(process.egmGsfElectronIDs)
@@ -719,12 +723,16 @@ def electronTriggerMatchMiniAOD(process,triggerProcess,HLT,srcEle):
    process.analysisSequence*= process.triggeredPatElectrons
 
 
-def tauOverloading(process,src, muons, vtxSrc):
+def tauOverloading(process,src, muons, vtxSrc, gen='prunedGenParticles'):
 
 
   process.patOverloadedTaus = cms.EDProducer('PATTauOverloader',
                                         src = cms.InputTag(src),
                                         muons = cms.InputTag(muons),
+                                        gen = cms.InputTag(gen),
+                                        genHadTaus = cms.InputTag("tauGenJetsSelectorAllHadrons"),
+                                        genMuTaus = cms.InputTag("tauGenJetsSelectorMuons"),
+                                        genEleTaus = cms.InputTag("tauGenJetsSelectorElectrons"),
                                         vtxSrc = cms.InputTag(vtxSrc)
   )                                        
 
@@ -743,7 +751,76 @@ def tauEffi(process,src,isData):
   )                                        
   process.analysisSequence=cms.Sequence(process.analysisSequence*process.tauTriggerEfficiencies)
 
+def reRunTaus(process,taus='slimmedTaus'):
+        from RecoTauTag.RecoTau.TauDiscriminatorTools import noPrediscriminants
+        process.load('RecoTauTag.Configuration.loadRecoTauTagMVAsFromPrepDB_cfi')
+        from RecoTauTag.RecoTau.PATTauDiscriminationByMVAIsolationRun2_cff import \
+            patDiscriminationByIsolationMVArun2v1raw, patDiscriminationByIsolationMVArun2v1VLoose
+        
+        process.rerunDiscriminationByIsolationMVArun2v1raw = patDiscriminationByIsolationMVArun2v1raw.clone(
+           PATTauProducer = cms.InputTag(taus),
+           Prediscriminants = noPrediscriminants,
+           loadMVAfromDB = cms.bool(True),
+           mvaName = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1"), # name of the training you want to use
+           mvaOpt = cms.string("DBoldDMwLT"), # option you want to use for your training (i.e., which variables are used to compute the BDT score)
+           requireDecayMode = cms.bool(True),
+           verbosity = cms.int32(0)
+        )
+        
+        process.rerunDiscriminationByIsolationMVArun2v1VLoose = patDiscriminationByIsolationMVArun2v1VLoose.clone(
+           PATTauProducer = cms.InputTag(taus),    
+           Prediscriminants = noPrediscriminants,
+           toMultiplex = cms.InputTag('rerunDiscriminationByIsolationMVArun2v1raw'),
+           key = cms.InputTag('rerunDiscriminationByIsolationMVArun2v1raw:category'),
+           loadMVAfromDB = cms.bool(True),
+           mvaOutput_normalization = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1_mvaOutput_normalization"), # normalization fo the training you want to use
+           mapping = cms.VPSet(
+              cms.PSet(
+                 category = cms.uint32(0),
+                 cut = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1_WPEff90"), # this is the name of the working point you want to use
+                 variable = cms.string("pt"),
+              )
+           )
+        )
+        
+        # here we produce all the other working points for the training
+        process.rerunDiscriminationByIsolationMVArun2v1Loose = process.rerunDiscriminationByIsolationMVArun2v1VLoose.clone()
+        process.rerunDiscriminationByIsolationMVArun2v1Loose.mapping[0].cut = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1_WPEff80")
+        process.rerunDiscriminationByIsolationMVArun2v1Medium = process.rerunDiscriminationByIsolationMVArun2v1VLoose.clone()
+        process.rerunDiscriminationByIsolationMVArun2v1Medium.mapping[0].cut = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1_WPEff70")
+        process.rerunDiscriminationByIsolationMVArun2v1Tight = process.rerunDiscriminationByIsolationMVArun2v1VLoose.clone()
+        process.rerunDiscriminationByIsolationMVArun2v1Tight.mapping[0].cut = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1_WPEff60")
+        process.rerunDiscriminationByIsolationMVArun2v1VTight = process.rerunDiscriminationByIsolationMVArun2v1VLoose.clone()
+        process.rerunDiscriminationByIsolationMVArun2v1VTight.mapping[0].cut = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1_WPEff50")
+        process.rerunDiscriminationByIsolationMVArun2v1VVTight = process.rerunDiscriminationByIsolationMVArun2v1VLoose.clone()
+        process.rerunDiscriminationByIsolationMVArun2v1VVTight.mapping[0].cut = cms.string("RecoTauTag_tauIdMVAIsoDBoldDMwLT2016v1_WPEff40")
+        
+        # this sequence has to be included in your cms.Path() before your analyzer which accesses the new variables is called.
+        process.rerunMvaIsolation2SeqRun2 = cms.Sequence(
+           process.rerunDiscriminationByIsolationMVArun2v1raw
+           * process.rerunDiscriminationByIsolationMVArun2v1VLoose
+           * process.rerunDiscriminationByIsolationMVArun2v1Loose
+           * process.rerunDiscriminationByIsolationMVArun2v1Medium
+           * process.rerunDiscriminationByIsolationMVArun2v1Tight
+           * process.rerunDiscriminationByIsolationMVArun2v1VTight
+           * process.rerunDiscriminationByIsolationMVArun2v1VVTight
+        )
 
+        # embed rerun MVA IDs
+        process.rerunSlimmedTaus = cms.EDProducer(
+            "MiniAODTauRerunIDEmbedder",
+            src = cms.InputTag(taus),
+            idRaw = cms.InputTag("rerunDiscriminationByIsolationMVArun2v1raw"),
+            idVLoose = cms.InputTag("rerunDiscriminationByIsolationMVArun2v1VLoose"),
+            idLoose = cms.InputTag("rerunDiscriminationByIsolationMVArun2v1Loose"),
+            idMedium = cms.InputTag("rerunDiscriminationByIsolationMVArun2v1Medium"),
+            idTight = cms.InputTag("rerunDiscriminationByIsolationMVArun2v1Tight"),
+            idVTight = cms.InputTag("rerunDiscriminationByIsolationMVArun2v1VTight"),
+            idVVTight = cms.InputTag("rerunDiscriminationByIsolationMVArun2v1VVTight"),
+        )
+
+        #process.analysisSequence+=process.rerunMvaIsolation2SeqRun2
+        process.analysisSequence=cms.Sequence(process.analysisSequence*process.rerunMvaIsolation2SeqRun2*process.rerunSlimmedTaus)
 
 def getAllEventCounters(process,path,onSkim = False):
         stringList = []
