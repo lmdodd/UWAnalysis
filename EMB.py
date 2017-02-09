@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("ANALYSIS")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
-process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v6'
+process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v7'
 
 
 
