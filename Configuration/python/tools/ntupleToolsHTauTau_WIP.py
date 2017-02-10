@@ -61,15 +61,13 @@ def makeMuTauCSVPair(sourceDiTaus,tagName,cutName,methodName,rank):
          rank = cms.untracked.double(rank)
    )
    return PSet
-
-def makeMuTauPtNoPair(sourceDiTaus,tagName,cutName,methodName,rank):
+ 
+def makeMuTauVBFPair(sourceDiTaus,tagName,cutName,rank=1.):
    PSet = cms.PSet(
-         pluginType  = cms.string("PATMuTauPairPtJetVarFiller"),
+         pluginType  = cms.string("PATMuTauPairVBFVariablesFiller"),
          src         = cms.InputTag(sourceDiTaus),
          tag         = cms.string(tagName),
-         cut         = cms.string(cutName),
-         method      = cms.string(methodName),
-         rank = cms.untracked.double(rank)
+         cut         = cms.string(cutName)
    )
    return PSet
 
@@ -192,14 +190,12 @@ def makeEleTauCSVPair(sourceDiTaus,tagName,cutName,methodName,rank):
    )
    return PSet
 
-def makeEleTauPtNoPair(sourceDiTaus,tagName,cutName,methodName,rank):
+def makeEleTauVBFPair(sourceDiTaus,tagName,cutName,rank=1.):
    PSet = cms.PSet(
-         pluginType  = cms.string("PATEleTauPairPtJetVarFiller"),
+         pluginType  = cms.string("PATEleTauVBFVariablesFiller"),
          src         = cms.InputTag(sourceDiTaus),
          tag         = cms.string(tagName),
-         cut         = cms.string(cutName),
-         method      = cms.string(methodName),
-         rank = cms.untracked.double(rank)
+         cut         = cms.string(cutName)
    )
    return PSet
 
@@ -352,7 +348,6 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauEventWeight = makeMuTauEventWeight(src),#FILLED
                               muTauEventWeightTmp = makeMuTauEventWeightTmp(src),#FILLED
                               muTauGenMCMatch = makeMuTauGenMatch(src),#FILLED
-                              #muTauNBTags = makeMuTauNBTag(src),#FILLED
                               muTauEffCSV = makeMuTauEffCSV(src),#FILLED
                               muTauCSVShape = makeMuTauCSVShape(src),#FILLED
 
@@ -376,8 +371,6 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauJetsPt20njets = makeMuTauJetCountPair(src,"njets20",'pt()>20&&abs(eta)<4.7&&userFloat("idLoose")'),
 
                               #Muon IDs and Isolation
-                              muTauRelPFIsoDB03 = makeMuTauPair(src,"iso03_1",'leg1.userFloat("dBRelIso03")'),
-                              muTauRelPFIsoDB04 = makeMuTauPair(src,"iso04_1",'leg1.userFloat("dBRelIso")'),
                               muTauRelPFIsoDB04_1 = makeMuTauPair(src,"iso_1",'leg1.userFloat("dBRelIso")'),
 
                               muTauMET1 = makeMuTauMET(src,"slimmedMETs","pf"),#FILLED

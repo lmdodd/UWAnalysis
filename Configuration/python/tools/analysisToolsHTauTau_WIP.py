@@ -169,6 +169,7 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   #Apply Tau Energy Scale Changes
   #EScaledTaus(process,False)
 
+
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
   MiniAODMuonIDEmbedder(process,"slimmedMuons")  
 
@@ -198,7 +199,8 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   #jetOverloading(process,"slimmedJets",False)
   jetOverloading(process,"patJetsReapplyJEC",False)
 
-  jetFilter(process,"patOverloadedJets")
+  MiniAODJES(process,"patOverloadedJets")
+  jetFilter(process,"fuckingJets")
 
   GenSumWeights(process)
   GenHTCalculator(process)
@@ -261,7 +263,6 @@ def defaultReconstructionEMB(process,triggerProcess = 'HLT',triggerPaths = ['HLT
   #jetOverloading(process,"patJetsReapplyJEC") #"slimmedJets")
   jetFilter(process,"patOverloadedJets")
 
-
   #Default selections for systematics
   applyDefaultSelectionsPT(process)
 
@@ -311,6 +312,18 @@ def genmatchtaus(process):
     process.analysisSequence*=process.buildGenTaus
 
 
+def MiniAODJES(process, jSrc="slimmedJets"):
+    process.fuckingJets = cms.EDProducer(
+            "MiniAODJetFullSystematicsEmbedder",
+            src = cms.InputTag(jSrc),
+            corrLabel = cms.string('AK4PFchs'),
+            fName = cms.string("Summer16_23Sep2016AllV4_DATA_UncertaintySources_AK4PFchs.txt")
+            )
+
+    process.analysisSequence*=process.fuckingJets
+
+
+#FIXME
 def BadMuonFilter(process):
 
     process.badGlobalMuonTagger = cms.EDFilter("BadGlobalMuonTagger",
