@@ -49,37 +49,37 @@ class JetCountFiller : public NtupleFillerBase {
     edm::Handle<std::vector<T> > handle;
 
     singleValue=0;
-    
+
     if(value->size()>0)
-            value->clear();
-    
+        value->clear();
+
     if(iEvent.getByToken(src_,handle)) {
 
 
-      if(leadingOnly_)
-	{
-	  if(handle->size()>0) {
-	    singleValue=0;
-	    for(unsigned int i=0;i<handle->at(0).jets().size();++i)
-	      if((*function)(*(handle->at(0).jets().at(i))))
-		singleValue++;
-	  }
-	}
-      else {
-	  if(handle->size()>0)
-	    for(unsigned int j=0;j<handle->size();++j) {
-	      singleValue=0;
-	      for(unsigned int i=0;i<handle->at(j).jets().size();++i)
-		if((*function)(*(handle->at(j).jets().at(i))))
-		  singleValue ++;
-	      value->push_back(singleValue);
-	    }    
-      }
+        if(leadingOnly_)
+        {
+            if(handle->size()>0) {
+                singleValue=0;
+                for(unsigned int i=0;i<handle->at(0).jets().size();++i)
+                    if((*function)(*(handle->at(0).jets().at(i))))
+                        singleValue++;
+            }
+        }
+        else {
+            if(handle->size()>0)
+                for(unsigned int j=0;j<handle->size();++j) {
+                    singleValue=0;
+                    for(unsigned int i=0;i<handle->at(j).jets().size();++i)
+                        if((*function)(*(handle->at(j).jets().at(i))))
+                            singleValue ++;
+                    value->push_back(singleValue);
+                }    
+        }
 
 
     }
   }
-  
+
 
  protected:
   edm::EDGetTokenT<std::vector<T> > src_;
