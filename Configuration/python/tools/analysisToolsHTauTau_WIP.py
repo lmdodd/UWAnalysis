@@ -200,7 +200,7 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   jetOverloading(process,"patJetsReapplyJEC",False)
 
   MiniAODJES(process,"patOverloadedJets")
-  jetFilter(process,"fuckingJets")
+  jetFilter(process,"jetsEmbedJES")
 
   GenSumWeights(process)
   GenHTCalculator(process)
@@ -313,14 +313,14 @@ def genmatchtaus(process):
 
 
 def MiniAODJES(process, jSrc="slimmedJets"):
-    process.fuckingJets = cms.EDProducer(
+    process.jetsEmbedJES = cms.EDProducer(
             "MiniAODJetFullSystematicsEmbedder",
             src = cms.InputTag(jSrc),
             corrLabel = cms.string('AK4PFchs'),
             fName = cms.string("Summer16_23Sep2016AllV4_DATA_UncertaintySources_AK4PFchs.txt")
             )
 
-    process.analysisSequence*=process.fuckingJets
+    process.analysisSequence*=process.jetsEmbedJES
 
 
 #FIXME

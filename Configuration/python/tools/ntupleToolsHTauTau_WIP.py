@@ -62,12 +62,10 @@ def makeMuTauCSVPair(sourceDiTaus,tagName,cutName,methodName,rank):
    )
    return PSet
  
-def makeMuTauVBFPair(sourceDiTaus,tagName,cutName,rank=1.):
+def makeMuTauVBFPair(sourceDiTaus):
    PSet = cms.PSet(
-         pluginType  = cms.string("PATMuTauPairVBFVariablesFiller"),
-         src         = cms.InputTag(sourceDiTaus),
-         tag         = cms.string(tagName),
-         cut         = cms.string(cutName)
+         pluginType  = cms.string("PATMuTauPairVBFVariableFiller"),
+         src         = cms.InputTag(sourceDiTaus)
    )
    return PSet
 
@@ -190,12 +188,10 @@ def makeEleTauCSVPair(sourceDiTaus,tagName,cutName,methodName,rank):
    )
    return PSet
 
-def makeEleTauVBFPair(sourceDiTaus,tagName,cutName,rank=1.):
+def makeEleTauVBFPair(sourceDiTaus):
    PSet = cms.PSet(
-         pluginType  = cms.string("PATEleTauVBFVariablesFiller"),
-         src         = cms.InputTag(sourceDiTaus),
-         tag         = cms.string(tagName),
-         cut         = cms.string(cutName)
+         pluginType  = cms.string("PATEleTauPairVBFVariableFiller"),
+         src         = cms.InputTag(sourceDiTaus)
    )
    return PSet
 
@@ -350,6 +346,7 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauGenMCMatch = makeMuTauGenMatch(src),#FILLED
                               muTauEffCSV = makeMuTauEffCSV(src),#FILLED
                               muTauCSVShape = makeMuTauCSVShape(src),#FILLED
+                              muTauJES = makeMuTauVBFPair(src),#FILLED
 
                               muonsSizeET = makeCollSize(srcU,"tightMuons"),
                               muonsSizeETVeto = makeCollSizeVeto(srcU,0,"extramuon_veto"),
@@ -510,6 +507,7 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauGenMCMatch = makeMuTauGenMatch(src),#FILLED
                               #muTauNBTags = makeMuTauNBTag(src),#FILLED
                               muTauEffCSV = makeMuTauEffCSV(src),#FILLED
+                              muTauJES = makeMuTauVBFPair(src),#FILLED
                               muTauCSVShape = makeMuTauCSVShape(src),#FILLED
 
                               muTauSize = makeCollSize(src,"nCands"),#FILLED
@@ -872,6 +870,7 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                               #eleTauNBTags = makeEleTauNBTag(src),#FILLED
                               eleTauEffCSV = makeEleTauEffCSV(src),#FILLED
                               eleTauCSVShape = makeEleTauCSVShape(src),#FILLED
+                              eleTauJES = makeEleTauVBFPair(src),#FILLED
                               eTauGenMCMatch = makeEleTauGenMatch(src), #FILLED
                               eleTauVBFDEta = makeEleTauPair(src,"vbfDEta","vbfDEta"),
                               eleTauVBFDPhi = makeEleTauPair(src,"vbfDPhi","vbfDPhi"),
@@ -1034,6 +1033,7 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
                               #eleTauNBTags = makeEleTauNBTag(src),#FILLED
                               eleTauEffCSV = makeEleTauEffCSV(src),#FILLED
                               eleTauCSVShape = makeEleTauCSVShape(src),#FILLED
+                              eleTauJES = makeEleTauVBFPair(src),#FILLED
                               eTauGenMCMatch = makeEleTauGenMatch(src),#FILLED
 
                               muonsSizeET = makeCollSize(srcU,"tightMuons"),
