@@ -514,7 +514,8 @@ class CutSequenceProducer(cms._ParameterTypeBase):
 
           #add a post MET tau
           smearedTausID = cms.EDProducer("SmearedTauProducer",
-                                       src = cms.InputTag('slimmedTaus'),
+                                       src = cms.InputTag('selectedPatTaus'),
+                                       #src = cms.InputTag('slimmedTaus'),
                                        smearMCParticle = cms.bool(False),
                                        module_label = cms.string("CRAP"),
                                        energyScale  = cms.double(1.0),
@@ -554,7 +555,8 @@ class CutSequenceProducer(cms._ParameterTypeBase):
           self.sequence*=smearedMuons
 
           smearedMuonsID = cms.EDProducer("SmearedMuonProducer",
-                                        src = cms.InputTag('slimmedMuons'),
+                                        src = cms.InputTag('selectedPatMuons'),
+                                        #src = cms.InputTag('slimmedMuons'),
                                         smearMCParticle = cms.bool(False),
                                         module_label = cms.string("CRAP"),
                                         energyScale  = cms.double(1.0),
@@ -589,7 +591,8 @@ class CutSequenceProducer(cms._ParameterTypeBase):
           self.sequence*=smearedElectrons
 
           smearedElectronsID = cms.EDProducer("SmearedElectronProducer",
-                                            src = cms.InputTag('slimmedElectrons'),
+                                            src = cms.InputTag('selectedPatElectrons'),
+                                            #src = cms.InputTag('slimmedElectrons'),
                                             smearMCParticle = cms.bool(False),
                                             module_label = cms.string("CRAP"),
                                             energyScale  = cms.double(1.0),
@@ -626,15 +629,16 @@ class CutSequenceProducer(cms._ParameterTypeBase):
 
           smearedMET = cms.EDProducer('METRecalculator',
                                       met = cms.InputTag(mets),
-                                      originalObjects = cms.VInputTag(cms.InputTag('slimmedMuons'),
-                                                                      cms.InputTag('slimmedElectrons'),
-                                                                      cms.InputTag('slimmedTaus'),
-                                                                      cms.InputTag("smearedJets"+mpost)#FIXME
+                                      originalObjects = cms.VInputTag(cms.InputTag('selectedPatMuons'),
+                                                                      cms.InputTag('selectedPatElectrons'),
+                                                                      cms.InputTag('selectedPatTaus'),
+                                                                      cms.InputTag('smearedJets'+mpost)#FIXME
+                                                                      #cms.InputTag('cleanPatJets')#FIXME
                                                                       ),
-                                      smearedObjects = cms.VInputTag(cms.InputTag("smearedMuonsID"+mpost),
-                                                                     cms.InputTag("smearedElectronsID"+mpost),
-                                                                     cms.InputTag("smearedTausID"+mpost),
-                                                                     cms.InputTag("smearedJets"+mpost)
+                                      smearedObjects = cms.VInputTag(cms.InputTag('smearedMuonsID'+mpost),
+                                                                     cms.InputTag('smearedElectronsID'+mpost),
+                                                                     cms.InputTag('smearedTausID'+mpost),
+                                                                     cms.InputTag('smearedJets'+mpost)
                                                                  ),
                                       unclusteredScale = cms.double(1.0),
                                       threshold   = cms.double(0.)

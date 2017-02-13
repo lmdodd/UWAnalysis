@@ -38,7 +38,7 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
 
   process.analysisSequence = cms.Sequence()
 
-  BadMuonFilter(process)
+  #BadMuonFilter(process)
   MiniAODMETfilter(process)
 
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
@@ -56,7 +56,8 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
   #Build good vertex collection
   #goodVertexFilter(process)  
   reRunTaus(process)
-  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"rerunSlimmedTaus") #ESTaus
+  selectTauDecayMode(process, 'rerunSlimmedTaus', 'pt>10')
+  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"selectTauDM") #ESTaus
   tauEffi(process,'triggeredPatTaus',True)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   
@@ -101,7 +102,7 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
  
   process.analysisSequence = cms.Sequence()
 
-  BadMuonFilter(process)
+  #BadMuonFilter(process)
   MiniAODMETfilter(process)
 
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
@@ -119,7 +120,8 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
   #Build good vertex collection
   #goodVertexFilter(process)  
   reRunTaus(process)
-  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"rerunSlimmedTaus") #ESTaus
+  selectTauDecayMode(process, 'rerunSlimmedTaus', 'pt>10')
+  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"selectTauMD") #ESTaus
   tauEffi(process,'triggeredPatTaus',True)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   #tauOverloading(process,'slimmedTaus','triggeredPatMuons','offlineSlimmedPrimaryVertices')
@@ -188,7 +190,8 @@ def defaultReconstructionMC(process,triggerProcess = 'HLT',triggerPaths = ['HLT_
   #goodVertexFilter(process)  
   genmatchtaus(process)  
   reRunTaus(process)
-  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"rerunSlimmedTaus")
+  selectTauDecayMode(process, 'rerunSlimmedTaus', 'pt>10')
+  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"selectTauDM")
   tauEffi(process,'triggeredPatTaus',False)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   
@@ -232,7 +235,7 @@ def defaultReconstructionEMB(process,triggerProcess = 'HLT',triggerPaths = ['HLT
 
   process.analysisSequence = cms.Sequence()
 
-  BadMuonFilter(process)
+  #BadMuonFilter(process)
   MiniAODMETfilter(process)
 
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
@@ -321,21 +324,21 @@ def MiniAODJES(process, jSrc="slimmedJets"):
 
 
 #FIXME
-def BadMuonFilter(process):
-
-    process.badGlobalMuonTagger = cms.EDFilter("BadGlobalMuonTagger",
-            muons = cms.InputTag("slimmedMuons"),
-            vtx   = cms.InputTag("offlineSlimmedPrimaryVertices"),
-            muonPtCut = cms.double(20),
-            selectClones = cms.bool(False),
-            taggingMode = cms.bool(False),
-            )
-    process.cloneGlobalMuonTagger = process.badGlobalMuonTagger.clone(
-                selectClones = True
-                )
-
-    process.noBadGlobalMuons = cms.Sequence(~process.cloneGlobalMuonTagger + ~process.badGlobalMuonTagger)
-    process.analysisSequence*=process.noBadGlobalMuons
+#def BadMuonFilter(process):
+#
+#    process.badGlobalMuonTagger = cms.EDFilter("BadGlobalMuonTagger",
+#            muons = cms.InputTag("slimmedMuons"),
+#            vtx   = cms.InputTag("offlineSlimmedPrimaryVertices"),
+#            muonPtCut = cms.double(20),
+#            selectClones = cms.bool(False),
+#            taggingMode = cms.bool(True),
+#            )
+#    process.cloneGlobalMuonTagger = process.badGlobalMuonTagger.clone(
+#                selectClones = True
+#                )
+#
+#    process.noBadGlobalMuons = cms.Sequence(process.cloneGlobalMuonTagger + process.badGlobalMuonTagger)
+#    process.analysisSequence*=process.noBadGlobalMuons
 
 
 def MiniAODMETfilter(process):
@@ -630,7 +633,7 @@ def applyDefaultSelectionsPT(process):#FIXME THISWILL HVAE TO CHANGE-- not curee
   #ONLY FOR SYSTEMATICS . PLEASE CHANGE THEM in YOUR CFG FILE IF REALLY NEEDED
   process.selectedPatTaus = cms.EDFilter("PATTauSelector",
                                            src = cms.InputTag("patOverloadedTaus"),
-                                           cut = cms.string('pt>15&&tauID("byCombinedIsolationDeltaBetaCorrRaw3Hits")<3&&tauID("decayModeFindingNewDMs")&&tauID("againstElectronVLooseMVA6")&&tauID("againstMuonLoose3")'),
+                                           cut = cms.string('pt>18&&(tauID("byVLooseIsolationMVArun2v1DBoldDMwLT")>0.5||userFloat("byIsolationMVArun2v1DBoldDMwLTVLooseRerun")>0.5)&&tauID("decayModeFinding")&&tauID("againstElectronVLooseMVA6")&&tauID("againstMuonLoose3")'),
                                            filter = cms.bool(False)
   										)  
   process.selectedPatElectrons = cms.EDFilter("PATElectronSelector",
@@ -768,6 +771,15 @@ def tauEffi(process,src,isData):
                                         data = cms.bool(isData)
   )                                        
   process.analysisSequence=cms.Sequence(process.analysisSequence*process.tauTriggerEfficiencies)
+
+def selectTauDecayMode(process, taus, cut='pt>10'):
+  process.selectTauDM = cms.EDFilter("PATTauSelector",
+                                           src = cms.InputTag(taus),
+                                           cut = cms.string(cut),
+                                           filter = cms.bool(False)
+  										)  
+
+  process.analysisSequence=cms.Sequence(process.analysisSequence*process.selectTauDM)
 
 def reRunTaus(process,taus='slimmedTaus'):
         from RecoTauTag.RecoTau.TauDiscriminatorTools import noPrediscriminants
