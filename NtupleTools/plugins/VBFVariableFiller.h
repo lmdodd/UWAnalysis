@@ -101,83 +101,6 @@ class VBFVariableFiller : public NtupleFillerBase {
             "jesClosure-",
         };
 
-
-        cuts= { 
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteFlavMap+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteFlavMap-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteMPFBias+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteMPFBias-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteScale+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteScale-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteStat+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesAbsoluteStat-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesFlavorQCD+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesFlavorQCD-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesFragmentation+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesFragmentation-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpDataMC+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpDataMC-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtBB+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtBB-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtEC1+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtEC1-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtEC2+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtEC2-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtHF+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtHF-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtRef+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesPileUpPtRef-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeBal+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeBal-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeFSR+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeFSR-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeJEREC1+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeJEREC1-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeJEREC2+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeJEREC2-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeJERHF+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeJERHF-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtBB+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtBB-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtEC1+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtEC1-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtEC2+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtEC2-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtHF+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativePtHF-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeStatEC+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeStatEC-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeStatFSR+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeStatFSR-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeStatHF+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesRelativeStatHF-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSinglePionECAL+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSinglePionECAL-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSinglePionHCAL+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSinglePionHCAL-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalAbsolute+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalAbsolute-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalMC+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalMC-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalPileUp+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalPileUp-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalPt+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalPt-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalRelative+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalRelative-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalScale+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesSubTotalScale-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesTimePtEta+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesTimePtEta-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesTotal+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesTotal-').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesClosure+').pt() > 30",
-            "abs(eta())<4.7&&userFloat('idLoose')&&userCand('jesClosure-').pt() > 30",
-        };
-
-        njets=-999.;
-        vbfmass=-999.;
-
         for(unsigned int i=0; i<uncertNames.size(); i++){
             njetVecUp.push_back(-999);
             njetVecDown.push_back(-999);
@@ -207,40 +130,33 @@ class VBFVariableFiller : public NtupleFillerBase {
         {
             edm::Handle<std::vector<T> > handle;
             //printf("Get Jets\n");
-            pat::Jet firstJet;
-            pat::Jet secondJet;
-
             if(iEvent.getByToken(src_,handle)) { //event exists
                 if(handle->size()>0){//JEts exits 
 
-                    for ( unsigned int c=0;c<cuts.size();c++){
-                        StringCutObjectSelector<pat::Jet> cut(cuts[c],true); 
-                        njets=0;
+                    for ( unsigned int c=0;c<shiftedPt.size();c++){
+                        //StringCutObjectSelector<pat::Jet> cut(cuts[c],true); 
+                        pat::Jet firstJet;
+                        pat::Jet secondJet;
+                        vbfmass=-999;
 
+
+                        njets=0;
                         for(unsigned int i=0;i<handle->at(0).jets().size();++i){
-                            if( cut(*(handle->at(0).jets().at(i)))){
+                            //if( cut(*(handle->at(0).jets().at(i)))){
+                            //id Loose and eta jets already cleaned
+                            if( handle->at(0).jets().at(i)->userCand(shiftedPt[c])->pt()>30 )  {
                                 njets++;
                             }
                         }//end njet loop
 
 
-                        vbfmass=-999;
-                        if(njets>1){//At least 2 jets
-
-                            for(unsigned int j=0;j<handle->at(0).jets().size();++j){
-                                if( cut(*(handle->at(0).jets().at(j))) && !(firstJet.pt()>0)){
-                                    firstJet= (*(handle->at(0).jets().at(j)));
-                                }
-                                else if ( cut(*(handle->at(0).jets().at(j))) &&firstJet.pt()>0 &&!(secondJet.pt()>0)){ 
-                                    secondJet= (*(handle->at(0).jets().at(j)));   
-                                }
+                        if (njets>1){
+                            if(  handle->at(0).jets().at(0)->userCand(shiftedPt[c])->pt()>20  &&  handle->at(0).jets().at(1)->userCand(shiftedPt[c])->pt()>20) {
+                                firstJet= (*(handle->at(0).jets().at(0)));
+                                secondJet= (*(handle->at(0).jets().at(1)));   
+                                vbfmass = (firstJet.userCand(shiftedPt[c])->p4()+secondJet.userCand(shiftedPt[c])->p4()).M();
                             }
-
-            
-                            vbfmass = (firstJet.userCand(shiftedPt[c])->p4()+secondJet.userCand(shiftedPt[c])->p4()).M();
-
-                        }//At least 2 jets 
-
+                        }
 
                         int type = c % 2; // 0 is njet(vbf)Up, 1 is njet(vbf)Down
                         //std::cout<<"njets: "<<njets<<std::endl;
@@ -254,47 +170,45 @@ class VBFVariableFiller : public NtupleFillerBase {
                             vbfVecDown[c/2]=vbfmass;
                         }
 
-                    }//end cut [i]
-                }//at least 1 JET Exists, jets defined 
-                //compute variables
+                        }//end cut [i]
+                    }//at least 1 JET Exists, jets defined 
+                    //compute variables
 
-            }//events exist 
+                }//events exist 
 
-            for (unsigned int i=0;i<myBranches.size();i++){
-                myBranches.at(i)->Fill();
+                /*std::cout<<"mybranches size"<<<myBranches.size<<std::endl;
+                  for (unsigned int i=0;i<myBranches.size();i++){
+                  myBranches.at(i)->Fill();
+                  }
+                  */
+
             }
 
-            //std::cout<<"Filled!!! "<<std::endl;
+            protected:
+            edm::EDGetTokenT<std::vector<T>> src_;
+            int njets;
+            float vbfmass;
+            StringCutObjectSelector<pat::Jet>*cut;
+            StringObjectFunction<pat::Jet>*function;
 
+            //std::vector<StringCutObjectSelector<pat::Jet>*> cutnew;
+            std::vector<TBranch*> myBranches;
+            std::vector<int> njetVecUp;
+            std::vector<int> njetVecDown;
+            std::vector<float> vbfVecUp;
+            std::vector<float> vbfVecDown;
 
-
-        }
-
-    protected:
-        edm::EDGetTokenT<std::vector<T>> src_;
-        int njets;
-        float vbfmass;
-        StringCutObjectSelector<pat::Jet>*cut;
-        StringObjectFunction<pat::Jet>*function;
-
-        //std::vector<StringCutObjectSelector<pat::Jet>*> cutnew;
-        std::vector<TBranch*> myBranches;
-        std::vector<int> njetVecUp;
-        std::vector<int> njetVecDown;
-        std::vector<float> vbfVecUp;
-        std::vector<float> vbfVecDown;
-
-        std::vector< std::string > uncertNames;
-        std::vector< std::string > cuts;
-        std::vector< std::string > shiftedPt;
-};
+            std::vector< std::string > uncertNames;
+            std::vector< std::string > cuts;
+            std::vector< std::string > shiftedPt;
+        };
 
 
 #include "UWAnalysis/DataFormats/interface/CompositePtrCandidateT1T2MEt.h"
 #include "UWAnalysis/DataFormats/interface/CompositePtrCandidateTMEt.h"
-typedef VBFVariableFiller<PATMuTauPair> PATMuTauPairVBFVariableFiller;
-typedef VBFVariableFiller<PATElecTauPair> PATEleTauPairVBFVariableFiller;
-typedef VBFVariableFiller<PATDiTauPair> PATDiTauPairVBFVariableFiller;
+        typedef VBFVariableFiller<PATMuTauPair> PATMuTauPairVBFVariableFiller;
+        typedef VBFVariableFiller<PATElecTauPair> PATEleTauPairVBFVariableFiller;
+        typedef VBFVariableFiller<PATDiTauPair> PATDiTauPairVBFVariableFiller;
 
 
 

@@ -52,6 +52,13 @@ def makeMuTauCSVPair(sourceDiTaus,tagName,cutName,methodName,rank):
          rank = cms.untracked.double(rank)
    )
    return PSet
+ 
+def makeMuTauVBFPair(sourceDiTaus):
+   PSet = cms.PSet(
+         pluginType  = cms.string("PATMuTauPairVBFVariableFiller"),
+         src         = cms.InputTag(sourceDiTaus)
+   )
+   return PSet
 
 def makeMuTauPtNoPair(sourceDiTaus,tagName,cutName,methodName,rank):
    PSet = cms.PSet(
@@ -144,6 +151,13 @@ def makeEleTauCSVPair(sourceDiTaus,tagName,cutName,methodName,rank):
          cut         = cms.string(cutName),
          method      = cms.string(methodName),
          rank = cms.untracked.double(rank)
+   )
+   return PSet
+
+def makeEleTauVBFPair(sourceDiTaus):
+   PSet = cms.PSet(
+         pluginType  = cms.string("PATEleTauPairVBFVariableFiller"),
+         src         = cms.InputTag(sourceDiTaus)
    )
    return PSet
 
@@ -262,6 +276,7 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               #muTauNBTags = makeMuTauNBTag(src),#FILLED
                               muTauEFFCSV = makeMuTauEffCSV(src),#FILLED
                               muTauGenMCMatch = makeMuTauGenMatch(src),#FILLED
+                              muTauJES = makeMuTauVBFPair(src),#FILLED
 
                               #tauGM2 =  makeMuTauPair(src,"gen_match_2","leg2.userInt('gen_match')"), #FILLED
                               muTauSize = makeCollSize(src,"nCands"),#FILLED
@@ -554,6 +569,7 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOS', s
                               #eleTauNBTags = makeEleTauNBTag(src),#FILLED
                               eleTauEffCSV = makeEleTauEffCSV(src),#FILLED
                               eTauGenMCMatch = makeEleTauGenMatch(src),#FILLED
+                              eleTauJES = makeEleTauVBFPair(src),#FILLED
 
                               muonsSizeET = makeCollSize(srcU,"tightMuons"),
                               muonsSizeETVeto = makeCollSizeVeto(srcU,0,"extramuon_veto"),

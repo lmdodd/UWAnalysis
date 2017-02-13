@@ -28,7 +28,6 @@ defaultReconstructionMC(process,'HLT',
             'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_v',
             'HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v',
             'HLT_IsoMu21_eta2p1_LooseIsoPFTau20_SingleL1_v',
-            'HLT_Ele24_eta2p1_WPLoose_Gsf_v',
             'HLT_Ele25_eta2p1_WPLoose_Gsf_v',
             'HLT_Ele25_eta2p1_WPTight_Gsf_v',	
             'HLT_Ele27_WPLoose_Gsf_v',
@@ -98,12 +97,12 @@ createGeneratedParticles(process,
 
 from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addMuTauEventTree
 addMuTauEventTree(process,'muTauEventTree')
-addMuTauEventTree(process,'muTauEventTreeFinal','muTausOS','diMuonsOSSorted')
+#addMuTauEventTree(process,'muTauEventTreeFinal','muTausOS','diMuonsOSSorted')
 
 
 from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addEleTauEventTree
 addEleTauEventTree(process,'eleTauEventTree')
-addEleTauEventTree(process,'eleTauEventTreeFinal','eleTausOS','diElectronsOSSorted')
+#addEleTauEventTree(process,'eleTauEventTreeFinal','eleTausOS','diElectronsOSSorted')
 
 addEventSummary(process,True,'MT','eventSelectionMT')
 addEventSummary(process,True,'ET','eventSelectionET')
@@ -114,23 +113,23 @@ from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addEleTauShort
 #Final trees afor shapes after shifts
 addMuTauShortEventTree(process,'muTauEventTreeTauUp','muTausSortedTauUp','diMuonsOSTauUp')
 addMuTauShortEventTree(process,'muTauEventTreeTauDown','muTausSortedTauDown','diMuonsOSTauDown')
-addMuTauShortEventTree(process,'muTauEventTreeFinalTauUp','muTausOSTauUp','diMuonsOSTauUp')
-addMuTauShortEventTree(process,'muTauEventTreeFinalTauDown','muTausOSTauDown','diMuonsOSTauDown')
+#addMuTauShortEventTree(process,'muTauEventTreeFinalTauUp','muTausOSTauUp','diMuonsOSTauUp')
+#addMuTauShortEventTree(process,'muTauEventTreeFinalTauDown','muTausOSTauDown','diMuonsOSTauDown')
 addMuTauShortEventTree(process,'muTauEventTreeJetUp','muTausSortedJetUp','diMuonsOSJetUp')
 addMuTauShortEventTree(process,'muTauEventTreeJetDown','muTausSortedJetDown','diMuonsOSJetDown')
-addMuTauShortEventTree(process,'muTauEventTreeFinalJetUp','muTausOSJetUp','diMuonsOSJetUp')
-addMuTauShortEventTree(process,'muTauEventTreeFinalJetDown','muTausOSJetDown','diMuonsOSJetDown')
+#addMuTauShortEventTree(process,'muTauEventTreeFinalJetUp','muTausOSJetUp','diMuonsOSJetUp')
+#addMuTauShortEventTree(process,'muTauEventTreeFinalJetDown','muTausOSJetDown','diMuonsOSJetDown')
 #
 
 #
 addEleTauShortEventTree(process,'eleTauEventTreeTauUp','eleTausSortedTauUp','diElectronsOSTauUp')
 addEleTauShortEventTree(process,'eleTauEventTreeTauDown','eleTausSortedTauDown','diElectronsOSTauDown')
-addEleTauShortEventTree(process,'eleTauEventTreeFinalTauUp','eleTausOSTauUp','diElectronsOSTauUp')
-addEleTauShortEventTree(process,'eleTauEventTreeFinalTauDown','eleTausOSTauDown','diElectronsOSTauDown')
+#addEleTauShortEventTree(process,'eleTauEventTreeFinalTauUp','eleTausOSTauUp','diElectronsOSTauUp')
+#addEleTauShortEventTree(process,'eleTauEventTreeFinalTauDown','eleTausOSTauDown','diElectronsOSTauDown')
 addEleTauShortEventTree(process,'eleTauEventTreeJetUp','eleTausSortedJetUp','diElectronsOSJetUp')
 addEleTauShortEventTree(process,'eleTauEventTreeJetDown','eleTausSortedJetDown','diElectronsOSJetDown')
-addEleTauShortEventTree(process,'eleTauEventTreeFinalJetUp','eleTausOSJetUp','diElectronsOSJetUp')
-addEleTauShortEventTree(process,'eleTauEventTreeFinalJetDown','eleTausOSJetDown','diElectronsOSJetDown')
+#addEleTauShortEventTree(process,'eleTauEventTreeFinalJetUp','eleTausOSJetUp','diElectronsOSJetUp')
+#addEleTauShortEventTree(process,'eleTauEventTreeFinalJetDown','eleTausOSJetDown','diElectronsOSJetDown')
 #
 
 process.source = cms.Source("PoolSource",

@@ -401,8 +401,13 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauTopGenPt = makeMuTauPair(src,"topGenPt","topGenPt"),#FIXME
                               muTauAntiTopGenPt = makeMuTauPair(src,"antiTopGenPt","antiTopGenPt"),#FIXME
 
-                              muTauMuTriggerMatch = makeMuTauPair(src,"lTrigger",'leg1.userFloat("hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09")'),
-                              muTauMuTriggerMatch2 = makeMuTauPair(src,"lTkTrigger",'leg1.userFloat("hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch = makeMuTauPair(src,"hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch2 = makeMuTauPair(src,"hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09")'),
+
+                              muTauMuTriggerMatch3 = makeMuTauPair(src,"hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch4 = makeMuTauPair(src,"hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch5 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu19LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu19LooseIsoPFTau20")'),
+                              muTauMuTriggerMatch6 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu21LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu21LooseIsoPFTau20")'),
  
 
                               muTauGenPt1 = makeMuTauPair(src,"genPt1",'p4Leg1gen().pt()'),
@@ -440,7 +445,6 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauByNewDMMVAIsoRR3 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTTightRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTTightRerun")'),
                               muTauByNewDMMVAIsoRR4 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTMediumRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTMediumRerun")'),
                               muTauByNewDMMVAIsoRR5 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTLooseRerun")'),
-                              muTauByNewDMMVAIsoRR6 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTLooseRerun")'),
                               muTauByNewDMMVAIsoRR7 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTVLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTVLooseRerun")'),
 
 
@@ -616,11 +620,14 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauDecayFoundOld = makeMuTauPair(src,"decayModeFindingOldDMs_2",'leg2.tauID("decayModeFinding")'),
                               muTauDecayFoundNew = makeMuTauPair(src,"decayModeFindingNewDMs_2",'leg2.tauID("decayModeFindingNewDMs")'),
                               #muTauProngs = makeMuTauPair(src,"tauProngs",'leg2.signalChargedHadrCands.size()'),#see Decay Modes
-                              muTauMuTriggerMatch = makeMuTauPair(src,"lTrigger",'leg1.userFloat("hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09")'),
-                              muTauMuTriggerMatch2 = makeMuTauPair(src,"lTkTrigger",'leg1.userFloat("hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09")'),
-                              muTauMuTriggerMatchTau = makeMuTauPair(src,"lt1Trigger",'leg1.userFloat("hltOverlapFilterSingleIsoMu19LooseIsoPFTau20")'),
-                              muTauMuTriggerMatchTau1 = makeMuTauPair(src,"lt2Trigger",'leg1.userFloat("hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch = makeMuTauPair(src,"hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch2 = makeMuTauPair(src,"hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09")'),
 
+                              muTauMuTriggerMatch3 = makeMuTauPair(src,"hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch4 = makeMuTauPair(src,"hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch5 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu19LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu19LooseIsoPFTau20")'),
+                              muTauMuTriggerMatch6 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu21LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu21LooseIsoPFTau20")'),
+ 
                               muTauPzeta = makeMuTauPair(src,"pZeta",'pZeta-1.5*pZetaVis'),
                               muTauPZ = makeMuTauPair(src,"pZ",'pZeta'),
                               muTauPZV = makeMuTauPair(src,"pzetavis",'pZetaVis'),
@@ -663,7 +670,6 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauByNewDMMVAIsoRR3 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTTightRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTTightRerun")'),
                               muTauByNewDMMVAIsoRR4 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTMediumRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTMediumRerun")'),
                               muTauByNewDMMVAIsoRR5 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTLooseRerun")'),
-                              muTauByNewDMMVAIsoRR6 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTLooseRerun")'),
                               muTauByNewDMMVAIsoRR7 = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTVLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTVLooseRerun")'),
 
                               muTauByOldDMMVAIso = makeMuTauPair(src,"byIsolationMVArun2v1DBoldDMwLTraw_2",'leg2.tauID("byIsolationMVArun2v1DBoldDMwLTraw")'),
@@ -920,7 +926,13 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                               eleTauAntiTopGenPt = makeEleTauPair(src,"antiTopGenPt","antiTopGenPt"),#FIXME
 
                               #eleTauMuTriggerMatch = makeEleTauPair(src,"lTrigger",'leg1.userFloat("hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09")'),
-                              eleTauEleTriggerMatch2016_25 = makeEleTauPair(src,"lTrigger25",'leg1.userFloat("hltEle25erWPTightGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch2016_25 = makeEleTauPair(src,"hltEle25erWPTightGsfTrackIsoFilter",'leg1.userFloat("hltEle25erWPTightGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch2 = makeEleTauPair(src,"hltEle24WPLooseL1SingleIsoEG22erGsfTrackIsoFilter",'leg1.userFloat("hltEle24WPLooseL1SingleIsoEG22erGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch3 = makeEleTauPair(src,"hltEle24WPLooseL1IsoEG22erTau20erGsfTrackIsoFilter",'leg1.userFloat("hltEle24WPLooseL1IsoEG22erTau20erGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch4 = makeEleTauPair(src,"hltEle24WPLooseL1IsoEG22erIsoTau26erGsfTrackIsoFilter",'leg1.userFloat("hltEle24WPLooseL1IsoEG22erIsoTau26erGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch5 = makeEleTauPair(src,"hltOverlapFilterSingleIsoEle24WPLooseGsfLooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoEle24WPLooseGsfLooseIsoPFTau20")'),
+                              eleTauEleTriggerMatch6 = makeEleTauPair(src,"hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau20")'),
+                              eleTauEleTriggerMatch7 = makeEleTauPair(src,"hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau30",'leg2.userFloat("hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau30")'),
 
                               eleTauGenPt1 = makeEleTauPair(src,"genPt1",'p4Leg1gen().pt()'),
                               eleTauGenPt2 = makeEleTauPair(src,"genPt2",'p4Leg2gen().pt()'),
@@ -945,7 +957,6 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                               eleTauByNewDMMVAIsoRR3 = makeEleTauPair(src,"byIsolationMVArun2v1DBoldDMwLTTightRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTTightRerun")'),
                               eleTauByNewDMMVAIsoRR4 = makeEleTauPair(src,"byIsolationMVArun2v1DBoldDMwLTMediumRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTMediumRerun")'),
                               eleTauByNewDMMVAIsoRR5 = makeEleTauPair(src,"byIsolationMVArun2v1DBoldDMwLTLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTLooseRerun")'),
-                              eleTauByNewDMMVAIsoRR6 = makeEleTauPair(src,"byIsolationMVArun2v1DBoldDMwLTLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTLooseRerun")'),
                               eleTauByNewDMMVAIsoRR7 = makeEleTauPair(src,"byIsolationMVArun2v1DBoldDMwLTVLooseRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTVLooseRerun")'),
 
                               eleTauByOldDMMVAIsoTight = makeEleTauPair(src,"byTightIsolationMVArun2v1DBoldDMwLT_2",'leg2.tauID("byTightIsolationMVArun2v1DBoldDMwLT")'),
@@ -1139,9 +1150,14 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
                               eleTauPZV = makeEleTauPair(src,"pzetavis",'pZetaVis'),#EO
 
                               #Trigger
-                              eleTauEleTriggerMatch2016_25 = makeEleTauPair(src,"lTrigger25",'leg1.userFloat("hltEle25erWPTightGsfTrackIsoFilter")'),
-                              eleTauEleTriggerMatch2016_1 = makeEleTauPair(src,"lt1Trigger",'leg1.userFloat("hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau20")'),
-                              eleTauEleTriggerMatch2016_2 = makeEleTauPair(src,"lt2Trigger",'leg1.userFloat("hltEle24WPLooseL1SingleIsoEG22erGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch = makeEleTauPair(src,"hltEle25erWPTightGsfTrackIsoFilter",'leg1.userFloat("hltEle25erWPTightGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch2 = makeEleTauPair(src,"hltEle24WPLooseL1SingleIsoEG22erGsfTrackIsoFilter",'leg1.userFloat("hltEle24WPLooseL1SingleIsoEG22erGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch3 = makeEleTauPair(src,"hltEle24WPLooseL1IsoEG22erTau20erGsfTrackIsoFilter",'leg1.userFloat("hltEle24WPLooseL1IsoEG22erTau20erGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch4 = makeEleTauPair(src,"hltEle24WPLooseL1IsoEG22erIsoTau26erGsfTrackIsoFilter",'leg1.userFloat("hltEle24WPLooseL1IsoEG22erIsoTau26erGsfTrackIsoFilter")'),
+                              eleTauEleTriggerMatch5 = makeEleTauPair(src,"hltOverlapFilterSingleIsoEle24WPLooseGsfLooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoEle24WPLooseGsfLooseIsoPFTau20")'),
+                              eleTauEleTriggerMatch6 = makeEleTauPair(src,"hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau20")'),
+                              eleTauEleTriggerMatch7 = makeEleTauPair(src,"hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau30",'leg2.userFloat("hltOverlapFilterIsoEle24WPLooseGsfLooseIsoPFTau30")'),
+
 
                               eleTauByNewDMMVAIsoRR1 = makeEleTauPair(src,"byIsolationMVArun2v1DBoldDMwLTVVTightRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTVVTightRerun")'),
                               eleTauByNewDMMVAIsoRR2 = makeEleTauPair(src,"byIsolationMVArun2v1DBoldDMwLTVTightRerun",'leg2.userFloat("byIsolationMVArun2v1DBoldDMwLTVTightRerun")'),
@@ -1155,41 +1171,40 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
                               eleTauRelPFIsoDB03 = makeEleTauPair(src,"iso_1",'leg1.userFloat("dBRelIso03")'),
                               eleTauRel2PFIsoDB03 = makeEleTauPair(src,"iso_2",'leg2.tauID("byIsolationMVArun2v1DBoldDMwLTraw")'),
                               eleTauRelPFIsoDB04 = makeEleTauPair(src,"iso04_1",'leg1.userFloat("dBRelIso")'),
-                              eleTauEleIsoChHadIso = makeEleTauPair(src,"eleIsoChHadIso",'leg1.userFloat("eleIsoChHadIso")'),
-                              eleTauEleIsoPUChHadIso = makeEleTauPair(src,"eleIsoPUChHadIso",'leg1.userFloat("eleIsoPUChHadIso")'),
-                              eleTauEleIsoPhotonIso = makeEleTauPair(src,"eleIsoPhotonIso",'leg1.userFloat("eleIsoPhotonIso")'),
-                              eleTauEleIsoNeuHadIso = makeEleTauPair(src,"eleIsoNeuHadIso",'leg1.userFloat("eleIsoNeuHadIso")'),
-                              eleTauEleIsoSumChHadPt = makeEleTauPair(src,"eleIsoSumChHadPt",'leg1.userFloat("eleIsoSumChHadPt")'),
-                              eleTauEleIsoSumNeuHadPt = makeEleTauPair(src,"eleIsoSumNeuHadPt",'leg1.userFloat("eleIsoSumNeuHadPt")'),
-                              eleTauEleIsoSumPhoEt = makeEleTauPair(src,"eleIsoSumPhoEt",'leg1.userFloat("eleIsoSumPhoEt")'),
-                              eleTauEleIsoSumPUPt = makeEleTauPair(src,"eleIsoSumPUPt",'leg1.userFloat("eleIsoSumPUPt")'),
+                              #eleTauEleIsoChHadIso = makeEleTauPair(src,"eleIsoChHadIso",'leg1.userFloat("eleIsoChHadIso")'),
+                              #eleTauEleIsoPUChHadIso = makeEleTauPair(src,"eleIsoPUChHadIso",'leg1.userFloat("eleIsoPUChHadIso")'),
+                              #eleTauEleIsoPhotonIso = makeEleTauPair(src,"eleIsoPhotonIso",'leg1.userFloat("eleIsoPhotonIso")'),
+                              #eleTauEleIsoNeuHadIso = makeEleTauPair(src,"eleIsoNeuHadIso",'leg1.userFloat("eleIsoNeuHadIso")'),
+                              #eleTauEleIsoSumChHadPt = makeEleTauPair(src,"eleIsoSumChHadPt",'leg1.userFloat("eleIsoSumChHadPt")'),
+                              #eleTauEleIsoSumNeuHadPt = makeEleTauPair(src,"eleIsoSumNeuHadPt",'leg1.userFloat("eleIsoSumNeuHadPt")'),
+                              #eleTauEleIsoSumPhoEt = makeEleTauPair(src,"eleIsoSumPhoEt",'leg1.userFloat("eleIsoSumPhoEt")'),
+                              #eleTauEleIsoSumPUPt = makeEleTauPair(src,"eleIsoSumPUPt",'leg1.userFloat("eleIsoSumPUPt")'),
 
                               eleTauDecayMode = makeEleTauPair(src,"tauDecayMode",'leg2.decayMode()'),
                               eleTauDecayFound = makeEleTauPair(src,"decayModeFinding_2",'leg2.tauID("decayModeFinding")'),
-                              #eleTauDecayFoundNew = makeEleTauPair(src,"decayModeFindingNewDMs_2",'leg2.tauID("decayModeFindingNewDMs")'),
                               eleTauProngs = makeEleTauPair(src,"tauProngs",'leg2.signalChargedHadrCands.size()'),#see Decay Modes
                               eleTauHadMass = makeEleTauPair(src,"m_2",'leg2.mass()'),
                               eleTauHaddxy = makeEleTauPair(src,"dxy_2",'leg2.dxy()'),
                               eleTauHaddxy_Sig = makeEleTauPair(src,"dxy_Sig_2",'leg2.dxy_Sig()'),
-                              eleTauHadflightLengthx = makeEleTauPair(src,"flightLengthx_2",'leg2.flightLength().x()'),
-                              eleTauHadflightLengthy = makeEleTauPair(src,"flightLengthy_2",'leg2.flightLength().y()'),
-                              eleTauHadflightLengthz = makeEleTauPair(src,"flightLengthz_2",'leg2.flightLength().x()'),
-                              eleTauHadflightLength = makeEleTauPair(src,"flightLength_2",'sqrt(leg2.flightLength().Mag2)'),
-                              eleTauHadflightLengthSig = makeEleTauPair(src,"flightLengthSig_2",'leg2.flightLengthSig()'),
-                              eleTauHadhasSecondaryVertex = makeEleTauPair(src,"hasSecondaryVertex_2",'leg2.hasSecondaryVertex()'),
+                              #eleTauHadflightLengthx = makeEleTauPair(src,"flightLengthx_2",'leg2.flightLength().x()'),
+                              #eleTauHadflightLengthy = makeEleTauPair(src,"flightLengthy_2",'leg2.flightLength().y()'),
+                              #eleTauHadflightLengthz = makeEleTauPair(src,"flightLengthz_2",'leg2.flightLength().x()'),
+                              #eleTauHadflightLength = makeEleTauPair(src,"flightLength_2",'sqrt(leg2.flightLength().Mag2)'),
+                              #eleTauHadflightLengthSig = makeEleTauPair(src,"flightLengthSig_2",'leg2.flightLengthSig()'),
+                              #eleTauHadhasSecondaryVertex = makeEleTauPair(src,"hasSecondaryVertex_2",'leg2.hasSecondaryVertex()'),
 
-                              eleTautau_pt_weighted_dr_signal = makeEleTauPair(src,"tau_pt_weighted_dr_signal",'leg2.userFloat("tau_pt_weighted_dr_signal")'),
-                              eleTautau_pt_weighted_deta_strip = makeEleTauPair(src,"tau_pt_weighted_deta_strip",'leg2.userFloat("tau_pt_weighted_deta_strip")'),
-                              eleTautau_pt_weighted_dphi_strip = makeEleTauPair(src,"tau_pt_weighted_dphi_strip",'leg2.userFloat("tau_pt_weighted_dphi_strip")'),
-                              eleTautau_pt_weighted_dr_iso = makeEleTauPair(src,"tau_pt_weighted_dr_iso",'leg2.userFloat("tau_pt_weighted_dr_iso")'),
-                              eleTaun_photons_total = makeEleTauPair(src,"n_photons_total",'leg2.userFloat("n_photons_total")'),
-                              eleTausigPhoIsoAvePt = makeEleTauPair(src,"sigPhoIsoAvePt",'leg2.userFloat("sigPhoIsoAvePt")'),
-                              eleTauphoIsoAvePt = makeEleTauPair(src,"phoIsoAvePt",'leg2.userFloat("phoIsoAvePt")'),
-                              eleTauphoIso1 = makeEleTauPair(src,"phoIso1",'leg2.userFloat("phoIso1")'),
-                              eleTauphoIso15 = makeEleTauPair(src,"phoIso15",'leg2.userFloat("phoIso15")'),
-                              eleTauphoIso2 = makeEleTauPair(src,"phoIso2",'leg2.userFloat("phoIso2")'),
-                              eleTauchIsoAvePt = makeEleTauPair(src,"chIsoAvePt",'leg2.userFloat("chIsoAvePt")'),
-                              eleTaunhIsoAvePt = makeEleTauPair(src,"nhIsoAvePt",'leg2.userFloat("nhIsoAvePt")'),
+                              #eleTautau_pt_weighted_dr_signal = makeEleTauPair(src,"tau_pt_weighted_dr_signal",'leg2.userFloat("tau_pt_weighted_dr_signal")'),
+                              #eleTautau_pt_weighted_deta_strip = makeEleTauPair(src,"tau_pt_weighted_deta_strip",'leg2.userFloat("tau_pt_weighted_deta_strip")'),
+                              #eleTautau_pt_weighted_dphi_strip = makeEleTauPair(src,"tau_pt_weighted_dphi_strip",'leg2.userFloat("tau_pt_weighted_dphi_strip")'),
+                              #eleTautau_pt_weighted_dr_iso = makeEleTauPair(src,"tau_pt_weighted_dr_iso",'leg2.userFloat("tau_pt_weighted_dr_iso")'),
+                              #eleTaun_photons_total = makeEleTauPair(src,"n_photons_total",'leg2.userFloat("n_photons_total")'),
+                              #eleTausigPhoIsoAvePt = makeEleTauPair(src,"sigPhoIsoAvePt",'leg2.userFloat("sigPhoIsoAvePt")'),
+                              #eleTauphoIsoAvePt = makeEleTauPair(src,"phoIsoAvePt",'leg2.userFloat("phoIsoAvePt")'),
+                              #eleTauphoIso1 = makeEleTauPair(src,"phoIso1",'leg2.userFloat("phoIso1")'),
+                              #eleTauphoIso15 = makeEleTauPair(src,"phoIso15",'leg2.userFloat("phoIso15")'),
+                              #eleTauphoIso2 = makeEleTauPair(src,"phoIso2",'leg2.userFloat("phoIso2")'),
+                              #eleTauchIsoAvePt = makeEleTauPair(src,"chIsoAvePt",'leg2.userFloat("chIsoAvePt")'),
+                              #eleTaunhIsoAvePt = makeEleTauPair(src,"nhIsoAvePt",'leg2.userFloat("nhIsoAvePt")'),
 
                               #tauIDs
                               eleTauByOldDMMVAIsoTight = makeEleTauPair(src,"byTightIsolationMVArun2v1DBoldDMwLT_2",'leg2.tauID("byTightIsolationMVArun2v1DBoldDMwLT")'),
