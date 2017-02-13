@@ -559,13 +559,13 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauE = makeMuTauPair(src,"fullEnergy","fullEnergy"),
 
                               muTauPt1 =  makeMuTauPair(src,"pt_1","leg1.pt"), 
-                              muTauPt1 =  makeMuTauPair(src,"px_1","leg1.px"), 
-                              muTauPt1 =  makeMuTauPair(src,"py_1","leg1.py"), 
-                              muTauPt1 =  makeMuTauPair(src,"pz_1","leg1.pz"), 
+                              muTauPx1 =  makeMuTauPair(src,"px_1","leg1.px"), 
+                              muTauPy1 =  makeMuTauPair(src,"py_1","leg1.py"), 
+                              muTauPz1 =  makeMuTauPair(src,"pz_1","leg1.pz"), 
                               muTauPt2 =  makeMuTauPair(src,"pt_2","leg2.pt"), 
-                              muTauPt2 =  makeMuTauPair(src,"px_2","leg2.px"), 
-                              muTauPt2 =  makeMuTauPair(src,"py_2","leg2.py"), 
-                              muTauPt2 =  makeMuTauPair(src,"pz_2","leg2.pz"), 
+                              muTauPx2 =  makeMuTauPair(src,"px_2","leg2.px"), 
+                              muTauPy2 =  makeMuTauPair(src,"py_2","leg2.py"), 
+                              muTauPz2 =  makeMuTauPair(src,"pz_2","leg2.pz"), 
                               muTauEta1 = makeMuTauPair(src,"eta_1","leg1.eta"),
                               muTauEta2 = makeMuTauPair(src,"eta_2","leg2.eta"),
                               muTauPhi1 = makeMuTauPair(src,"phi_1","leg1.phi"),
@@ -750,7 +750,7 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                                   tag        = cms.string("higgsPt"),
                                   method     = cms.string('pt()'),
                                   leadingOnly=cms.untracked.bool(True)
-                              ), in higgs sample
+                              ), #only filled in higgs sample
 
                               muTauLHEProduct2 = cms.PSet(
                                   pluginType = cms.string("LHEProductFiller"),
@@ -762,14 +762,14 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                                   src        = cms.InputTag("generator"),
                                   #src        = cms.InputTag("generator","EmbWeight"),
                                   tag        = cms.string("aMCNLO_weight"),
-                              ),#FIXME #CHECKME
+                              ),#FIXME
                               muTauEmbedPt = cms.PSet(
                                   pluginType = cms.string("PATGenParticleFiller"),
                                   src        = cms.InputTag("genDaughters"),
                                   tag        = cms.string("embeddedPt"),#CHECKME
                                   method     = cms.string("pt"),
                                   leadingOnly=cms.untracked.bool(False)
-                              ),#FIXME #CHECKME
+                              ),#FIXME 
                               muTauEmbedEta = cms.PSet(
                                   pluginType = cms.string("PATGenParticleFiller"),
                                   src        = cms.InputTag("genDaughters"),
