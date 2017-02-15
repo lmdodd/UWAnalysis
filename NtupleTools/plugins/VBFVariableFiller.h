@@ -130,7 +130,7 @@ class VBFVariableFiller : public NtupleFillerBase {
         {
             edm::Handle<std::vector<T> > handle;
             //printf("Get Jets\n");
-            if(iEvent.getByToken(src_,handle)) { //event exists
+            if(iEvent.getByToken(src_,handle) && !iEvent.isRealData()) { //event exists
                 if(handle->size()>0){//JEts exits 
 
                     for ( unsigned int c=0;c<shiftedPt.size();c++){
