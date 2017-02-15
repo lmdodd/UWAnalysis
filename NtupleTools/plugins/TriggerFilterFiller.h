@@ -25,50 +25,50 @@
 //
 
 class TriggerFilterFiller : public NtupleFillerBase {
-	public:
+    public:
 
-		TriggerFilterFiller(){
-		}
+        TriggerFilterFiller(){
+        }
 
-		TriggerFilterFiller(const edm::ParameterSet& iConfig, TTree* t, edm::ConsumesCollector && iC):
-			src_(iC.consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("src"))),
+        TriggerFilterFiller(const edm::ParameterSet& iConfig, TTree* t, edm::ConsumesCollector && iC):
+            src_(iC.consumes<edm::TriggerResults>(iConfig.getParameter<edm::InputTag>("src"))),
             BadChCandFilterToken_(iC.consumes<bool>(iConfig.getParameter<edm::InputTag>("BadChargedCandidateFilter"))),
             BadPFMuonFilterToken_(iC.consumes<bool>(iConfig.getParameter<edm::InputTag>("BadPFMuonFilter"))),
-			paths_(iConfig.getParameter<std::vector<std::string> >("paths"))
-	{
-		fired    = std::vector<int>(paths_.size());
+            paths_(iConfig.getParameter<std::vector<std::string> >("paths"))
+    {
+        fired    = std::vector<int>(paths_.size());
         any=1;
 
 
-		for(unsigned int i=0;i<paths_.size();++i) {
-			fired[i]=0;
+        for(unsigned int i=0;i<paths_.size();++i) {
+            fired[i]=0;
 
-			t->Branch((paths_[i]+"_fired").c_str(),&fired[i],(paths_[i]+"_fired/I").c_str());
+            t->Branch((paths_[i]+"_fired").c_str(),&fired[i],(paths_[i]+"_fired/I").c_str());
 
-		}
-       t->Branch("BadMuonFilter",&any,"BadMuonFilter/I");
+        }
+        t->Branch("BadMuonFilter",&any,"BadMuonFilter/I");
 
-	}
-
-
-
-		~TriggerFilterFiller()
-		{ 
-
-		}
+    }
 
 
-		void fill(const edm::Event& iEvent, const edm::EventSetup& iSetup)
-		{
 
-			using namespace std; 
+        ~TriggerFilterFiller()
+        { 
+
+        }
+
+
+        void fill(const edm::Event& iEvent, const edm::EventSetup& iSetup)
+        {
+
+            using namespace std; 
 
             edm::Handle<edm::TriggerResults> triggerBits;
             edm::Handle<bool> ifilterbadChCand;
             edm::Handle<bool> ifilterbadPFMuon;
 
 
-			iEvent.getByToken(src_, triggerBits);
+            iEvent.getByToken(src_, triggerBits);
             iEvent.getByToken(BadChCandFilterToken_, ifilterbadChCand);
             iEvent.getByToken(BadPFMuonFilterToken_, ifilterbadPFMuon);
 
@@ -78,7 +78,7 @@ class TriggerFilterFiller : public NtupleFillerBase {
             //std::cout<<"filter bad 1: " << filterbadChCandidate<<std::endl;
             //std::cout<<"filter bad 2: " << filterbadPFMuon<<std::endl;
 
-			const edm::TriggerNames &names = iEvent.triggerNames(*triggerBits);
+            const edm::TriggerNames &names = iEvent.triggerNames(*triggerBits);
             any=1*filterbadChCandidate*filterbadPFMuon;
 
             //get the names of the triggers
