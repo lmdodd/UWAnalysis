@@ -303,6 +303,8 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                                   BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
                                   paths      = cms.vstring(
                                       "Flag_noBadMuons",
+                                      "Flag_badMuons",
+                                      "Flag_duplicateMuons",
                                       "Flag_HBHENoiseFilter",
                                       "Flag_HBHENoiseIsoFilter",
                                       "Flag_globalTightHalo2016Filter",
@@ -480,6 +482,8 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                                   BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
                                   paths      = cms.vstring(
                                       "Flag_noBadMuons",
+                                      "Flag_badMuons",
+                                      "Flag_duplicateMuons",
                                       "Flag_HBHENoiseFilter",
                                       "Flag_HBHENoiseIsoFilter",
                                       "Flag_globalTightHalo2016Filter",
@@ -813,6 +817,8 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                                   BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
                                   paths      = cms.vstring(
                                       "Flag_noBadMuons",
+                                      "Flag_badMuons",
+                                      "Flag_duplicateMuons",
                                       "Flag_HBHENoiseFilter",
                                       "Flag_HBHENoiseIsoFilter",
                                       "Flag_globalTightHalo2016Filter",
@@ -861,12 +867,12 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                               eleTauMETUncertUp = makeEleTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               eleTauMETUncertDown = makeEleTauMETUncert(src,"slimmedMETs","pf","EnDown"),
  
-                              eleTauMET = makeEleTauPair(src,"met","calibratedMET.pt()"),
+                              eleTauMET = makeEleTauPair(src,"met","calibratedMET.phi()"), #FIXME
+                              eleTauMETPhi = makeEleTauPair(src,"metphi","calibratedMET.phi()"), #FIXME
                               eleTauMT1 = makeEleTauPair(src,"mt_1","mt1MET"),
                               eleTauMT2 = makeEleTauPair(src,"mt_2","mt2MET"),
                               eleTauMT12 = makeEleTauPair(src,"mt_12","mt12MET"),
 
-                              eleTauMETPhi = makeEleTauPair(src,"metphi","calibratedMET.phi()"),
                               eleTauMvaCovMat00 = makeEleTauPair(src,"cov00","covMatrix00"),#FIXME
                               eleTauMvaCovMat10 = makeEleTauPair(src,"cov10","covMatrix10"),#FIXME
                               eleTauMvaCovMat01 = makeEleTauPair(src,"cov01","covMatrix01"),#FIXME
@@ -966,6 +972,8 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
                                   BadPFMuonFilter           = cms.InputTag("BadPFMuonFilter"),
                                   paths      = cms.vstring(
                                       "Flag_noBadMuons",
+                                      "Flag_badMuons",
+                                      "Flag_duplicateMuons",
                                       "Flag_HBHENoiseFilter",
                                       "Flag_HBHENoiseIsoFilter",
                                       "Flag_globalTightHalo2016Filter",

@@ -30,7 +30,7 @@ git clone https://github.com/CMS-HTT/RecoilCorrections.git  HTT-utilities/Recoil
 pushd $CMSSW_BASE/src
 
 git cms-merge-topic ikrav:egm_id_80X_v2
-git cms-merge-topic cms-met:METRecipe_8020
+git cms-merge-topic cms-met:METRecipe_8020 -u
 #git cms-merge-topic gpetruc:badMuonFilters_80X
 #git cms-merge-topic -u cms-met:fromCMSSW_8_0_20_postICHEPfilter
 

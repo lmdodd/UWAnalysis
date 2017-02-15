@@ -345,10 +345,12 @@ def MiniAODMETfilter(process):
     process.load('RecoMET.METFilters.BadPFMuonFilter_cfi')
     process.BadPFMuonFilter.muons = cms.InputTag("slimmedMuons")
     process.BadPFMuonFilter.PFCandidates = cms.InputTag("packedPFCandidates")
+    process.BadPFMuonFilter.taggingMode =  cms.bool(True)
 
     process.load('RecoMET.METFilters.BadChargedCandidateFilter_cfi')
     process.BadChargedCandidateFilter.muons = cms.InputTag("slimmedMuons")
     process.BadChargedCandidateFilter.PFCandidates = cms.InputTag("packedPFCandidates")
+    process.BadPFMuonFilter.taggingMode =  cms.bool(True)
 
     process.BadMuon = cms.Sequence(process.BadPFMuonFilter*process.BadChargedCandidateFilter)
     process.analysisSequence*=process.BadMuon
@@ -955,7 +957,7 @@ def cloneAndReplaceInputTag(process,sequence,oldValue,newValue,postfix):
 
 
 
-def createSystematics(process,sequence,postfix,muScale,eScale,tauScale,jetScale,unclusteredScale,electronresb = 0.0, electronrese = 0.0):
+def createSystematics(process,sequence,postfix,muScale,eScale,tauScale,jetScale,unclusteredScale,electronresb = 0.0, electronrese = 0.0, oneProngScale = 1.0,oneProngPi0Scale = 1.0, threeProngScale = 1.0):
 
   #First Clone the sequence
   p = cloneProcessingSnippet(process, sequence, postfix)
@@ -972,6 +974,9 @@ def createSystematics(process,sequence,postfix,muScale,eScale,tauScale,jetScale,
           mod.energyScale = cms.double(muScale)
       if mod.label().find('smearedTaus') !=-1 :
           mod.energyScale = cms.double(tauScale)
+          mod.oneProngEnergyScale = cms.double(oneProngScale)
+          mod.oneProngPi0EnergyScale = cms.double(oneProngPi0Scale)
+          mod.threeProngEnergyScale = cms.double(threeProngScale)
       if mod.label().find('smearedElectrons') !=-1 :
           mod.energyScale = cms.double(eScale)
           mod.deltaPtB = cms.double(electronresb)
