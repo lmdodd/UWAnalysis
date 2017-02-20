@@ -351,6 +351,7 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauOS = makeCollSizeOS(src,0,"os"),
                               muMuSize = makeCollSize(srcLL,"diLeptons"),
 
+                              muTauHadMass = makeMuTauPair(src,"m_2",'leg2.mass()'),
                               muMuSizeVeto = makeCollSizeVeto(srcLL,0,"dilepton_veto"),#CHECKME
                               muTauVBFDEta = makeMuTauPair(src,"vbfDEta","vbfDEta"),
                               muTauVBFDPhi = makeMuTauPair(src,"vbfDPhi","vbfDPhi"),
@@ -371,8 +372,8 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauMETUncertUp = makeMuTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               muTauMETUncertDown = makeMuTauMETUncert(src,"slimmedMETs","pf","EnDown"),
  
-                              muTauMET = makeMuTauPair(src,"met","calibratedMET.pt()"),
-                              muTauMETPhi = makeMuTauPair(src,"metphi","calibratedMET.phi()"),
+                              muTauMET = makeMuTauPair(src,"met","met.pt()"),
+                              muTauMETPhi = makeMuTauPair(src,"metphi","met.phi()"),
                               muTauMvaCovMat00 = makeMuTauPair(src,"cov00","covMatrix00"),#FIXME
                               muTauMvaCovMat10 = makeMuTauPair(src,"cov10","covMatrix10"),#FIXME
                               muTauMvaCovMat01 = makeMuTauPair(src,"cov01","covMatrix01"),#FIXME
@@ -582,10 +583,10 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauMETUncertUp = makeMuTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               muTauMETUncertDown = makeMuTauMETUncert(src,"slimmedMETs","pf","EnDown"),
                               #muTauGenMET = makeMuTauPair(src,"genMET","met.genMET().pt"),
-                              muTauMET = makeMuTauPair(src,"met","calibratedMET.pt()"),
-                              muTauMETPhi = makeMuTauPair(src,"metphi","calibratedMET.phi()"),
-                              muTauMETx = makeMuTauPair(src,"met_ex","calibratedMET.px()"),
-                              muTauMETy = makeMuTauPair(src,"met_ey","calibratedMET.py()"),
+                              muTauMET = makeMuTauPair(src,"met","met.pt()"),
+                              muTauMETPhi = makeMuTauPair(src,"metphi","met.phi()"),
+                              muTauMETx = makeMuTauPair(src,"met_ex","met.px()"),
+                              muTauMETy = makeMuTauPair(src,"met_ey","met.py()"),
                               muTauMvaCovMat00 = makeMuTauPair(src,"cov00","covMatrix00"),#FIXME
                               muTauMvaCovMat10 = makeMuTauPair(src,"cov10","covMatrix10"),#FIXME
                               muTauMvaCovMat01 = makeMuTauPair(src,"cov01","covMatrix01"),#FIXME
@@ -864,11 +865,12 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                               eleTauMET3 = makeEleTauMET(src,"MVAMET:MVAMET","mva"),
 
 
+                              eleTauHadMass = makeEleTauPair(src,"m_2",'leg2.mass()'),
                               eleTauMETUncertUp = makeEleTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               eleTauMETUncertDown = makeEleTauMETUncert(src,"slimmedMETs","pf","EnDown"),
  
-                              eleTauMET = makeEleTauPair(src,"met","calibratedMET.phi()"), #FIXME
-                              eleTauMETPhi = makeEleTauPair(src,"metphi","calibratedMET.phi()"), #FIXME
+                              eleTauMET = makeEleTauPair(src,"met","met.phi()"), #FIXME
+                              eleTauMETPhi = makeEleTauPair(src,"metphi","met.phi()"), #FIXME
                               eleTauMT1 = makeEleTauPair(src,"mt_1","mt1MET"),
                               eleTauMT2 = makeEleTauPair(src,"mt_2","mt2MET"),
                               eleTauMT12 = makeEleTauPair(src,"mt_12","mt12MET"),
@@ -1074,8 +1076,8 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
                               eleTauMETUncertUp = makeEleTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               eleTauMETUncertDown = makeEleTauMETUncert(src,"slimmedMETs","pf","EnDown"), 
 
-                              eleTauMET = makeEleTauPair(src,"met","calibratedMET.pt()"),
-                              eleTauMETPhi = makeEleTauPair(src,"metphi","calibratedMET.phi()"),
+                              eleTauMET = makeEleTauPair(src,"met","met.pt()"),
+                              eleTauMETPhi = makeEleTauPair(src,"metphi","met.phi()"),
                               eleTauMETx = makeEleTauPair(src,"met_ex","met.px()"),
                               eleTauMETy = makeEleTauPair(src,"met_ey","met.py()"),
                               eleTauCovMat00 = makeEleTauPair(src,"cov00","covMatrix00"),

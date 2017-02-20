@@ -75,8 +75,7 @@ def defaultReconstructionBCDEF(process,triggerProcess = 'HLT',triggerPaths = ['H
 
 
 
-
-def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults', triggerFilter='RECO'):
+def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu9','HLT_Mu11_PFTau15_v1'],HLT = 'TriggerResults',triggerFilter='RECO'):
   process.load("UWAnalysis.Configuration.startUpSequence_cff")
   process.load("Configuration.StandardSequences.Services_cff")
   process.load("TrackingTools.TransientTrack.TransientTrackBuilder_cfi")
@@ -99,18 +98,18 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
   TriggerRes=HLT 
   global TriggerFilter
   TriggerFilter=triggerFilter
- 
+
   process.analysisSequence = cms.Sequence()
 
   #BadMuonFilter(process)
   MiniAODMETfilter(process)
 
   MiniAODEleVIDEmbedder(process,"slimmedElectrons")  
-  MiniAODMuonIDEmbedder(process,"slimmedMuons")  
+  MiniAODMuonIDEmbedder(process,"slimmedMuons", False) #is HIP  
 
-  recorrectJets(process, True) #adds patJetsReapplyJEC
+  recorrectJets(process, True) #adds patJetsReapplyJEC  
   reRunMET(process,True)
-  
+
   #mvaMet2(process, True) #isData
   metSignificance(process)
 
@@ -121,10 +120,9 @@ def defaultReconstruction(process,triggerProcess = 'HLT',triggerPaths = ['HLT_Mu
   #goodVertexFilter(process)  
   reRunTaus(process)
   selectTauDecayMode(process, 'rerunSlimmedTaus', 'pt>10')
-  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"selectTauMD") #ESTaus
+  tauTriggerMatchMiniAOD(process,triggerProcess,HLT,"selectTauDM") #ESTaus
   tauEffi(process,'triggeredPatTaus',True)
   tauOverloading(process,'tauTriggerEfficiencies','triggeredPatMuons','offlineSlimmedPrimaryVertices')
-  #tauOverloading(process,'slimmedTaus','triggeredPatMuons','offlineSlimmedPrimaryVertices')
   
   triLeptons(process)
   #jetOverloading(process,"slimmedJets",True)

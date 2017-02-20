@@ -1,4 +1,5 @@
 import FWCore.ParameterSet.Config as cms
+import os
 
 process = cms.Process("ANALYSIS")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
@@ -25,10 +26,8 @@ process.source = cms.Source("PoolSource",
 		)
 )
 
-#from UWAnalysis.Configuration.JSONBtoF import myLumiList
-#myLumiList(process);
-import FWCore.PythonUtilities.LumiList as LumiList
-process.source.lumisToProcess = LumiList.LumiList(filename = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/Final/Cert_271036-284044_13TeV_PromptReco_Collisions16_JSON.txt').getVLuminosityBlockRange()
+from UWAnalysis.Configuration.JSONBtoH import myLumiList
+myLumiList(process);
 
 
 process.maxEvents = cms.untracked.PSet(
@@ -51,7 +50,9 @@ defaultReconstructionBCDEF(process,'HLT',
             'HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_v',
             'HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1_v',
             'HLT_Ele25_eta2p1_WPTight_Gsf_v',	
+            'HLT_Ele45_WPLoose_Gsf_L1JetTauSeeded',
             'HLT_Ele27_WPTight_Gsf_v',
+            'HLT_Ele32_WPTight_Gsf_v',
             'HLT_Ele27_eta2p1_WPTight_Gsf_v',
             'HLT_VLooseIsoPFTau140_Trk50_eta2p1_v',
             'HLT_VLooseIsoPFTau120_Trk50_eta2p1_v',

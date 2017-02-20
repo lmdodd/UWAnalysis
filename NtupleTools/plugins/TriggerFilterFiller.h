@@ -79,7 +79,7 @@ class TriggerFilterFiller : public NtupleFillerBase {
             //std::cout<<"filter bad 2: " << filterbadPFMuon<<std::endl;
 
             const edm::TriggerNames &names = iEvent.triggerNames(*triggerBits);
-            any=1*filterbadChCandidate*filterbadPFMuon;
+            any=filterbadChCandidate+filterbadPFMuon;
 
             //get the names of the triggers
             for(unsigned int i=0;i<paths_.size();++i) {
