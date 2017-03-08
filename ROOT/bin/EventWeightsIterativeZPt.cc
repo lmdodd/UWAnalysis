@@ -19,14 +19,13 @@ int main (int argc, char* argv[])
    optutl::CommandLineParser parser ("Sets Event Weights in the ntuple");
    parser.addOption("histoName",optutl::CommandLineParser::kString,"Counter Histogram Name","EventSummary");
    parser.addOption("weight",optutl::CommandLineParser::kDouble,"Weight to apply",1.0);
-   parser.addOption("branch",optutl::CommandLineParser::kString,"Branch","__ZWEIGHT__");
 
    
    parser.parseArguments (argc, argv);
    
    
  
-   TFile *fZpt    = new TFile("zpt_weights_2016.root","UPDATE");
+   TFile *fZpt    = new TFile("zpt_weights_2016_BtoH.root","UPDATE");
    TH2D* hZpt = 0;
    if(fZpt!=0 && fZpt->IsOpen()) {
      hZpt = (TH2D*)fZpt->Get("zptmass_histo");;
@@ -37,8 +36,7 @@ int main (int argc, char* argv[])
      return 0;
    }
 
- 
-   TFile *f0 = new TFile("ZJETS.root","UPDATE");   
+   TFile *f0 = new TFile(parser.stringValue("outputFile").c_str(),"UPDATE");
    readdir(f0,parser,hZpt);
    f0->Close();
 
@@ -67,21 +65,21 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser, TH2D* hist)
 		else if(obj->IsA()->InheritsFrom(TTree::Class())) {
 			TTree *t = (TTree*)obj;
 			float weight;
+			float weightU;
+			float weightD;
 			float weight2;
-			float weight3;
-			float weight4;
 
 
-			TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
+			TBranch *newBranch = t->Branch("ZWEIGHT",&weight,"ZWEIGHT/F");
+			TBranch *newBranchU = t->Branch("ZWEIGHTUp",&weightU,"ZWEIGHTUp/F");
+			TBranch *newBranchD = t->Branch("ZWEIGHTDown",&weightD,"ZWEIGHTDown/F");
 			TBranch *newBranch2 = t->Branch("highTauEffi",&weight2,"highTauEffi/F");
-			TBranch *newBranch3 = t->Branch("EleTauFake",&weight3,"EleTauFake/F");
-			TBranch *newBranch4 = t->Branch("MuTauFake",&weight4,"MuTauFake/F");
-			int mLL=0;
+			float mLL=0;
 			float genPx=0;
 			float genPy=0;
 			float genTauPt=0;
 			float TauEta=0;
-			t->SetBranchAddress("LHEProduct_mll",&mLL); //InvMass
+			t->SetBranchAddress("genMass",&mLL); //InvMass
 			t->SetBranchAddress("genpX",&genPx); //genPx
 			t->SetBranchAddress("genpY",&genPy); //genPy
 			t->SetBranchAddress("genPt2",&genTauPt); //genPy
@@ -95,19 +93,15 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser, TH2D* hist)
 				//printf("Found genPt -> %f,\n",genPt);
                 weight =  1.0;
                 weight = hist->GetBinContent(hist->GetXaxis()->FindBin(mLL),hist->GetYaxis()->FindBin(genPt));
+                weightU= 1+1.10*(weight-1);
+                weightD= 1+0.90*(weight-1);
 				//printf("Found Zweight -> %f,\n",weight);
 				weight2 = 0.2 * genTauPt/1000.; 
-                if (std::abs(TauEta)<1.460)  weight3=1.994;
-                else  weight3=1.505;
-                
-                if (std::abs(TauEta)<1.2)  weight4=1.28;
-                else if (std::abs(TauEta)<1.7)  weight4=2.6;
-                else if (std::abs(TauEta)<2.3)  weight4=2.1;
 
 				newBranch->Fill();
+				newBranchU->Fill();
+				newBranchD->Fill();
 				newBranch2->Fill();
-				newBranch3->Fill();
-				newBranch4->Fill();
 			}
 			t->Write("",TObject::kOverwrite);
 		}

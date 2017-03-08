@@ -28,8 +28,7 @@ int main (int argc, char* argv[])
    
 
  
-   //TFile *w = new TFile("ZJets.root","UPDATE");
-   TFile *w = new TFile("ZJets_ext1.root","UPDATE");
+   TFile *w = new TFile("ZJets_ext.root","UPDATE");
 
    TH1F* evC  = (TH1F*)w->Get(parser.stringValue("histoName").c_str());
    float evW = evC->GetBinContent(1);
@@ -85,8 +84,7 @@ int main (int argc, char* argv[])
    ev.push_back(DYLo3);
    ev.push_back(DYLo4);
    
-   TFile *f0 = new TFile("ZJets_ext1.root","UPDATE");   
-   //TFile *f0 = new TFile("ZJets.root","UPDATE");   
+   TFile *f0 = new TFile("ZJets_ext.root","UPDATE");   
    readdir(f0,parser,ev);
    f0->Close();
    

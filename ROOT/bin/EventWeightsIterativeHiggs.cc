@@ -91,7 +91,7 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
 		  float ptH=0;
 		  float JJ=0;
 		  t->SetBranchAddress("pt_2",&tauPt); //genPy
-		  t->SetBranchAddress("p_sv",&ptH); //genPy
+		  t->SetBranchAddress("pt_sv",&ptH); //genPy
 		  t->SetBranchAddress("vbfMass",&JJ); //genPy
 
 

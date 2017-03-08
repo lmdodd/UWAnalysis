@@ -34,6 +34,16 @@
 </bin>
 <bin   name="PrintSelectionTableFromTree" file="PrintSelectionTableFromTree.cc">
 </bin>
+<bin   name="EventWeightsIterativeRedoMVis" file="EventWeightsIterativeRedoMVis.cc">
+</bin>
+<bin   name="EventWeightsIterative_ZLShift" file="EventWeightsIterative_ZLShift.cc">
+</bin>
+<bin   name="EventWeightsMuonTrigger" file="EventWeightsMuonTrigger.cc">
+</bin>
+<bin   name="EventWeightsTauFakeRate" file="EventWeightsTauFakeRate.cc">
+</bin>
+<bin   name="EventWeightsIterativeAddTauNom" file="EventWeightsIterativeAddTauNom.cc">
+</bin>
 <bin   name="EventWeightsIterativePU" file="EventWeightsIterativePUWeighting.cc">
 </bin>
 <bin   name="EventWeightsIterativeFixMe" file="EventWeightsIterativeFixMe.cc">
@@ -41,6 +51,8 @@
 <bin   name="EventWeightsIterativeGen" file="EventWeightsIterativeGen.cc">
 </bin>
 <bin   name="EventWeightsIterativeHiggs" file="EventWeightsIterativeHiggs.cc">
+</bin>
+<bin   name="EventWeightsIterativeAddBranch" file="EventWeightsIterativeAddBranch.cc">
 </bin>
 <bin   name="EventWeightsIterativeGenTauPt" file="EventWeightsIterativeGenTauPt.cc">
 </bin>
@@ -72,6 +84,8 @@
 <bin   name="EventWeightsFromHisto" file="EventWeightsFromHisto.cc">
 </bin>
 
+<bin   name="EventWeightsForEfficiencyTracking" file="EventWeightsForEfficiencyTracking.cc">
+</bin>
 <bin   name="EventWeightsForEfficiencyIsolation" file="EventWeightsForEfficiencyIsolation.cc">
 </bin>
 <bin   name="EventWeightsForEfficiencyTagAndProbe" file="EventWeightsForEfficiencyTagAndProbe.cc">

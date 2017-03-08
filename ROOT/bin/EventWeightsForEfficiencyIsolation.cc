@@ -81,15 +81,15 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser,RooWorkspace *w, 
             float weight_redo1 = 1.0;
             float weight_redo2 = 1.0;
             float weight_tauid = 1.0;
-            //TBranch *newBranch  = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
-            //TBranch *newBranch1  = t->Branch(parser.stringValue("branch1").c_str(),&weight1,(parser.stringValue("branch1")+"/F").c_str());
-            TBranch *newBranch2 = t->Branch("fakeTauEffiUp_REDO",&weightUp,"fakeTauEffiUp_REDO/F");
-            TBranch *newBranch3 = t->Branch("fakeTauEffiDown_REDO",&weightDown,"fakeTauEffiDown_REDO/F");
-            //TBranch *newBranch4 = t->Branch("zmumu_pth",&weightpth,"zmumu_pth/F");
-            TBranch *newBranch5 = t->Branch("zmumu_mjj_REDO",&weightmjj,"zmumu_mjj_REDO/F");
-            //TBranch *newBranch6 = t->Branch("idisoweight_REDO",&weight_redo1,"idisoweight_REDO/F");
-            //TBranch *newBranch7 = t->Branch("trigweight_REDO",&weight_redo2,"trigweight_REDO/F");
-            //TBranch *newBranch8 = t->Branch("TAUID",&weight_tauid,"TAUID/F");
+            TBranch *newBranch  = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
+            TBranch *newBranch1  = t->Branch(parser.stringValue("branch1").c_str(),&weight1,(parser.stringValue("branch1")+"/F").c_str());
+            TBranch *newBranch2 = t->Branch("fakeTauEffiUp",&weightUp,"fakeTauEffiUp/F");
+            TBranch *newBranch3 = t->Branch("fakeTauEffiDown",&weightDown,"fakeTauEffiDown/F");
+            TBranch *newBranch4 = t->Branch("zmumu_pth",&weightpth,"zmumu_pth/F");
+            TBranch *newBranch5 = t->Branch("zmumu_mjj",&weightmjj,"zmumu_mjj/F");
+            TBranch *newBranch6 = t->Branch("idisoweight_REDO",&weight_redo1,"idisoweight_REDO/F");
+            TBranch *newBranch7 = t->Branch("trigweight_REDO",&weight_redo2,"trigweight_REDO/F");
+            TBranch *newBranch8 = t->Branch("TAUID",&weight_tauid,"TAUID/F");
 
 
             std::cout<<"here1"<<std::endl;
@@ -146,16 +146,29 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser,RooWorkspace *w, 
                     w->var("t_eta")->setVal(eta2);
                     w->var("t_dm")->setVal(tauDM);
 
-                    double muon_id_scalefactor = w->function("m_idiso_aiso0p15to0p3_desy_ratio")->getVal();
-                    weight=muon_id_scalefactor;
-                    weight1 = w->function("m_trgMu19leg_eta2p1_aiso0p15to0p3_desy_ratio")->getVal();
+                    weight=w->function("m_idiso_aiso0p15to0p3_desy_ratio")->getVal();
                     weight_redo1 = w->function("m_idiso0p15_desy_ratio")->getVal();
 
                     if (pt1>23){
                         weight_redo2 = w->function("m_trgMu22OR_eta2p1_desy_ratio")->getVal();
+                        weight1 = w->function("m_trgMu22OR_eta2p1_aiso0p15to0p3_desy_ratio")->getVal();
                     }
                     else{
                         weight_redo2 = w->function("t_genuine_TightIso_mt_ratio")->getVal()*w->function("m_trgMu19leg_eta2p1_desy_ratio")->getVal();
+                        weight1 = w->function("t_genuine_TightIso_mt_ratio")->getVal()*w->function("m_trgMu19leg_eta2p1_aiso0p15to0p3_desy_ratio")->getVal();
+                    }
+
+
+                    if (gen_match==1||gen_match==3){
+                        if (std::abs(eta2)<1.460)  weight_tauid=1.213;
+                        else if (std::abs(eta2)>1.558)  weight_tauid=1.375;
+                    }
+                    else if (gen_match==2||gen_match==4){
+                        if (std::abs(eta2)<0.4)  weight_tauid=1.263;
+                        else if (std::abs(eta2)<0.8)  weight_tauid=1.364;
+                        else if (std::abs(eta2)<1.2)  weight_tauid=0.854;
+                        else if (std::abs(eta2)<1.7)  weight_tauid=1.712;
+                        else if (std::abs(eta2)<2.3)  weight_tauid=2.324;
                     }
                 }
                 else if(std::string(TreeToUse).find("eleTauEvent")!= std::string::npos){
@@ -163,14 +176,25 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser,RooWorkspace *w, 
                     w->var("e_eta")->setVal(eta1);
 
 
-                    double ele_id_scalefactor = w->function("e_idiso_aiso0p1to0p3_desy_ratio")->getVal();
-                    weight=ele_id_scalefactor;
-                    weight1 = w->function("e_trgEle24_aiso0p1to0p3_desy_ratio")->getVal();
+                    weight= w->function("e_idiso_aiso0p1to0p3_desy_ratio")->getVal();
+                    weight1 = w->function("e_trgEle25eta2p1WPTight_aiso0p1to0p3_desy_data")->getVal();
                     //printf("Ele function: id:%f,  trig:%f \n", ele_id_scalefactor, weight1);
 
                     weight_redo1 = w->function("e_idiso0p1_desy_ratio")->getVal();
                     weight_redo2 = w->function("e_trgEle25eta2p1WPTight_desy_ratio")->getVal();
                     //printf("Ele function: id:%f,  trig:%f \n", weight_redo1, weight_redo2);
+
+                    if (gen_match==1||gen_match==3){
+                        if (std::abs(eta2)<1.460)  weight_tauid=1.402;
+                        else if (std::abs(eta2)>1.558)  weight_tauid=1.9;
+                    }
+                    else if (gen_match==2||gen_match==4){
+                        if (std::abs(eta2)<0.4)  weight_tauid=1.012;
+                        else if (std::abs(eta2)<0.8)  weight_tauid=1.007;
+                        else if (std::abs(eta2)<1.2)  weight_tauid=0.870;
+                        else if (std::abs(eta2)<1.7)  weight_tauid=1.154;
+                        else if (std::abs(eta2)<2.3)  weight_tauid=2.281;
+                    }
 
 
                 }
@@ -179,22 +203,11 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser,RooWorkspace *w, 
                     continue;
                 }
 
-                if (gen_match==1||gen_match==3){
-                    if (std::abs(eta2)<1.460)  weight_tauid=1.867;
-                    else  weight_tauid=1.456;
-                }
-                else if (gen_match==2||gen_match==4){
-                    if (std::abs(eta2)<0.4)  weight_tauid=1.263;
-                    else if (std::abs(eta2)<0.8)  weight_tauid=1.364;
-                    else if (std::abs(eta2)<1.2)  weight_tauid=0.854;
-                    else if (std::abs(eta2)<1.7)  weight_tauid=1.712;
-                    else if (std::abs(eta2)<2.3)  weight_tauid=2.324;
-                }
-                else if(gen_match==5){
+                if(gen_match==5){
                     weight_tauid=0.95;
                 }
                 else if(gen_match==6){
-                    if (tauPt>150)tauPt=150.;
+                    if (tauPt>200)tauPt=200.;
 
                     weightUp = 1-(0.2*(tauPt/100.0));
                     weightDown = 1+ (0.2*(tauPt/100.0));
@@ -212,15 +225,15 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser,RooWorkspace *w, 
                 else if (1100<mjj && mjj<1500) weightmjj= 1.055;
                 else if (1500<mjj) weightmjj= 1.015;
 
-                //newBranch->Fill();
-                //newBranch1->Fill();
+                newBranch->Fill();
+                newBranch1->Fill();
                 newBranch2->Fill();
                 newBranch3->Fill();
-                //newBranch4->Fill();
+                newBranch4->Fill();
                 newBranch5->Fill();
-                //newBranch6->Fill();
-                //newBranch7->Fill();
-                //newBranch8->Fill();
+                newBranch6->Fill();
+                newBranch7->Fill();
+                newBranch8->Fill();
 
 
             }

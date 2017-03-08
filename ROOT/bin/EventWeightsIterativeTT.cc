@@ -79,10 +79,12 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
 	  else if(obj->IsA()->InheritsFrom(TTree::Class())) {
           float weight = parser.doubleValue("weight")/(ev);
           float topweight = 1.0;
+          float topweightUp = 1.0;
 
           TTree *t = (TTree*)obj;
           TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
           TBranch *ttBranch = t->Branch("topWeight",&topweight,"topWeight/F");
+          TBranch *ttBranchU = t->Branch("topWeightUp",&topweightUp,"topWeightUp/F");
           float tPt=0;
           float atPt=0;
           t->SetBranchAddress("topGenPt",&tPt); //NJets
@@ -96,11 +98,11 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
               if (tPt>400) tPt=400;
               if (atPt>400) atPt=400;
               topweight =TMath::Sqrt(TMath::Exp(0.0615-0.0005*tPt)*TMath::Exp(0.0615-0.0005*atPt)); 
-              //topweight =TMath::Sqrt(TMath::Exp(0.156-0.00137*tPt)*TMath::Exp(0.156-0.00137*atPt)); 
-
+              topweightUp =1+ (2*(topweight-1));
               //printf("Found topWeight -> %f \n",topweight);
               //printf("Found topGenPt -> %f, antiTopGenPt -> %f \n",tPt,atPt);
-              //ttBranch->Fill();
+              ttBranch->Fill();
+              ttBranchU->Fill();
               newBranch->Fill();
           }
           t->Write("",TObject::kOverwrite);
