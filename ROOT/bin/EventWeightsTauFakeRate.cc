@@ -45,37 +45,29 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser)
         }
         else if(obj->IsA()->InheritsFrom(TTree::Class())) {
             TTree *t = (TTree*)obj;
-            float weight_tauid;
+            float weight_tauidUp;
+            float weight_tauidDown;
 
 
-            TBranch *newBranch = t->Branch("TAUID",&weight_tauid,"TAUID/F");
-            float TauEta=0;
-            float GenMatch=0;
-            t->SetBranchAddress("eta_2",&TauEta); //genPy
-            t->SetBranchAddress("gen_match_2",&GenMatch); //genPy
+            TBranch *newBranch = t->Branch("tauDM_weight",&weight_tauidUp,"tauDM_weight/F");
+            TBranch *newBranch1 = t->Branch("tauDM_weightDown",&weight_tauidDown,"tauDM_weightDown/F");
+            float tauDM=0;
+            t->SetBranchAddress("tauDecayMode",&tauDM); //genPy
 
 
             printf("Found tree -> weight_tauiding\n");
             for(Int_t i=0;i<t->GetEntries();++i){
                 t->GetEntry(i);
-                weight_tauid=1.0;
+                weight_tauidUp=1.0;
+                weight_tauidDown=1.0;
 
-                if (GenMatch==1||GenMatch==3){
-                    if (std::abs(TauEta)<1.460)  weight_tauid=1.867;
-                    else  weight_tauid=1.456;
-                }
-                else if (GenMatch==2||GenMatch==4){
-                    if (std::abs(TauEta)<0.4)  weight_tauid=1.263;
-                    else if (std::abs(TauEta)<0.8)  weight_tauid=1.364;
-                    else if (std::abs(TauEta)<1.2)  weight_tauid=0.854;
-                    else if (std::abs(TauEta)<1.7)  weight_tauid=1.712;
-                    else if (std::abs(TauEta)<2.3)  weight_tauid=2.324;
-                }
-                else if(GenMatch==5){
-                    weight_tauid=0.95;
+                if (tauDM==0){
+                    weight_tauidUp=1.8;        
+                    weight_tauidDown=0.2;        
                 }
 
                 newBranch->Fill();
+                newBranch1->Fill();
             }
             t->Write("",TObject::kOverwrite);
         }

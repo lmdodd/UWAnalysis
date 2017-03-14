@@ -68,9 +68,9 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,char TreeToUse[])
 
             TTree *t = (TTree*)obj;
 
-            TBranch *newBranch0 = t->Branch("m_vis_ZL",&m_vis,"m_vis_ZL/F");
-            TBranch *newBranch1 = t->Branch("m_vis_ZL_UP",&m_visUP,"m_vis_ZL_UP/F");
-            TBranch *newBranch2 = t->Branch("m_vis_ZL_DOWN",&m_visDOWN,"m_vis_ZL_DOWN/F");
+            TBranch *newBranch0 = t->Branch("m_vis_ZL1",&m_vis,"m_vis_ZL1/F");
+            TBranch *newBranch1 = t->Branch("m_vis_ZL1_UP",&m_visUP,"m_vis_ZL1_UP/F");
+            TBranch *newBranch2 = t->Branch("m_vis_ZL1_DOWN",&m_visDOWN,"m_vis_ZL1_DOWN/F");
 
             t->SetBranchAddress("m_vis_REDO",&mvisN);
 
@@ -90,17 +90,30 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,char TreeToUse[])
 
                 if (gen_match<5) {
 
-                    if(std::string(TreeToUse).find("muTauEvent")!= std::string::npos){
-                        if (tauDM==0){ m_vis=m_vis*1.01; }
+                    if(std::string(TreeToUse).compare("muTauEventTree")==0){
+                        if (tauDM==0){ 
+                            m_vis=m_vis*1.01; 
+                            m_visUP=m_vis*1.003;
+                            m_visDOWN=m_vis*0.997;
+                        }
+                        else if (tauDM==1){
+                            m_visUP=m_vis*1.004;
+                            m_visDOWN=m_vis*0.996;
+                        }
                     }
-                    else if(std::string(TreeToUse).find("eleTauEvent")!= std::string::npos){
-                        if (tauDM==0) m_vis=m_vis*1.017;
-                        else if (tauDM==1) m_vis=m_vis*1.03;
+                    else if(std::string(TreeToUse).compare("eleTauEvent")==0){
+                        if (tauDM==0){
+                            m_vis=m_vis*1.017;
+                            m_visUP=m_vis*1.005;
+                            m_visDOWN=m_vis*0.995;
+                        }
+                        else if (tauDM==1){
+                            m_vis=m_vis*1.03;
+                            m_visUP=m_vis*1.005;
+                            m_visDOWN=m_vis*0.995;
+                        }
 
                     }
-                    m_visUP=m_vis*1.03;
-                    m_visDOWN=m_vis*0.97;
-
                 }
                 newBranch0->Fill();
                 newBranch1->Fill();
