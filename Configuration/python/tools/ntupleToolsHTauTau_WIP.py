@@ -369,6 +369,9 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauMET2 = makeMuTauMET(src,"slimmedMETsPuppi","puppi"),
                               muTauMET3 = makeMuTauMET(src,"MVAMET:MVAMET","mva"),
 
+                              muTauMETJUncertUp = makeMuTauMETUncert(src,"slimmedMETs","pf","JetUp"),
+                              muTauMETJUncertDown = makeMuTauMETUncert(src,"slimmedMETs","pf","JetDown"),
+ 
                               muTauMETUncertUp = makeMuTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               muTauMETUncertDown = makeMuTauMETUncert(src,"slimmedMETs","pf","EnDown"),
  
@@ -404,7 +407,6 @@ def addMuTauShortEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOS
                               muTauMuTriggerMatch4 = makeMuTauPair(src,"hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09")'),
                               muTauMuTriggerMatch5 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu19LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu19LooseIsoPFTau20")'),
                               muTauMuTriggerMatch6 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu21LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu21LooseIsoPFTau20")'),
- 
 
                               muTauGenPt1 = makeMuTauPair(src,"genPt1",'p4Leg1gen().pt()'),
                               muTauGenPt2 = makeMuTauPair(src,"genPt2",'p4Leg2gen().pt()'),
@@ -579,7 +581,10 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauMET1 = makeMuTauMET(src,"slimmedMETs","pf"),
                               muTauMET2 = makeMuTauMET(src,"slimmedMETsPuppi","puppi"),
                               muTauMET3 = makeMuTauMET(src,"MVAMET:MVAMET","mva"),
- 
+  
+                              muTauMETJUncertUp = makeMuTauMETUncert(src,"slimmedMETs","pf","JetUp"),
+                              muTauMETJUncertDown = makeMuTauMETUncert(src,"slimmedMETs","pf","JetDown"),
+
                               muTauMETUncertUp = makeMuTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               muTauMETUncertDown = makeMuTauMETUncert(src,"slimmedMETs","pf","EnDown"),
                               #muTauGenMET = makeMuTauPair(src,"genMET","met.genMET().pt"),
@@ -618,6 +623,8 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauDecayFound = makeMuTauPair(src,"decayModeFinding_2",'leg2.tauID("decayModeFinding")'),
                               muTauDecayFoundOld = makeMuTauPair(src,"decayModeFindingOldDMs_2",'leg2.tauID("decayModeFinding")'),
 
+                              muTauMuTriggerMatch00 = makeMuTauPair(src,"hltL3fL1sMu20erL1f0Tkf22QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3fL1sMu20erL1f0Tkf22QL3trkIsoFiltered0p09")'),
+                              muTauMuTriggerMatch0 = makeMuTauPair(src,"hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09")'),
                               muTauMuTriggerMatch = makeMuTauPair(src,"hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09")'),
                               muTauMuTriggerMatch2 = makeMuTauPair(src,"hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09")'),
 
@@ -625,7 +632,16 @@ def addMuTauEventTree(process,name,src = 'muTausSorted', srcLL = 'diMuonsOSSorte
                               muTauMuTriggerMatch4 = makeMuTauPair(src,"hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09",'leg1.userFloat("hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09")'),
                               muTauMuTriggerMatch5 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu19LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu19LooseIsoPFTau20")'),
                               muTauMuTriggerMatch6 = makeMuTauPair(src,"hltOverlapFilterSingleIsoMu21LooseIsoPFTau20",'leg2.userFloat("hltOverlapFilterSingleIsoMu21LooseIsoPFTau20")'),
- 
+                         #'hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09', #2016D IsoMu18
+                        #'hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09', #2016D IsoMu18
+                        #'hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09', #2016B
+                        #'hltL3fL1sMu20L1f0Tkf22QL3trkIsoFiltered0p09', #2016B
+                        #'hltL3fL1sMu20erL1f0Tkf22QL3trkIsoFiltered0p09', #2016B
+                        #'hltL3crIsoL1sSingleMu20erL1f0L2f10QL3f22QL3trkIsoFiltered0p09',
+                        #'hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09', #2016B HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v2
+                        #'hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09' 
+
+
                               muTauPzeta = makeMuTauPair(src,"pZeta",'pZeta-1.5*pZetaVis'),
                               muTauPZ = makeMuTauPair(src,"pZ",'pZeta'),
                               muTauPZV = makeMuTauPair(src,"pzetavis",'pZetaVis'),
@@ -868,6 +884,9 @@ def addEleTauShortEventTree(process,name,src='eleTausSorted',srcLL='diElectronsO
                               eleTauHadMass = makeEleTauPair(src,"m_2",'leg2.mass()'),
                               eleTauMETUncertUp = makeEleTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               eleTauMETUncertDown = makeEleTauMETUncert(src,"slimmedMETs","pf","EnDown"),
+
+                              eleTauMETJUncertUp = makeEleTauMETUncert(src,"slimmedMETs","pf","JetUp"),
+                              eleTauMETJUncertDown = makeEleTauMETUncert(src,"slimmedMETs","pf","JetDown"),
  
                               eleTauMET = makeEleTauPair(src,"met","met.phi()"), #FIXME
                               eleTauMETPhi = makeEleTauPair(src,"metphi","met.phi()"), #FIXME
@@ -1073,6 +1092,9 @@ def addEleTauEventTree(process,name,src='eleTausSorted',srcLL='diElectronsOSSort
                               eleTauMET2 = makeEleTauMET(src,"slimmedMETsPuppi","puppi"),
                               eleTauMET3 = makeEleTauMET(src,"MVAMET:MVAMET","mva"),
 
+                              eleTauMETJUncertUp = makeEleTauMETUncert(src,"slimmedMETs","pf","JetUp"),
+                              eleTauMETJUncertDown = makeEleTauMETUncert(src,"slimmedMETs","pf","JetDown"),
+ 
                               eleTauMETUncertUp = makeEleTauMETUncert(src,"slimmedMETs","pf","EnUp"),
                               eleTauMETUncertDown = makeEleTauMETUncert(src,"slimmedMETs","pf","EnDown"), 
 

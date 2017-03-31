@@ -56,6 +56,7 @@ SmearedTauProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup) {
 
             //std::cout<<"decayMode "<< object.decayMode()<<" decayModeES "<<decayModeES<<std::endl;
             object.setP4(vToSmear*decayModeES); 
+            if (object.decayMode()==0) object.setMass(0.1395699);
 
             if(smearConstituents_) {
                 math::XYZTLorentzVector hadronLV;

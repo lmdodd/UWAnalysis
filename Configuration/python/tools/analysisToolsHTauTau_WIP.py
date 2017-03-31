@@ -698,13 +698,21 @@ def muonTriggerMatchMiniAOD(process,triggerProcess,HLT,srcMuon):
                                             trigEvent = cms.InputTag(HLT),
                                             filters = cms.vstring(
 						'hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09', #2016B
+						'hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09', #2016B
 						'hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09', #2016B
+						'hltL3fL1sMu20L1f0Tkf22QL3trkIsoFiltered0p09', #2016B
+                        'hltL3fL1sMu20erL1f0Tkf22QL3trkIsoFiltered0p09', 
+						'hltL3crIsoL1sSingleMu20erL1f0L2f10QL3f22QL3trkIsoFiltered0p09',
 						'hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09',
 						'hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09' 
                                             ),
 					    filtersAND = cms.vstring(
 						'hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09', #2016D IsoMu18
+						'hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09', #2016D IsoMu18
 						'hltL3fL1sMu22L1f0Tkf24QL3trkIsoFiltered0p09', #2016B
+						'hltL3fL1sMu20L1f0Tkf22QL3trkIsoFiltered0p09', #2016B
+						'hltL3fL1sMu20erL1f0Tkf22QL3trkIsoFiltered0p09', #2016B
+						'hltL3crIsoL1sSingleMu20erL1f0L2f10QL3f22QL3trkIsoFiltered0p09',
 						'hltL3crIsoL1sSingleMu18erIorSingleMu20erL1f0L2f10QL3f19QL3trkIsoFiltered0p09', #2016B HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v2
 						'hltL3crIsoL1sSingleMu20erIorSingleMu22erL1f0L2f10QL3f21QL3trkIsoFiltered0p09' #2016B HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1_v2
 					    ),
