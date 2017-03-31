@@ -94,7 +94,8 @@ class TriggerFiller : public NtupleFillerBase {
 						found=true;
 						fired[i]=triggerBits->accept(j); 
 						prescale[i] = triggerPrescales->getPrescaleForIndex(j);
-						if(triggerPrescales->getPrescaleForIndex(j)==1 &&triggerBits->accept(j) ){
+						//if(triggerPrescales->getPrescaleForIndex(j)==1 &&triggerBits->accept(j) ){
+						if(triggerBits->accept(j) ){
 							any=1; fired_t=true;
 							//std::cout<<"Found a Trigger Name! FIRED"<<std::endl;
 						}
