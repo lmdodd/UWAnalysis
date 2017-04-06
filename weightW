@@ -1,0 +1,297 @@
+Found  57026068.000000 W Events
+Found  45284576.000000 W+1Jet Events
+Found  29878392.000000 W+2Jet Events
+Found  19792872.000000 W+3Jet Events
+Found  9109680.000000 W+4Jet Events
+Found  0.001079  0 Jet Weight 
+Found  0.000210 W+1Jet Weight
+Found  0.000115 W+2Jet Weight
+Found  0.000056 W+3Jet Weight
+Found  0.000061 W+4Jet Weight
+Found key=sumweights 
+Found key=genWeights 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Found key=sumweights 
+Found key=genWeights 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Found key=sumweights 
+Found key=genWeights 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Found key=sumweights 
+Found key=genWeights 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Found key=sumweights 
+Found key=genWeights 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Weight EWK
+Found  778396.000000 Events Counted
+Found  778396.000000 Positive NLO Weights Counted
+Found  0.000000 Negative NLO Weights Counted
+Weighting by  778396.000000 Events
+Found key=sumweights 
+Skipping key sumweights . Not weighting. 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Found  2672618.000000 Events Counted
+Found  2672618.000000 Positive NLO Weights Counted
+Found  0.000000 Negative NLO Weights Counted
+Weighting by  2672618.000000 Events
+Found key=sumweights 
+Skipping key sumweights . Not weighting. 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Found  486805.000000 Events Counted
+Found  486805.000000 Positive NLO Weights Counted
+Found  0.000000 Negative NLO Weights Counted
+Weighting by  486805.000000 Events
+Found key=sumweights 
+Skipping key sumweights . Not weighting. 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 
+Found  496000.000000 Events Counted
+Found  496000.000000 Positive NLO Weights Counted
+Found  0.000000 Negative NLO Weights Counted
+Weighting by  496000.000000 Events
+Found key=sumweights 
+Skipping key sumweights . Not weighting. 
+Found key=muTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTree 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=muTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauNom 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauUp 
+Found key=eventTree 
+Found tree -> weighting
+Found key=eleTauEventTreeTauDown 
+Found key=eventTree 
+Found tree -> weighting
+Found key=sumPUP 
+Found key=LHE_PARTONMULTIPLICITY 
+Found key=LHE_PUPSUM 
+Found key=LHE_LEADINGPARTON_PT 
+Found key=MT 
+Found key=results 
+Found key=ET 
+Found key=results 

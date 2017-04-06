@@ -83,15 +83,15 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
 
 		  TTree *t = (TTree*)obj;
 		  //TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
-		  TBranch *newBranch2 = t->Branch("tauPdfScaleREDO",&weighttau,"tauPdfScaleREDO/F");
-		  //TBranch *newBranch3 = t->Branch("pthPdfScale",&weightpth,"pthPdfScale/F");
-		  //TBranch *newBranch4 = t->Branch("mjjPdfScale",&weightmjj,"mjjPdfScale/F");
+		  //TBranch *newBranch2 = t->Branch("tauPdfScaleREDO",&weighttau,"tauPdfScaleREDO/F");
+		  TBranch *newBranch3 = t->Branch("pthPdfScale",&weightpth,"pthPdfScale/F");
+		  TBranch *newBranch4 = t->Branch("mjjPdfScale",&weightmjj,"mjjPdfScale/F");
 
 		  float tauPt=0;
 		  float ptH=0;
 		  float JJ=0;
 		  t->SetBranchAddress("taupt",&tauPt); //genPy
-		  t->SetBranchAddress("pt_sv",&ptH); //genPy
+		  t->SetBranchAddress("pttot_REDO",&ptH); //genPy
 		  t->SetBranchAddress("vbfMass",&JJ); //genPy
 
 
@@ -105,9 +105,9 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
               weightpth = 0.919+0.0010055*ptH;
               weightmjj = 1.026+0.000066*JJ;
 			  //newBranch->Fill();
-			  newBranch2->Fill();
-			  //newBranch3->Fill();
-			  //newBranch4->Fill();
+			  //newBranch2->Fill();
+			  newBranch3->Fill();
+			  newBranch4->Fill();
 		  }
 		  t->Write("",TObject::kOverwrite);
 	  }//end else if object A

@@ -125,11 +125,11 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,char TreeToUse[])
                     lM=0.00051100;
                 }
                 else{ 
-                    std::cout<<"muon mass"<<std::endl;
+                    //std::cout<<"muon mass"<<std::endl;
                     lM=0.105658;
                 }
 
-                std::cout<<"L 4 vector: "<<lpt<<","<<leta<<","<<lphi<<","<<lM <<std::endl;
+                //std::cout<<"L 4 vector: "<<lpt<<","<<leta<<","<<lphi<<","<<lM <<std::endl;
                 l.SetPtEtaPhiM(lpt,leta,lphi,lM); 
 
                 if (tauDM==0){ 
