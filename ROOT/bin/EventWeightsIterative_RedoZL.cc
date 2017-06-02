@@ -132,33 +132,21 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,char TreeToUse[])
                 //std::cout<<"L 4 vector: "<<lpt<<","<<leta<<","<<lphi<<","<<lM <<std::endl;
                 l.SetPtEtaPhiM(lpt,leta,lphi,lM); 
 
-
-                float shiftTau=1.0;
-                if (tauDM==0) shiftTau=0.982;
-                if (tauDM==1) shiftTau=1.010;
-                if (tauDM==10) shiftTau=1.004;
-
-                if (gen_match==2||gen_match==4){
-                    if (tauDM==0) shiftTau=0.998;
-                    if (tauDM==1) shiftTau=1.015;
-                    if (tauDM==10) shiftTau=1.00;
-                }
-                else if (gen_match==1||gen_match==3){
-                    if (tauDM==0) shiftTau=1.00;
-                    if (tauDM==1) shiftTau=1.095;
-                    if (tauDM==10) shiftTau=1.00;
-                }
-                else if (gen_match==6){ shiftTau=1.00; }
-
                 if (tauDM==0){ 
                     tauM=0.13957;
-                    taupt=taupt*shiftTau;
+                    taupt=taupt*0.982;
+                    newtaupt=taupt;
+                    tau.SetPtEtaPhiM(taupt,taueta,tauphi,tauM);
+                }
+                else if (tauDM==1){ 
+                    tauM=tauM*1.01;
+                    taupt=taupt*1.01;
                     newtaupt=taupt;
                     tau.SetPtEtaPhiM(taupt,taueta,tauphi,tauM);
                 }
                 else { 
-                    tauM=tauM*shiftTau;
-                    taupt=taupt*shiftTau;
+                    tauM=tauM*1.004;
+                    taupt=taupt*1.004;
                     newtaupt=taupt;
                     tau.SetPtEtaPhiM(taupt,taueta,tauphi,tauM);
                 }

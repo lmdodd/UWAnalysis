@@ -82,8 +82,8 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
 		  float weightmjj; 
 
 		  TTree *t = (TTree*)obj;
-		  //TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
-		  //TBranch *newBranch2 = t->Branch("tauPdfScaleREDO",&weighttau,"tauPdfScaleREDO/F");
+		  TBranch *newBranch = t->Branch(parser.stringValue("branch").c_str(),&weight,(parser.stringValue("branch")+"/F").c_str());
+		  TBranch *newBranch2 = t->Branch("tauPdfScale",&weighttau,"tauPdfScale/F");
 		  TBranch *newBranch3 = t->Branch("pthPdfScale",&weightpth,"pthPdfScale/F");
 		  TBranch *newBranch4 = t->Branch("mjjPdfScale",&weightmjj,"mjjPdfScale/F");
 
@@ -104,8 +104,8 @@ void readdir(TDirectory *dir,optutl::CommandLineParser parser,float ev)
               weighttau = 0.929+0.0001702*tauPt;
               weightpth = 0.919+0.0010055*ptH;
               weightmjj = 1.026+0.000066*JJ;
-			  //newBranch->Fill();
-			  //newBranch2->Fill();
+			  newBranch->Fill();
+			  newBranch2->Fill();
 			  newBranch3->Fill();
 			  newBranch4->Fill();
 		  }

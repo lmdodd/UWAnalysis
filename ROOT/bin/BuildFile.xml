@@ -34,7 +34,13 @@
 </bin>
 <bin   name="PrintSelectionTableFromTree" file="PrintSelectionTableFromTree.cc">
 </bin>
+<bin   name="EventWeightsIterativeRedoMt" file="EventWeightsIterativeRedoMt.cc">
+</bin>
+<bin   name="EventWeightsIterativeRedoFullPt" file="EventWeightsIterativeRedoFullPt.cc">
+</bin>
 <bin   name="EventWeightsIterativeRedoMVis" file="EventWeightsIterativeRedoMVis.cc">
+</bin>
+<bin   name="EventWeightsIterative_RedoZL" file="EventWeightsIterative_RedoZL.cc">
 </bin>
 <bin   name="EventWeightsIterative_ZLShift" file="EventWeightsIterative_ZLShift.cc">
 </bin>

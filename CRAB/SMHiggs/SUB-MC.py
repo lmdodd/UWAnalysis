@@ -59,9 +59,6 @@ process.load("UWAnalysis.Configuration.hTauTau_cff")
 process.eventSelectionMT = cms.Path(process.selectionSequenceMT)
 process.eventSelectionET = cms.Path(process.selectionSequenceET)
 #Systematic Shifts 1sigma
-#process.eventSelectionMTTauNom    = createSystematics(process,process.selectionSequenceMT,'TauNom', 1.00, 1.00, 1.00, 0, 1.00, 0.00, 0.00, 0.982, 1.01, 1.004)
-#process.eventSelectionMTTauUp    = createSystematics(process,process.selectionSequenceMT, 'TauUp',  1.00, 1.00, 1.00, 0, 1.00, 0.00, 0.00, 0.988, 1.016, 1.01)
-#process.eventSelectionMTTauDown  = createSystematics(process,process.selectionSequenceMT,'TauDown', 1.00, 1.00, 1.00, 0, 1.00, 0.00, 0.00, 0.976, 1.004, 0.998)
 #process.eventSelectionMTTauNom    = createSystematics(process,process.selectionSequenceMT,'TauNom', 1.00, 1.00, 1.00, 0, 1.00, 0.00, 0.00, 0.982, 1.010, 1.004)
 #process.eventSelectionMTTauUp    = createSystematics(process,process.selectionSequenceMT, 'TauUp',  1.00, 1.00, 1.00, 0, 1.00, 0.00, 0.00, 0.982*1.006, 1.010*1.006, 1.004*1.006)
 #process.eventSelectionMTTauDown  = createSystematics(process,process.selectionSequenceMT, 'TauDown', 1.00, 1.00, 1.00, 0, 1.00, 0.00, 0.00, 0.982*0.994, 1.010*0.994, 1.004*0.994)
@@ -100,22 +97,24 @@ createGeneratedParticles(process,
 from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addMuTauEventTree
 addMuTauEventTree(process,'muTauEventTree')
 #addMuTauEventTree(process,'muTauEventTreeFinal','muTausOS','diMuonsOSSorted')
+#addMuTauEventTree(process,'muTauEventTreeTauNom','muTausSortedTauNom','diMuonsOSSortedTauNom')
 
 
 from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addEleTauEventTree
 addEleTauEventTree(process,'eleTauEventTree')
 #addEleTauEventTree(process,'eleTauEventTreeFinal','eleTausOS','diElectronsOSSorted')
+#addEleTauEventTree(process,'eleTauEventTreeTauNom','eleTausSortedTauNom','diElectronsOSSortedTauNom')
 
 #from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addMuTauShortEventTree
 #from UWAnalysis.Configuration.tools.ntupleToolsHTauTau_WIP import addEleTauShortEventTree
 #Final trees afor shapes after shifts
 #addMuTauShortEventTree(process,'muTauEventTreeTauNom','muTausSortedTauNom','diMuonsOSTauNom')
-#addMuTauShortEventTree(process,'muTauEventTreeTauUp','muTausSortedTauUp','diMuonsOSTauUp')
-#addMuTauShortEventTree(process,'muTauEventTreeTauDown','muTausSortedTauDown','diMuonsOSTauDown')
+#addMuTauShortEventTree(process,'muTauEventTreeTauUp','muTausSortedTauUp','diMuonsOSSortedTauUp')
+#addMuTauShortEventTree(process,'muTauEventTreeTauDown','muTausSortedTauDown','diMuonsOSSortedTauDown')
 #
 #addEleTauShortEventTree(process,'eleTauEventTreeTauNom','eleTausSortedTauNom','diElectronsOSTauNom')
-#addEleTauShortEventTree(process,'eleTauEventTreeTauUp','eleTausSortedTauUp','diElectronsOSTauUp')
-#addEleTauShortEventTree(process,'eleTauEventTreeTauDown','eleTausSortedTauDown','diElectronsOSTauDown')
+#addEleTauShortEventTree(process,'eleTauEventTreeTauUp','eleTausSortedTauUp','diElectronsOSortedTauUp')
+#addEleTauShortEventTree(process,'eleTauEventTreeTauDown','eleTausSortedTauDown','diElectronsOSSortedTauDown')
 #
 
 addEventSummary(process,True,'MT','eventSelectionMT')

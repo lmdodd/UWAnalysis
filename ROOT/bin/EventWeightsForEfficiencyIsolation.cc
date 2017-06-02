@@ -111,6 +111,7 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser,RooWorkspace *w, 
             t->SetBranchAddress("iso_1",&iso1);
             t->SetBranchAddress("vbfMass",&mjj);
             t->SetBranchAddress("pt_sv",&pth);
+            t->SetBranchAddress("pttot_REDO",&pth);
             t->SetBranchAddress("tauDecayMode",&tauDM);
             t->SetBranchAddress("gen_match_2",&gen_match);
 

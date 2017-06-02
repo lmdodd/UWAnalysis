@@ -37,6 +37,8 @@ process.maxEvents = cms.untracked.PSet(
 from UWAnalysis.Configuration.tools.analysisToolsHTauTau_WIP import *
 defaultReconstruction(process,'HLT',
         [
+            'HLT_IsoMu22_v', 
+            'HLT_IsoTkMu22_v',
             'HLT_IsoMu22_eta2p1_v', 
             'HLT_IsoTkMu22_eta2p1_v',
             'HLT_IsoMu24_v', 
